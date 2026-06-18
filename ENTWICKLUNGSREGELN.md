@@ -1,0 +1,102 @@
+# Entwicklungsregeln für die Java-Lernplattform
+
+Dieses Dokument beschreibt verbindliche Regeln für die Weiterentwicklung der interaktiven Java-Lernplattform.
+
+## Zielbild
+
+Die Plattform soll Einsteigerinnen und Einsteiger nicht mit IDE-, Build- oder Framework-Komplexitaet überfordern. Sie soll Konzepte erklären, kleine Beispiele zeigen und interaktive Aufgaben anbieten.
+
+Die Lernenden sollen lokal im Browser arbeiten können. Die Plattform soll ohne Backend, ohne Build-Schritt und ohne echte Java-Ausführung funktionieren.
+
+## Sprache und Schreibweise
+
+- Sichtbare deutsche Texte verwenden echte Umlaute: `ä`, `ö`, `ü`, `Ä`, `Ö`, `Ü`, `ß`.
+- Keine Umschreibungen wie `ae`, `oe`, `ue`, `ss`, wenn ein deutsches Wort gemeint ist.
+- Fachbegriffe dürfen deutsch erklärt werden, auch wenn der Java-Begriff englisch bleibt.
+- Erklärungen bleiben kurz, konkret und anschaulich.
+
+## Layout
+
+- Die Kapitel-/Modulnavigation bleibt erhalten.
+- Der Inhaltsbereich eines Moduls ist strikt einspaltig.
+- Abschnitte stehen untereinander:
+  - Konzept
+  - Beispiele
+  - Wissensquiz
+  - Code-Vervollständigung
+- Keine zweite Inhaltsspalte für Quiz oder Aufgaben.
+- Auf mobilen Viewports darf kein horizontaler Seiten-Overflow entstehen.
+
+## Modulaufbau
+
+Jedes Modul soll enthalten:
+
+- Konzept-Erklärung
+- anschauliche Beispiele
+- Wissensquiz
+- Code-Vervollständigung
+
+Neue Konzepte sollen schrittweise eingeführt werden. Eine Aufgabe soll nicht zu viele neue Begriffe gleichzeitig einführen.
+
+## Code-Beispiele
+
+- Code-Beispiele sind fake-runnable.
+- Es wird kein echter Java-Code im Browser ausgeführt.
+- Die Ausgabe wird als simulierte Konsolenausgabe angezeigt.
+- Bei normalen Beispielen gibt es eine kleine IDE-artige Gutter links am Codeblock.
+- In dieser Gutter sitzt oben ein kleines gruenes Play-Symbol.
+- Es gibt keinen normalen Textbutton `Ausführen` unter dem Codeblock.
+- Der Output erscheint beim Klick auf das Play-Symbol.
+- Das Play-Symbol darf den Codeblock nicht optisch dominieren.
+
+## Quiz-Code und Output
+
+- Quizfragen dürfen Code enthalten.
+- Wenn eine Quizfrage Code enthält, wird der Output erst angezeigt, nachdem die richtige Antwort ausgewählt wurde.
+- Bei einer falschen Antwort bleibt der Output verborgen.
+- Nach einer falschen Antwort muss man weiter raten können.
+- Falsche Antworten dürfen markiert/deaktiviert werden, aber die richtige Antwort muss weiter klickbar bleiben.
+
+## Code-Vervollständigung
+
+- Code-Vervollständigung simuliert Code, führt ihn aber nicht aus.
+- Nach korrekter Lösung wird eine simulierte Konsolenausgabe angezeigt.
+- Bei falscher Lösung bleibt die Ausgabe verborgen.
+- Rückmeldungen sollen konkret, freundlich und knapp sein.
+
+## Glossar
+
+- Es gibt ein festes Glossar. Dies hat eine eigene Seite, auf der es dargestellt wird, wo auch die echte "Wahrheit" steht, d.h. auf diesen Text wird referenziert.
+- Glossarbegriffe werden beim ersten Vorkommen auf einer Modulseite markiert, immer nur in Konzepterklärungstexten.
+- Pro Begriff wird auf einer Modulseite nur das erste Vorkommen markiert.
+- Beim Hover oder Tastatur-Fokus erscheint ein kleines Fenster mit:
+  - Begriff als Überschrift
+  - kurzer, einfacher Erklärung aus dem Glossar.
+- Innerhalb von Codeblöcken werden keine Glossarlinks oder Glossarfenster angezeigt.
+- Vor jeder Abnahme muss explizit geprüft werden, ob die markierte Stelle wirklich das erste Vorkommen des Begriffs auf der aktuellen Modulseite ist. Dazu werden alle markierten Wörter identifiziert und mit dem jeweiligen Vorkommen verglichen.
+
+## Infoboxen
+
+- Infoboxen dürfen für wichtige Nebenbegriffe genutzt werden. Das wird aber vom User erwähnt wenn das relevant ist oder eingebaut werden soll
+- Orientierung: Die Info-Box für System.out.println beim Thema "Variablen" 
+
+## Technische Regeln
+
+- Das Teilprojekt bleibt statisch: `index.html`, `styles.css`, `app.js`.
+- Keine externen Dependencies ohne ausdrueckliche Entscheidung.
+- Kein Build-Step, solange er nicht wirklich benötigt wird.
+
+## Abnahme-Checkliste
+
+Vor Abschluss einer Änderung:
+
+- JavaScript-Syntaxcheck ausführen.
+- Neue oder geänderte deutsche Texte auf Umlaut-Umschreibungen prüfen.
+- Browser lokal starten und Seite laden.
+- Desktop- und Mobile-Breite prüfen.
+- Interaktion testen, wenn sich etwas an der jeweiligen Struktur geändert hat:
+  - Modulwechsel (zB bei neuem oder geänderten Modulen)
+  - Play-Symbol (zB bei Änderungen an der Darstellung o.ä.)
+- Sicherstellen, dass keine Glossar-Markierungen in Codeblöcken erscheinen.
+- Sicherstellen, dass Glossar-Markierungen nur in Konzepterklärungen erscheinen.
+- Sicherstellen, dass Glossar-Markierungen bei der ERSTEN Verwendung eines Worts auftreten.

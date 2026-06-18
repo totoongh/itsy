@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Java Lernplattform</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f766e'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='18' font-weight='700' text-anchor='middle' fill='white'%3EJ%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Lernmodule">
+        <div class="brand-block">
+          <div class="brand-mark" aria-hidden="true">J</div>
+          <div>
+            <h1>Java Lernplattform</h1>
+            <p>Grundlagen für Anwendungsentwicklung</p>
+          </div>
+        </div>
+
+        <nav id="moduleNav" class="module-nav"></nav>
+
+        <div class="progress-panel">
+          <div class="progress-row">
+            <span>Fortschritt</span>
+            <strong id="progressText">0%</strong>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <div id="progressFill" class="progress-fill"></div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Aufgaben-Repository</p>
+            <h2 id="moduleTitle">Modul</h2>
+          </div>
+          <div class="topbar-actions">
+            <button id="resetProgressButton" class="secondary-button" type="button">Fortschritt zurücksetzen</button>
+          </div>
+        </header>
+
+        <section class="module-layout">
+          <article class="lesson-column">
+            <section class="section-block">
+              <h3>Konzept</h3>
+              <div id="conceptContent"></div>
+            </section>
+
+            <section class="section-block">
+              <h3>Beispiele</h3>
+              <div id="examplesContent"></div>
+            </section>
+          </article>
+
+          <aside class="activity-column">
+            <section class="activity-card">
+              <div class="activity-heading">
+                <h3>Wissensquiz</h3>
+                <span id="quizCounter"></span>
+              </div>
+              <div id="quizContent"></div>
+            </section>
+
+            <section class="activity-card">
+              <div class="activity-heading">
+                <h3>Code-Vervollständigung</h3>
+                <span id="codeCounter"></span>
+              </div>
+              <div id="codeContent"></div>
+            </section>
+          </aside>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
