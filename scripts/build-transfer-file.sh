@@ -2,7 +2,8 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-OUTPUT_FILE="${1:-"$ROOT_DIR/java-learning-platform-transfer.sh"}"
+SH_OUTPUT_FILE="${1:-"$ROOT_DIR/java-learning-platform-transfer.sh"}"
+PS_OUTPUT_FILE="${2:-"$ROOT_DIR/java-learning-platform-transfer.ps1"}"
 
 FILES=(
   "index.html"
@@ -10,7 +11,9 @@ FILES=(
   "app.js"
   "README.md"
   "ENTWICKLUNGSREGELN.md"
+  ".gitignore"
   "scripts/build-transfer-file.sh"
+  "scripts/build-transfer-file.ps1"
 )
 
 for file in "${FILES[@]}"; do
@@ -22,14 +25,16 @@ done
 
 TMP_DIR="$(mktemp -d)"
 ARCHIVE_FILE="$TMP_DIR/java-learning-platform.tar.gz"
+ZIP_FILE="$TMP_DIR/java-learning-platform.zip"
 trap 'rm -rf "$TMP_DIR"' EXIT
 
 (
   cd "$ROOT_DIR"
   tar -czf "$ARCHIVE_FILE" "${FILES[@]}"
+  zip -qr "$ZIP_FILE" "${FILES[@]}"
 )
 
-cat > "$OUTPUT_FILE" <<'SCRIPT_HEADER'
+cat > "$SH_OUTPUT_FILE" <<'SCRIPT_HEADER'
 #!/usr/bin/env bash
 set -euo pipefail
 
@@ -78,8 +83,68 @@ exit 0
 __JAVA_LEARNING_PLATFORM_PAYLOAD__
 SCRIPT_HEADER
 
-base64 < "$ARCHIVE_FILE" >> "$OUTPUT_FILE"
-printf '\n' >> "$OUTPUT_FILE"
-chmod +x "$OUTPUT_FILE"
+base64 < "$ARCHIVE_FILE" >> "$SH_OUTPUT_FILE"
+printf '\n' >> "$SH_OUTPUT_FILE"
+chmod +x "$SH_OUTPUT_FILE"
 
-printf 'Transfer-Datei erstellt: %s\n' "$OUTPUT_FILE"
+cat > "$PS_OUTPUT_FILE" <<'POWERSHELL_HEADER'
+param(
+    [string]$TargetDir = "java-learning-platform",
+    [switch]$InitGit
+)
+
+$ErrorActionPreference = "Stop"
+
+if ((Test-Path -LiteralPath $TargetDir) -and -not (Test-Path -LiteralPath $TargetDir -PathType Container)) {
+    Write-Error "Ziel existiert, ist aber kein Ordner: $TargetDir"
+    exit 1
+}
+
+New-Item -ItemType Directory -Force -Path $TargetDir | Out-Null
+
+$tmpArchive = Join-Path ([System.IO.Path]::GetTempPath()) ("java-learning-platform-transfer-{0}.zip" -f [System.Guid]::NewGuid())
+
+try {
+    $payload = @'
+POWERSHELL_HEADER
+
+base64 < "$ZIP_FILE" >> "$PS_OUTPUT_FILE"
+
+cat >> "$PS_OUTPUT_FILE" <<'POWERSHELL_FOOTER'
+'@
+
+    [System.IO.File]::WriteAllBytes($tmpArchive, [System.Convert]::FromBase64String(($payload -replace "\s", "")))
+
+    if (Get-Command Expand-Archive -ErrorAction SilentlyContinue) {
+        Expand-Archive -Path $tmpArchive -DestinationPath $TargetDir -Force
+    } else {
+        Add-Type -AssemblyName System.IO.Compression.FileSystem
+        [System.IO.Compression.ZipFile]::ExtractToDirectory($tmpArchive, $TargetDir)
+    }
+
+    if ($InitGit) {
+        Push-Location $TargetDir
+        try {
+            if (Get-Command git -ErrorAction SilentlyContinue) {
+                git init | Out-Null
+                git add .
+                git commit -m "Restore Java learning platform snapshot" | Out-Null
+            } else {
+                Write-Warning "Git ist nicht installiert, überspringe git init."
+            }
+        } finally {
+            Pop-Location
+        }
+    }
+
+    Write-Host "Java Lernplattform wurde nach $TargetDir entpackt."
+    Write-Host "Start: $TargetDir/index.html im Browser öffnen."
+} finally {
+    if (Test-Path -LiteralPath $tmpArchive) {
+        Remove-Item -LiteralPath $tmpArchive -Force
+    }
+}
+POWERSHELL_FOOTER
+
+printf 'Transfer-Datei erstellt: %s\n' "$SH_OUTPUT_FILE"
+printf 'Windows-Transfer-Datei erstellt: %s\n' "$PS_OUTPUT_FILE"

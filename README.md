@@ -42,22 +42,29 @@ im Browser.
 
 ## Transfer-Datei
 
-Der aktuelle Projektstand kann als einzelne ausführbare Datei erzeugt werden:
+Der aktuelle Projektstand kann als einzelne ausführbare Datei erzeugt werden. Für macOS/Linux:
 
 ```bash
 ./scripts/build-transfer-file.sh
 ```
 
-Dadurch entsteht:
+Dadurch entstehen:
 
 ```text
 java-learning-platform-transfer.sh
+java-learning-platform-transfer.ps1
 ```
 
-Diese Datei kann auf ein Zielsystem übertragen und dort ausgeführt werden:
+Die `.sh`-Datei kann auf macOS/Linux übertragen und dort ausgeführt werden:
 
 ```bash
 ./java-learning-platform-transfer.sh
+```
+
+Die `.ps1`-Datei kann auf Windows in PowerShell ausgeführt werden:
+
+```powershell
+.\java-learning-platform-transfer.ps1
 ```
 
 Standardmäßig wird ein Ordner `java-learning-platform` erzeugt. Optional kann ein Zielordner angegeben werden:
@@ -66,10 +73,24 @@ Standardmäßig wird ein Ordner `java-learning-platform` erzeugt. Optional kann 
 ./java-learning-platform-transfer.sh zielordner
 ```
 
+```powershell
+.\java-learning-platform-transfer.ps1 zielordner
+```
+
 Wenn im Zielordner direkt ein neues Git-Repository initialisiert werden soll:
 
 ```bash
 ./java-learning-platform-transfer.sh zielordner --init-git
+```
+
+```powershell
+.\java-learning-platform-transfer.ps1 zielordner -InitGit
+```
+
+Unter Windows kann die PowerShell-Transfer-Datei auch direkt neu erzeugt werden:
+
+```powershell
+.\scripts\build-transfer-file.ps1
 ```
 
 ## GitHub-Nutzung
