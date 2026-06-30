@@ -1,16 +1,27 @@
-# Java Lernplattform
+# Java Grundlagen
 
 Eine kleine statische Lernplattform für angehende Anwendungsentwicklerinnen und Anwendungsentwickler.
 
+Der Kurs nutzt als roten Faden die Modellierung einer Ausbildungsgruppe: Eine Ausbilderin verwaltet Azubis mit Vorname, Lehrjahr, Anwesenheit und den letzten drei Noten. Aus einzelnen Werten wächst schrittweise ein kleines Java-Modell.
+
 ## Inhalt dieses Prototyps
 
-Der erste Stand deckt drei Themen aus dem Ausbildungsrahmen ab:
+Der aktuelle Stand deckt zwölf Themen aus dem Ausbildungsrahmen ab:
 
 1. Variablen
-2. Einfache und zusammengesetzte Datentypen
+2. Einfache Datentypen
 3. Kontrollstrukturen
+4. Arrays
+5. Schleifen
+6. Listen
+7. Methoden
+8. Klassen
+9. Objekte in Listen
+10. Kapselung
+11. Fehlerbehandlung
+12. Tests
 
-Jedes Thema enthaelt:
+Jedes Thema enthält:
 
 - kurze Konzept-Erklärung
 - Java-nahe Beispiele
@@ -29,6 +40,38 @@ index.html
 
 im Browser.
 
+## Transfer-Datei
+
+Der aktuelle Projektstand kann als einzelne ausführbare Datei erzeugt werden:
+
+```bash
+./scripts/build-transfer-file.sh
+```
+
+Dadurch entsteht:
+
+```text
+java-learning-platform-transfer.sh
+```
+
+Diese Datei kann auf ein Zielsystem übertragen und dort ausgeführt werden:
+
+```bash
+./java-learning-platform-transfer.sh
+```
+
+Standardmäßig wird ein Ordner `java-learning-platform` erzeugt. Optional kann ein Zielordner angegeben werden:
+
+```bash
+./java-learning-platform-transfer.sh zielordner
+```
+
+Wenn im Zielordner direkt ein neues Git-Repository initialisiert werden soll:
+
+```bash
+./java-learning-platform-transfer.sh zielordner --init-git
+```
+
 ## GitHub-Nutzung
 
 Dieses Teilprojekt kann als statische Website in ein GitHub-Repository gelegt werden.
@@ -45,19 +88,6 @@ java-learning-platform/
 
 Für GitHub Pages kann die Seite ohne Build-Schritt ausgeliefert werden.
 
-## Naechste Ausbaustufen
+## Nächste Ausbaustufen
 
-Moegliche weitere Module:
-
-- Operatoren
-- Prozeduraler Programmieransatz
-- Übergabeparameter und Rückgabewerte
-- Darstellungsmittel
-- Phasen der Softwareentwicklung
-- Dokumentation und Softwaretests
-- Algorithmen
-- Objektorientierte Programmierung
-- Exceptionhandling
-- Garbage Collector
-- Externe Bibliotheken
-- Grundlagen grafischer Oberflaechen
+Der aktuelle Prototyp bildet den geplanten Grundlagenpfad vollständig ab. Sinnvolle spätere Erweiterungen wären Vertiefungen zu JUnit, Projektstruktur, Paketen oder kleinen Konsolenprogrammen.

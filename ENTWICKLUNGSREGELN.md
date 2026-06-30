@@ -4,9 +4,11 @@ Dieses Dokument beschreibt verbindliche Regeln für die Weiterentwicklung der in
 
 ## Zielbild
 
-Die Plattform soll Einsteigerinnen und Einsteiger nicht mit IDE-, Build- oder Framework-Komplexitaet überfordern. Sie soll Konzepte erklären, kleine Beispiele zeigen und interaktive Aufgaben anbieten.
+Die Plattform soll Einsteigerinnen und Einsteiger nicht mit IDE-, Build- oder Framework-Komplexität überfordern. Sie soll Konzepte erklären, kleine Beispiele zeigen und interaktive Aufgaben anbieten.
 
 Die Lernenden sollen lokal im Browser arbeiten können. Die Plattform soll ohne Backend, ohne Build-Schritt und ohne echte Java-Ausführung funktionieren.
+
+Der fachliche rote Faden ist die Modellierung einer Ausbildungsgruppe von Azubis. Beispiele sollen auf Azubis, Lehrjahr, Anwesenheit, letzte drei Noten, Ausbilderin und Gruppendaten aufbauen. Kino-, Ticket-, Aufgabenboard- oder Berichtsheft-Szenarien gehören nicht zur Kurs-Story.
 
 ## Sprache und Schreibweise
 
@@ -38,13 +40,16 @@ Jedes Modul soll enthalten:
 
 Neue Konzepte sollen schrittweise eingeführt werden. Eine Aufgabe soll nicht zu viele neue Begriffe gleichzeitig einführen.
 
+Die ersten Module betrachten einzelne Werte eines Azubis. Arrays, Listen und Gruppen mit mehreren Azubis werden erst eingeführt, wenn das jeweilige Modul diese Konzepte erklärt. Frühe Beispiele vermeiden String-Vergleiche mit `.equals(...)`; Entscheidungen sollen zunächst über `boolean`, `int`, `double` und einfache Zahlenvergleiche laufen.
+
 ## Code-Beispiele
 
 - Code-Beispiele sind fake-runnable.
 - Es wird kein echter Java-Code im Browser ausgeführt.
 - Die Ausgabe wird als simulierte Konsolenausgabe angezeigt.
+- Code-Beispiele dürfen am Anfang kurze Kommentarzeilen enthalten, wenn diese den fachlichen Kontext erklären.
 - Bei normalen Beispielen gibt es eine kleine IDE-artige Gutter links am Codeblock.
-- In dieser Gutter sitzt oben ein kleines gruenes Play-Symbol.
+- In dieser Gutter sitzt oben ein kleines grünes Play-Symbol.
 - Es gibt keinen normalen Textbutton `Ausführen` unter dem Codeblock.
 - Der Output erscheint beim Klick auf das Play-Symbol.
 - Das Play-Symbol darf den Codeblock nicht optisch dominieren.
@@ -52,10 +57,12 @@ Neue Konzepte sollen schrittweise eingeführt werden. Eine Aufgabe soll nicht zu
 ## Quiz-Code und Output
 
 - Quizfragen dürfen Code enthalten.
-- Wenn eine Quizfrage Code enthält, wird der Output erst angezeigt, nachdem die richtige Antwort ausgewählt wurde.
-- Bei einer falschen Antwort bleibt der Output verborgen.
+- Quizblöcke zeigen keinen Konsolenoutput.
+- Wissensquizfragen dürfen die Lösung nicht schon in der Aufgabenstellung oder in einem begleitenden Codebeispiel verraten.
 - Nach einer falschen Antwort muss man weiter raten können.
 - Falsche Antworten dürfen markiert/deaktiviert werden, aber die richtige Antwort muss weiter klickbar bleiben.
+- Zwischen einer eingeblendeten Antwort/Rückmeldung und der nächsten Frage muss sichtbar Luft bleiben.
+- In Quizfragen und Quizantworten gibt es keine Glossar-Markierungen.
 
 ## Code-Vervollständigung
 
@@ -63,16 +70,21 @@ Neue Konzepte sollen schrittweise eingeführt werden. Eine Aufgabe soll nicht zu
 - Nach korrekter Lösung wird eine simulierte Konsolenausgabe angezeigt.
 - Bei falscher Lösung bleibt die Ausgabe verborgen.
 - Rückmeldungen sollen konkret, freundlich und knapp sein.
+- Es gibt keine Hinweise oder Tipptexte bei Code-Vervollständigungsblöcken.
 
 ## Glossar
 
 - Es gibt ein festes Glossar. Dies hat eine eigene Seite, auf der es dargestellt wird, wo auch die echte "Wahrheit" steht, d.h. auf diesen Text wird referenziert.
+- Das Glossar ist als eigener Menüpunkt oben auf Höhe der Modulüberschrift erreichbar.
+- Die Glossarseite ist durchsuchbar und tabellarisch aufgebaut: links steht der Titel, rechts die Beschreibung mit deutlich mehr Platz.
+- Bei der Suche erscheinen zuerst Treffer, bei denen der Suchbegriff im Titel vorkommt, danach Treffer, bei denen der Suchbegriff nur in der Beschreibung vorkommt.
 - Glossarbegriffe werden beim ersten Vorkommen auf einer Modulseite markiert, immer nur in Konzepterklärungstexten.
 - Pro Begriff wird auf einer Modulseite nur das erste Vorkommen markiert.
 - Beim Hover oder Tastatur-Fokus erscheint ein kleines Fenster mit:
   - Begriff als Überschrift
   - kurzer, einfacher Erklärung aus dem Glossar.
 - Innerhalb von Codeblöcken werden keine Glossarlinks oder Glossarfenster angezeigt.
+- In Infoboxen sind Glossar-Markierungen erlaubt, falls sie fachlich helfen.
 - Vor jeder Abnahme muss explizit geprüft werden, ob die markierte Stelle wirklich das erste Vorkommen des Begriffs auf der aktuellen Modulseite ist. Dazu werden alle markierten Wörter identifiziert und mit dem jeweiligen Vorkommen verglichen.
 
 ## Infoboxen
@@ -83,7 +95,7 @@ Neue Konzepte sollen schrittweise eingeführt werden. Eine Aufgabe soll nicht zu
 ## Technische Regeln
 
 - Das Teilprojekt bleibt statisch: `index.html`, `styles.css`, `app.js`.
-- Keine externen Dependencies ohne ausdrueckliche Entscheidung.
+- Keine externen Dependencies ohne ausdrückliche Entscheidung.
 - Kein Build-Step, solange er nicht wirklich benötigt wird.
 
 ## Abnahme-Checkliste
@@ -93,10 +105,10 @@ Vor Abschluss einer Änderung:
 - JavaScript-Syntaxcheck ausführen.
 - Neue oder geänderte deutsche Texte auf Umlaut-Umschreibungen prüfen.
 - Browser lokal starten und Seite laden.
-- Desktop- und Mobile-Breite prüfen.
+- Desktop-Breite prüfen.
 - Interaktion testen, wenn sich etwas an der jeweiligen Struktur geändert hat:
-  - Modulwechsel (zB bei neuem oder geänderten Modulen)
-  - Play-Symbol (zB bei Änderungen an der Darstellung o.ä.)
+  - Modulwechsel (z. B. bei neuem oder geänderten Modulen)
+  - Play-Symbol (z. B. bei Änderungen an der Darstellung o. ä.)
 - Sicherstellen, dass keine Glossar-Markierungen in Codeblöcken erscheinen.
-- Sicherstellen, dass Glossar-Markierungen nur in Konzepterklärungen erscheinen.
+- Sicherstellen, dass keine Glossar-Markierungen in Quizblöcken erscheinen.
 - Sicherstellen, dass Glossar-Markierungen bei der ERSTEN Verwendung eines Worts auftreten.

@@ -6,25 +6,22 @@ const modules = [
     subtitle: "Werte benennen und wiederverwenden",
     concepts: [
       "Eine Variable ist ein benannter Speicherplatz für einen Wert.",
-      "In Java hat jede Variable einen Datentyp, zum Beispiel int oder String.",
+      "Für eine Ausbildungsgruppe können Werte wie Vorname, Lehrjahr, Anwesenheit oder eine Note gespeichert werden.",
+      "In Java hat jede Variable einen Datentyp, zum Beispiel int, double oder String.",
       "Mit dem Gleichheitszeichen wird ein Wert zugewiesen. Das ist keine mathematische Gleichung.",
       "Ein guter Variablenname beschreibt, was gespeichert wird."
     ],
     explanation: [
       {
-        heading: "Alltagsbild",
-        text: "Eine Variable ist wie ein beschriftetes Fach. Auf dem Fach steht ein Name, im Fach liegt ein Wert. Wenn sich der Wert ändert, bleibt der Name gleich."
-      },
-      {
         heading: "Java-Regel",
-        text: "Java will beim Anlegen wissen, welche Art von Wert in die Variable darf. Deshalb schreiben wir zuerst den Typ und dann den Namen."
+        text: "Java will beim Anlegen wissen, welche Art von Wert gespeichert wird. Deshalb schreiben wir zuerst den Typ und dann den Namen."
       }
     ],
     examples: [
       {
-        title: "Ein Ticket-Titel als Text",
-        code: `String title = "Drucker defekt";\nSystem.out.println(title);`,
-        output: "Drucker defekt",
+        title: "Vorname als Text",
+        code: `// Frau Kaya notiert zuerst den Vornamen eines Azubis.\n// Der Name soll später wiederverwendet werden können.\nString firstName = "Maya";\nSystem.out.println(firstName);`,
+        output: "Maya",
         info: {
           title: "Was macht System.out.println?",
           body: [
@@ -33,17 +30,36 @@ const modules = [
             "Warum heißt es nicht einfach `println`? Java organisiert Befehle in Klassen und Objekten. `System` ist eine eingebaute Java-Klasse, `out` ist der Ausgabekanal zur Konsole und `println` ist die Methode, die auf diesem Ausgabekanal Text ausgibt.",
             "`println` bedeutet: ausgeben und danach in die nächste Zeile springen."
           ]
-        }
+        },
+        infoBlocks: [
+          {
+            title: "Wofür stehen die Anführungszeichen?",
+            body: [
+              "Anführungszeichen markieren in Java einen festen Textwert. `\"Maya\"` bedeutet: Genau dieser Name soll gespeichert oder ausgegeben werden.",
+              "Du brauchst Anführungszeichen, wenn du Text direkt in den Code schreibst: `String firstName = \"Maya\";`.",
+              "Du brauchst keine Anführungszeichen, wenn du den Wert aus einer Variable verwendest: `System.out.println(firstName);`. Dann nimmt Java den Inhalt, der unter dem Namen `firstName` gespeichert ist.",
+              "Zahlen und Wahrheitswerte stehen ohne Anführungszeichen: `int trainingYear = 1;` und `boolean presentToday = true;`."
+            ]
+          },
+          {
+            title: "Wie sind Anweisungen aufgebaut?",
+            body: [
+              "`String firstName = \"Maya\";` legt eine neue Variable an. `String` ist der Datentyp, `firstName` ist der Name und `\"Maya\"` ist der gespeicherte Wert.",
+              "`System.out.println(firstName);` legt nichts Neues an. Diese Anweisung ruft eine Methode auf und übergibt ihr `firstName`, damit der gespeicherte Wert ausgegeben wird.",
+              "Beide Zeilen sind Anweisungen und enden mit einem Semikolon. Die erste speichert Daten, die zweite benutzt Daten."
+            ]
+          }
+        ]
       },
       {
-        title: "Eine Ticket-ID als Zahl",
-        code: `int ticketId = 7;\nSystem.out.println(ticketId);`,
-        output: "7"
+        title: "Lehrjahr als ganze Zahl",
+        code: `// Das Lehrjahr ist eine ganze Zahl.\n// Maya ist aktuell im ersten Lehrjahr.\nint trainingYear = 1;\nSystem.out.println(trainingYear);`,
+        output: "1"
       },
       {
         title: "Wert später ändern",
-        code: `String status = "OPEN";\nstatus = "IN_PROGRESS";\nSystem.out.println(status);`,
-        output: "IN_PROGRESS"
+        code: `// Eine Note kann sich ändern, wenn eine neue Bewertung vorliegt.\n// Die Variable bleibt gleich, nur der gespeicherte Wert wird ersetzt.\ndouble lastGrade = 2.3;\nlastGrade = 2.0;\nSystem.out.println(lastGrade);`,
+        output: "2.0"
       }
     ],
     quiz: [
@@ -59,156 +75,150 @@ const modules = [
         explanation: "Eine Variable speichert einen Wert unter einem Namen."
       },
       {
-        question: "Was passiert in Java bei `int ticketId = 5;`?",
+        question: "Was beschreibt die Zeile `int trainingYear = 1;` fachlich am besten?",
         options: [
-          "Eine Zahlvariable wird angelegt und bekommt den Wert 5",
+          "Eine Zahlvariable wird angelegt und bekommt den Wert 1",
           "Ein Text wird ausgegeben",
           "Ein neues Projekt wird erstellt",
           "Eine Schleife wird gestartet"
         ],
         correct: 0,
-        explanation: "`int` ist der Datentyp für ganze Zahlen.",
-        code: `int ticketId = 5;\nSystem.out.println(ticketId);`,
-        output: "5"
+        explanation: "`int` ist der Datentyp für ganze Zahlen."
       }
     ],
     completion: {
-      prompt: "Vervollständige den Code, sodass Titel und ID eines Tickets gespeichert werden.",
+      prompt: "Vervollständige den Code, sodass Vorname und Lehrjahr eines Azubis gespeichert werden.",
       parts: [
         { text: "" },
-        { blank: "typeTitle", answers: ["String"] },
-        { text: " title = \"Passwort zurücksetzen\";\n" },
-        { blank: "typeId", answers: ["int"] },
-        { text: " ticketId = 12;\nSystem.out.println(title);\nSystem.out.println(ticketId);" }
+        { blank: "nameType", answers: ["String"] },
+        { text: " firstName = \"Maya\";\n" },
+        { blank: "yearType", answers: ["int"] },
+        { text: " trainingYear = 1;\nSystem.out.println(firstName);\nSystem.out.println(trainingYear);" }
       ],
-      hint: "Text braucht String. Ganze Zahlen brauchen int.",
-      output: "Passwort zurücksetzen\n12"
+      output: "Maya\n1"
     }
   },
   {
     id: "data-types",
     number: "02",
     title: "Datentypen",
-    subtitle: "Einfache und zusammengesetzte Werte",
+    subtitle: "Einfache Werte unterscheiden",
     concepts: [
       "Einfache Datentypen speichern einzelne Werte, zum Beispiel int, double oder boolean.",
       "String ist ein Texttyp und wird im Einsteigerkurs wie ein einfacher Wert benutzt.",
-      "Zusammengesetzte Datentypen fassen mehrere Werte zusammen, zum Beispiel Arrays, Listen oder eigene Klassen.",
+      "boolean ist ein Wahrheitswert (wahr/falsch).",
       "Der Datentyp hilft Java, Fehler früh zu erkennen."
     ],
     explanation: [
       {
         heading: "Einfache Datentypen",
-        text: "Ein einfacher Datentyp steht für einen einzelnen Wert: eine Zahl, eine Wahrheit oder ein Zeichen."
-      },
-      {
-        heading: "Zusammengesetzte Datentypen",
-        text: "Ein Ticket besteht aus mehreren Werten: ID, Titel, Beschreibung, Status. Dafür eignet sich später eine Klasse."
+        text: "Ein einfacher Datentyp steht für einen einzelnen Wert: einen Text, eine ganze Zahl, eine Kommazahl oder einen Wahrheitswert (wahr/falsch)."
       }
     ],
     examples: [
       {
         title: "Einfache Datentypen",
-        code: `int id = 3;\ndouble hours = 1.5;\nboolean urgent = true;\nString title = "Software installieren";\n\nSystem.out.println(id);\nSystem.out.println(hours);\nSystem.out.println(urgent);\nSystem.out.println(title);`,
-        output: "3\n1.5\ntrue\nSoftware installieren"
+        code: `// Für einen Azubi gibt es unterschiedliche Arten von Informationen.\n// Jede Variable bekommt den Datentyp, der zu ihrem Wert passt.\nString firstName = "Maya";\nint trainingYear = 1;\ndouble lastGrade = 2.3;\nboolean presentToday = true;\n\nSystem.out.println(firstName);\nSystem.out.println(trainingYear);\nSystem.out.println(lastGrade);\nSystem.out.println(presentToday);`,
+        output: "Maya\n1\n2.3\ntrue"
       },
       {
-        title: "Array als zusammengesetzter Datentyp",
-        code: `String[] statuses = {"OPEN", "IN_PROGRESS", "CLOSED"};\nSystem.out.println(statuses[0]);`,
-        output: "OPEN"
+        title: "Wahrheitswert für Anwesenheit",
+        code: `// Anwesenheit hat nur zwei sinnvolle Zustände: wahr oder falsch.\n// false bedeutet hier: Der Azubi ist heute nicht da.\nboolean presentToday = false;\nSystem.out.println(presentToday);`,
+        output: "false"
       },
       {
-        title: "Klasse als zusammengesetzter Datentyp",
-        code: `Ticket ticket = new Ticket();\nticket.title = "Drucker defekt";\nticket.status = "OPEN";\n\nSystem.out.println(ticket.title);\nSystem.out.println(ticket.status);`,
-        output: "Drucker defekt\nOPEN"
+        title: "Kommazahl für eine Note",
+        code: `// Noten können Nachkommastellen haben.\n// Deshalb passt hier ein Datentyp für Kommazahlen.\ndouble lastGrade = 2.3;\nSystem.out.println(lastGrade);`,
+        output: "2.3"
       }
     ],
     quiz: [
       {
-        question: "Welcher Datentyp passt für wahr/falsch?",
+        question: "Welche Art von Datentyp braucht man für eine Information mit nur zwei Zuständen?",
         options: ["boolean", "int", "String", "double"],
         correct: 0,
-        explanation: "`boolean` speichert true oder false.",
-        code: `boolean urgent = true;\nSystem.out.println(urgent);`,
-        output: "true"
+        explanation: "`boolean` speichert true oder false."
       },
       {
-        question: "Was ist ein Beispiel für einen zusammengesetzten Datentyp?",
-        options: ["Eine Klasse Ticket mit mehreren Feldern", "Die Zahl 7", "Der Wert true", "Ein einzelnes Zeichen"],
+        question: "Welche Art von Datentyp passt zu einer Zahl mit Nachkommastelle?",
+        options: ["double", "boolean", "String", "int"],
         correct: 0,
-        explanation: "Eine Klasse kann mehrere Werte zu einem Objekt zusammenfassen."
+        explanation: "`double` speichert Kommazahlen."
       }
     ],
     completion: {
-      prompt: "Wähle passende Datentypen für ein Ticket.",
+      prompt: "Wähle passende Datentypen für einen Azubi in der Ausbildungsgruppe.",
       parts: [
-        { blank: "id", answers: ["int"] },
-        { text: " ticketId = 3;\n" },
-        { blank: "urgent", answers: ["boolean"] },
-        { text: " urgent = true;\n" },
-        { blank: "title", answers: ["String"] },
-        { text: " title = \"Drucker defekt\";\n" },
-        { blank: "duration", answers: ["double"] },
-        { text: " estimatedHours = 2.5;" }
+        { blank: "year", answers: ["int"] },
+        { text: " trainingYear = 1;\n" },
+        { blank: "present", answers: ["boolean"] },
+        { text: " presentToday = true;\n" },
+        { blank: "name", answers: ["String"] },
+        { text: " firstName = \"Maya\";\n" },
+        { blank: "grade", answers: ["double"] },
+        { text: " lastGrade = 2.3;" }
       ],
-      hint: "Achte darauf, ob ein Wert Text, ganze Zahl, Kommazahl oder wahr/falsch ist.",
-      output: "3\ntrue\nDrucker defekt\n2.5"
+      output: "1\ntrue\nMaya\n2.3"
     }
   },
   {
     id: "control-flow",
     number: "03",
     title: "Kontrollstrukturen",
-    subtitle: "Bedingungen, Schleifen und Fallunterscheidung",
+    subtitle: "Bedingungen und Fallunterscheidung",
     concepts: [
       "Anweisungen werden normalerweise von oben nach unten ausgeführt.",
-      "Mit if/else kann Code nur unter bestimmten Bedingungen laufen.",
-      "Mit Schleifen kann Code wiederholt werden.",
-      "Mit switch kann man mehrere feste Fälle übersichtlich unterscheiden."
+      "Mit if/else kann Code nur unter bestimmten Bedingungen laufen, zum Beispiel wenn ein Azubi heute anwesend ist.",
+      "Mit Zahlenvergleichen kann die Ausbilderin einfache Regeln zu Noten prüfen.",
+      "Mit switch kann man mehrere feste Fälle übersichtlich unterscheiden, zum Beispiel das Lehrjahr."
     ],
     explanation: [
       {
         heading: "Bedingung",
-        text: "Eine Bedingung entscheidet, welcher Code ausgeführt wird. Beispiel: Wenn ein Ticket kritisch ist, soll eine Warnung erscheinen."
+        text: "Eine Bedingung entscheidet, welcher Code ausgeführt wird. Beispiel: Wenn ein Azubi heute anwesend ist, kann die Ausbilderin ihn für die Tagesübung einplanen."
       },
       {
-        heading: "Schleife",
-        text: "Eine Schleife ist nützlich, wenn man mehrere Tickets nacheinander bearbeiten oder ausgeben will."
+        heading: "Fallunterscheidung",
+        text: "Eine Fallunterscheidung ist nützlich, wenn für Lehrjahr 1, 2 und 3 unterschiedliche Hinweise gelten."
       }
     ],
     examples: [
       {
         title: "if/else",
-        code: `boolean critical = true;\n\nif (critical) {\n    System.out.println("Sofort bearbeiten");\n} else {\n    System.out.println("Normal einplanen");\n}`,
-        output: "Sofort bearbeiten"
+        code: `// Frau Kaya entscheidet anhand der Anwesenheit,\n// ob Maya heute für die Tagesübung eingeplant wird.\nboolean presentToday = true;\n\nif (presentToday) {\n    System.out.println("Für die Tagesübung einplanen");\n} else {\n    System.out.println("Abwesenheit notieren");\n}`,
+        output: "Für die Tagesübung einplanen"
       },
       {
-        title: "for-Schleife",
-        code: `String[] tickets = {"Drucker", "Passwort", "Software"};\n\nfor (String ticket : tickets) {\n    System.out.println(ticket);\n}`,
-        output: "Drucker\nPasswort\nSoftware"
+        title: "Zahlenvergleich",
+        code: `// Frau Kaya prüft eine Note mit einem Zahlenvergleich.\n// Eine Note schlechter als 4.0 soll Unterstützung auslösen.\ndouble lastGrade = 4.3;\n\nif (lastGrade > 4.0) {\n    System.out.println("Unterstützung einplanen");\n} else {\n    System.out.println("Weiter selbstständig üben");\n}`,
+        output: "Unterstützung einplanen"
       },
       {
         title: "switch",
-        code: `String status = "OPEN";\n\nswitch (status) {\n    case "OPEN" -> System.out.println("Neu");\n    case "CLOSED" -> System.out.println("Erledigt");\n    default -> System.out.println("Unbekannt");\n}`,
-        output: "Neu"
+        code: `// Je nach Lehrjahr gibt Frau Kaya einen anderen Hinweis.\n// Der Pfeil -> verbindet den passenden Fall mit der auszuführenden Anweisung.\nint trainingYear = 1;\n\nswitch (trainingYear) {\n    case 1 -> System.out.println("Grundlagen festigen");\n    case 2 -> System.out.println("Projektarbeit vorbereiten");\n    case 3 -> System.out.println("Prüfungsvorbereitung starten");\n    default -> System.out.println("Lehrjahr prüfen");\n}`,
+        output: "Grundlagen festigen",
+        info: {
+          title: "Was bedeutet der Pfeil ->?",
+          body: [
+            "Der Pfeil `->` gehört zur modernen switch-Schreibweise in Java.",
+            "Links steht der Fall, zum Beispiel `case 1`. Rechts vom Pfeil steht, was Java ausführen soll, wenn dieser Fall passt.",
+            "`case 1 -> System.out.println(\"Grundlagen festigen\");` heißt also: Wenn der Wert 1 ist, führe diese Ausgabe aus."
+          ]
+        }
       }
     ],
     quiz: [
       {
-        question: "Welche Kontrollstruktur passt, wenn Code nur bei kritischen Tickets laufen soll?",
+        question: "Was braucht ein Programm, wenn ein Codeabschnitt nur bei erfüllter Bedingung laufen soll?",
         options: ["if", "for", "class", "String"],
         correct: 0,
-        explanation: "`if` prüft eine Bedingung.",
-        code: `boolean critical = true;\n\nif (critical) {\n    System.out.println("Sofort bearbeiten");\n}`,
-        output: "Sofort bearbeiten"
+        explanation: "`if` prüft eine Bedingung."
       },
       {
-        question: "Welche Kontrollstruktur passt, wenn alle Tickets einer Liste ausgegeben werden sollen?",
-        options: ["for-Schleife", "int", "return", "JDK"],
+        question: "Welche Prüfung erkennt eine Note schlechter als 4.0?",
+        options: ["lastGrade > 4.0", "lastGrade = 4.0", "String lastGrade", "class lastGrade"],
         correct: 0,
-        explanation: "Eine Schleife wiederholt Code für mehrere Elemente.",
-        code: `String[] tickets = {"A", "B", "C"};\n\nfor (String ticket : tickets) {\n    System.out.println(ticket);\n}`,
-        output: "A\nB\nC"
+        explanation: "`>` prüft, ob die linke Zahl größer als die rechte Zahl ist."
       },
       {
         question: "Was leistet switch besonders gut?",
@@ -219,25 +229,831 @@ const modules = [
           "Java installieren"
         ],
         correct: 0,
-        explanation: "`switch` ist praktisch für feste Auswahlwerte wie Menüpunkte oder Status."
+        explanation: "`switch` ist praktisch für feste Auswahlwerte wie Lehrjahr 1, 2 oder 3."
       }
     ],
     completion: {
-      prompt: "Vervollständige die Bedingung und die Schleife.",
+      prompt: "Vervollständige die Anwesenheitsprüfung und die Lehrjahr-Fallunterscheidung.",
       parts: [
-        { text: "boolean critical = true;\n\n" },
+        { text: "boolean presentToday = true;\n\n" },
         { blank: "ifKeyword", answers: ["if"] },
-        { text: " (critical) {\n    System.out.println(\"Sofort bearbeiten\");\n}\n\nString[] tickets = {\"A\", \"B\", \"C\"};\n" },
-        { blank: "forKeyword", answers: ["for"] },
-        { text: " (String ticket : tickets) {\n    System.out.println(ticket);\n}" }
+        { text: " (presentToday) {\n    System.out.println(\"Für die Tagesübung einplanen\");\n}\n\nint trainingYear = 1;\n\n" },
+        { blank: "switchKeyword", answers: ["switch"] },
+        { text: " (trainingYear) {\n    case 1 -> System.out.println(\"Grundlagen festigen\");\n    default -> System.out.println(\"Lehrjahr prüfen\");\n}" }
       ],
-      hint: "Eine Bedingung startet mit if. Eine Wiederholung über mehrere Werte startet hier mit for.",
-      output: "Sofort bearbeiten\nA\nB\nC"
+      output: "Für die Tagesübung einplanen\nGrundlagen festigen"
+    }
+  },
+  {
+    id: "arrays",
+    number: "04",
+    title: "Arrays",
+    subtitle: "Mehrere Werte zusammen speichern",
+    concepts: [
+      "Ein Array speichert mehrere Werte desselben Datentyps unter einem Namen.",
+      "In der Ausbildungsgruppe können zum Beispiel mehrere Azubi-Namen in einem String-Array stehen.",
+      "Die Positionen in einem Array beginnen bei 0.",
+      "Mit length kann Java erkennen, wie viele Werte im Array liegen."
+    ],
+    explanation: [
+      {
+        heading: "Warum jetzt Arrays?",
+        text: "Bisher haben wir einen einzelnen Azubi betrachtet. Eine Ausbildungsgruppe besteht aber aus mehreren Azubis. Dafür ist ein Array der nächste Schritt."
+      },
+      {
+        heading: "Java-Regel",
+        text: "Bei einem Array steht der Datentyp mit eckigen Klammern vor dem Namen. Ein String-Array heißt zum Beispiel String[]."
+      }
+    ],
+    examples: [
+      {
+        title: "Mehrere Azubi-Namen",
+        code: `// Ab jetzt betrachten wir die Ausbildungsgruppe als mehrere Werte.\n// Die Namen stehen gemeinsam in einem Array.\nString[] apprenticeNames = {"Maya", "Noah", "Lea"};\nSystem.out.println(apprenticeNames[0]);\nSystem.out.println(apprenticeNames[1]);\nSystem.out.println(apprenticeNames[2]);`,
+        output: "Maya\nNoah\nLea",
+        info: {
+          title: "Warum startet das Array bei 0?",
+          body: [
+            "Java zählt Array-Positionen ab 0.",
+            "`apprenticeNames[0]` ist also der erste Name, `apprenticeNames[1]` der zweite Name und `apprenticeNames[2]` der dritte Name.",
+            "Das wirkt am Anfang ungewohnt, ist in vielen Programmiersprachen aber normal."
+          ]
+        }
+      },
+      {
+        title: "Anzahl der Azubis",
+        code: `// Frau Kaya möchte wissen, wie viele Namen im Array stehen.\n// length liefert die Anzahl der gespeicherten Werte.\nString[] apprenticeNames = {"Maya", "Noah", "Lea"};\nSystem.out.println(apprenticeNames.length);`,
+        output: "3"
+      },
+      {
+        title: "Letzte drei Noten als Array",
+        code: `// Auch gleichartige Zahlenwerte können zusammen gespeichert werden.\n// Hier stehen Mayas letzte drei Noten in einem Array.\ndouble[] lastGrades = {2.0, 2.3, 1.7};\nSystem.out.println(lastGrades[0]);\nSystem.out.println(lastGrades[1]);\nSystem.out.println(lastGrades[2]);`,
+        output: "2.0\n2.3\n1.7"
+      }
+    ],
+    quiz: [
+      {
+        question: "Was speichert `String[] apprenticeNames`?",
+        options: [
+          "Mehrere Textwerte unter einem Namen",
+          "Genau eine Kommazahl",
+          "Eine einzelne Bedingung",
+          "Einen Java-Installationspfad"
+        ],
+        correct: 0,
+        explanation: "`String[]` ist ein Array für mehrere Textwerte."
+      },
+      {
+        question: "Welcher Zugriff liest den ersten Wert aus einem Array?",
+        options: ["names[0]", "names[1]", "names[3]", "names.first"],
+        correct: 0,
+        explanation: "Arrays starten in Java bei Position 0."
+      }
+    ],
+    completion: {
+      prompt: "Vervollständige den Code, sodass drei Azubi-Namen in einem Array gespeichert werden.",
+      parts: [
+        { text: "" },
+        { blank: "arrayType", answers: ["String[]"] },
+        { text: " apprenticeNames = {\"Maya\", \"Noah\", \"Lea\"};\nSystem.out.println(apprenticeNames[" },
+        { blank: "firstIndex", answers: ["0"] },
+        { text: "]);\nSystem.out.println(apprenticeNames.length);" }
+      ],
+      output: "Maya\n3"
+    }
+  },
+  {
+    id: "loops",
+    number: "05",
+    title: "Schleifen",
+    subtitle: "Gruppendaten nacheinander verarbeiten",
+    concepts: [
+      "Eine Schleife wiederholt Code automatisch.",
+      "Mit einer for-Schleife kann Java alle Namen einer Ausbildungsgruppe nacheinander durchgehen.",
+      "Eine for-each-Schleife passt gut, wenn jeder Wert eines Arrays verarbeitet werden soll.",
+      "Der Schleifenrumpf steht in geschweiften Klammern."
+    ],
+    explanation: [
+      {
+        heading: "Warum jetzt Schleifen?",
+        text: "Im Array stehen mehrere Azubi-Namen. Ohne Schleife müssten wir für jeden Namen eine eigene Ausgabezeile schreiben."
+      },
+      {
+        heading: "Java-Regel",
+        text: "Bei for-each steht links eine Variable für den aktuellen Wert und rechts das Array, das durchlaufen wird."
+      }
+    ],
+    examples: [
+      {
+        title: "Alle Namen ausgeben",
+        code: `// Frau Kaya möchte nicht für jeden Namen eine eigene Ausgabezeile schreiben.\n// Die Schleife geht die Namen automatisch nacheinander durch.\nString[] apprenticeNames = {"Maya", "Noah", "Lea"};\n\nfor (String name : apprenticeNames) {\n    System.out.println(name);\n}`,
+        output: "Maya\nNoah\nLea"
+      },
+      {
+        title: "Anwesende zählen",
+        code: `// Für jeden Azubi steht ein Wahrheitswert im Array.\n// Die Schleife zählt, wie oft true vorkommt.\nboolean[] presentToday = {true, false, true};\nint presentCount = 0;\n\nfor (boolean present : presentToday) {\n    if (present) {\n        presentCount = presentCount + 1;\n    }\n}\n\nSystem.out.println(presentCount);`,
+        output: "2"
+      },
+      {
+        title: "Notendurchschnitt berechnen",
+        code: `// Aus den letzten drei Noten soll ein Durchschnitt entstehen.\n// Dafür werden erst alle Noten aufsummiert.\ndouble[] lastGrades = {2.0, 2.3, 1.7};\ndouble sum = 0.0;\n\nfor (double grade : lastGrades) {\n    sum = sum + grade;\n}\n\nSystem.out.println(sum / lastGrades.length);`,
+        output: "2.0"
+      },
+      {
+        title: "Mit Positionen arbeiten",
+        code: `// Manchmal ist nicht nur der Wert interessant, sondern auch seine Position.\n// Der index läuft von 0 bis zur letzten gültigen Array-Position.\nString[] apprenticeNames = {"Maya", "Noah", "Lea"};\n\nfor (int index = 0; index < apprenticeNames.length; index = index + 1) {\n    System.out.println(index);\n    System.out.println(apprenticeNames[index]);\n}`,
+        output: "0\nMaya\n1\nNoah\n2\nLea"
+      }
+    ],
+    quiz: [
+      {
+        question: "Warum ist eine Schleife bei einer Ausbildungsgruppe nützlich?",
+        options: [
+          "Weil sie denselben Arbeitsschritt für mehrere Azubis wiederholen kann",
+          "Weil sie Java installiert",
+          "Weil sie nur einen einzelnen Wert speichern kann",
+          "Weil sie Anführungszeichen ersetzt"
+        ],
+        correct: 0,
+        explanation: "Eine Schleife wiederholt Code für mehrere Werte."
+      },
+      {
+        question: "Was passiert mit der Schleifenvariable in einer for-each-Schleife?",
+        options: [
+          "name steht nacheinander für jeden Wert im Array apprenticeNames",
+          "name ist immer nur der erste Wert",
+          "apprenticeNames wird gelöscht",
+          "String wird in int umgewandelt"
+        ],
+        correct: 0,
+        explanation: "Die Variable links nimmt nacheinander die Werte aus dem Array rechts an."
+      }
+    ],
+    completion: {
+      prompt: "Vervollständige die Schleife, sodass alle Namen der Ausbildungsgruppe ausgegeben werden.",
+      parts: [
+        { text: "String[] apprenticeNames = {\"Maya\", \"Noah\", \"Lea\"};\n\n" },
+        { blank: "forKeyword", answers: ["for"] },
+        { text: " (" },
+        { blank: "valueType", answers: ["String"] },
+        { text: " name : apprenticeNames) {\n    System.out.println(name);\n}" }
+      ],
+      output: "Maya\nNoah\nLea"
+    }
+  },
+  {
+    id: "lists",
+    number: "06",
+    title: "Listen",
+    subtitle: "Eine Gruppe flexibel erweitern",
+    concepts: [
+      "Eine Liste kann wachsen, wenn neue Werte hinzukommen.",
+      "ArrayList ist eine häufige Listenklasse in Java.",
+      "Mit add wird ein neuer Wert an die Liste angehängt.",
+      "Mit size kann Java erkennen, wie viele Werte aktuell in der Liste stehen."
+    ],
+    explanation: [
+      {
+        heading: "Warum jetzt Listen?",
+        text: "Ein Array hat eine feste Größe. Eine Ausbildungsgruppe kann sich aber verändern, wenn ein Azubi dazukommt oder die Gruppe wechselt."
+      },
+      {
+        heading: "Java-Regel",
+        text: "Für ArrayList brauchen wir einen Import. In den spitzen Klammern steht, welche Art von Werten die Liste speichern soll."
+      }
+    ],
+    examples: [
+      {
+        title: "Namen hinzufügen",
+        code: `// Die Gruppe soll flexibel wachsen können.\n// Deshalb werden Namen nacheinander in eine ArrayList eingefügt.\nimport java.util.ArrayList;\n\nArrayList<String> apprenticeNames = new ArrayList<>();\napprenticeNames.add("Maya");\napprenticeNames.add("Noah");\napprenticeNames.add("Lea");\n\nSystem.out.println(apprenticeNames.size());`,
+        output: "3",
+        info: {
+          title: "Was bedeutet import?",
+          body: [
+            "`ArrayList` gehört nicht zu den ganz einfachen Java-Bausteinen, die ohne Vorbereitung bereitstehen.",
+            "Mit `import java.util.ArrayList;` sagen wir Java, aus welchem Paket diese Klasse kommt.",
+            "Die Codeblöcke hier sind weiterhin vereinfachte Beispiele und werden nur simuliert ausgeführt."
+          ]
+        }
+      },
+      {
+        title: "Einzelnen Namen lesen",
+        code: `// Auch Listen haben Positionen, die bei 0 beginnen.\n// get(1) liest hier den zweiten gespeicherten Namen.\nimport java.util.ArrayList;\n\nArrayList<String> apprenticeNames = new ArrayList<>();\napprenticeNames.add("Maya");\napprenticeNames.add("Noah");\n\nSystem.out.println(apprenticeNames.get(1));`,
+        output: "Noah"
+      },
+      {
+        title: "Liste mit Schleife ausgeben",
+        code: `// Eine Liste kann wie ein Array mit einer Schleife durchlaufen werden.\n// Jeder Name wird dabei nacheinander ausgegeben.\nimport java.util.ArrayList;\n\nArrayList<String> apprenticeNames = new ArrayList<>();\napprenticeNames.add("Maya");\napprenticeNames.add("Noah");\napprenticeNames.add("Lea");\n\nfor (String name : apprenticeNames) {\n    System.out.println(name);\n}`,
+        output: "Maya\nNoah\nLea"
+      },
+      {
+        title: "Noten flexibel sammeln",
+        code: `// Wenn später weitere Noten dazukommen, ist eine Liste praktischer als ein festes Array.\n// Die size-Abfrage zeigt, wie viele Noten aktuell gespeichert sind.\nimport java.util.ArrayList;\n\nArrayList<Double> lastGrades = new ArrayList<>();\nlastGrades.add(2.0);\nlastGrades.add(2.3);\nlastGrades.add(1.7);\n\nSystem.out.println(lastGrades.size());`,
+        output: "3"
+      }
+    ],
+    quiz: [
+      {
+        question: "Warum passt eine ArrayList gut für eine Ausbildungsgruppe?",
+        options: [
+          "Weil neue Azubi-Namen hinzugefügt werden können",
+          "Weil sie nur genau einen Wert speichern darf",
+          "Weil sie keine Datentypen braucht",
+          "Weil sie Bedingungen ersetzt"
+        ],
+        correct: 0,
+        explanation: "Eine ArrayList kann wachsen, wenn neue Werte hinzukommen."
+      },
+      {
+        question: "Welche Zeile fügt einer Liste einen neuen Namen hinzu?",
+        options: ["apprenticeNames.add(\"Maya\");", "apprenticeNames.size();", "String apprenticeNames;", "if (apprenticeNames)"],
+        correct: 0,
+        explanation: "Mit add wird ein neuer Wert an eine ArrayList angehängt."
+      }
+    ],
+    completion: {
+      prompt: "Vervollständige den Code, sodass eine flexible Liste mit Azubi-Namen entsteht.",
+      parts: [
+        { text: "import java.util.ArrayList;\n\n" },
+        { blank: "listType", answers: ["ArrayList"] },
+        { text: "<String> apprenticeNames = new ArrayList<>();\napprenticeNames." },
+        { blank: "addMethod", answers: ["add"] },
+        { text: "(\"Maya\");\napprenticeNames.add(\"Noah\");\nSystem.out.println(apprenticeNames.size());" }
+      ],
+      output: "2"
+    }
+  },
+  {
+    id: "methods",
+    number: "07",
+    title: "Methoden",
+    subtitle: "Wiederkehrende Aufgaben benennen",
+    concepts: [
+      "Eine Methode ist ein benannter Codeblock, der eine bestimmte Aufgabe übernimmt.",
+      "Parameter bringen Werte in eine Methode hinein.",
+      "Mit return kann eine Methode ein Ergebnis zurückgeben.",
+      "Methoden helfen, Gruppenaufgaben wie Anwesenheit zählen oder Noten prüfen wiederzuverwenden."
+    ],
+    explanation: [
+      {
+        heading: "Warum jetzt Methoden?",
+        text: "Bei Arrays, Schleifen und Listen entstehen wiederkehrende Aufgaben. Frau Kaya möchte nicht jedes Mal denselben Code neu schreiben, sondern Aufgaben klar benennen."
+      },
+      {
+        heading: "Java-Regel",
+        text: "Eine Methode hat einen Rückgabetyp, einen Namen, runde Klammern für Parameter und einen Codeblock in geschweiften Klammern."
+      }
+    ],
+    examples: [
+      {
+        title: "Azubi ausgeben",
+        code: `// Frau Kaya möchte dieselbe Ausgabe für verschiedene Azubis nutzen.\n// Die Methode bekommt Name und Lehrjahr als Parameter.\nstatic void printApprentice(String firstName, int trainingYear) {\n    System.out.println(firstName);\n    System.out.println(trainingYear);\n}\n\nprintApprentice("Maya", 1);`,
+        output: "Maya\n1",
+        info: {
+          title: "Warum steht hier static?",
+          body: [
+            "Die Beispiele sind kurze Ausschnitte, damit der Fokus auf der Methode bleibt.",
+            "`static` sorgt hier dafür, dass die Methode direkt aufgerufen werden kann. Klassen und Objekte schauen wir im nächsten Modul genauer an."
+          ]
+        }
+      },
+      {
+        title: "Anwesende zählen",
+        code: `// Die Anwesenheiten stehen bereits als Array bereit.\n// Die Methode zählt, wie viele Werte true sind.\nstatic int countPresent(boolean[] presentToday) {\n    int count = 0;\n\n    for (boolean present : presentToday) {\n        if (present) {\n            count = count + 1;\n        }\n    }\n\n    return count;\n}\n\nboolean[] presentToday = {true, false, true};\nSystem.out.println(countPresent(presentToday));`,
+        output: "2"
+      },
+      {
+        title: "Note prüfen",
+        code: `// Eine einfache Regel bekommt einen eigenen Namen.\n// Dadurch liest sich der spätere Code fachlicher.\nstatic boolean needsSupport(double lastGrade) {\n    return lastGrade > 4.0;\n}\n\nSystem.out.println(needsSupport(4.3));`,
+        output: "true"
+      },
+      {
+        title: "Durchschnitt berechnen",
+        code: `// Die letzten drei Noten werden an die Methode übergeben.\n// Das Ergebnis kommt mit return zurück.\nstatic double averageGrade(double[] lastGrades) {\n    double sum = 0.0;\n\n    for (double grade : lastGrades) {\n        sum = sum + grade;\n    }\n\n    return sum / lastGrades.length;\n}\n\ndouble[] lastGrades = {2.0, 2.3, 1.7};\nSystem.out.println(averageGrade(lastGrades));`,
+        output: "2.0"
+      }
+    ],
+    quiz: [
+      {
+        question: "Wofür ist eine Methode besonders nützlich?",
+        options: [
+          "Um eine wiederkehrende Aufgabe unter einem Namen zu sammeln",
+          "Um Java ohne Datentypen zu schreiben",
+          "Um einen Array-Index bei 1 starten zu lassen",
+          "Um eine Datei automatisch zu speichern"
+        ],
+        correct: 0,
+        explanation: "Eine Methode bündelt Code für eine klar benannte Aufgabe."
+      },
+      {
+        question: "Welche Aufgabe haben Parameter?",
+        options: [
+          "Sie geben Werte in eine Methode hinein",
+          "Sie löschen eine Liste",
+          "Sie ersetzen geschweifte Klammern",
+          "Sie starten den Browser neu"
+        ],
+        correct: 0,
+        explanation: "Parameter sind Platzhalter für Werte, mit denen eine Methode arbeiten soll."
+      },
+      {
+        question: "Was bedeutet return in einer Methode?",
+        options: [
+          "Die Methode gibt ein Ergebnis zurück",
+          "Die Methode wird in eine Liste umgewandelt",
+          "Die Methode darf keine Parameter haben",
+          "Die Methode wird aus dem Projekt entfernt"
+        ],
+        correct: 0,
+        explanation: "`return` liefert ein Ergebnis an die aufrufende Stelle zurück."
+      }
+    ],
+    completion: {
+      prompt: "Vervollständige die Methode, die eine Note auf Unterstützungsbedarf prüft.",
+      parts: [
+        { text: "static " },
+        { blank: "returnType", answers: ["boolean"] },
+        { text: " needsSupport(double lastGrade) {\n    " },
+        { blank: "returnKeyword", answers: ["return"] },
+        { text: " lastGrade > 4.0;\n}\n\nSystem.out.println(needsSupport(4.3));" }
+      ],
+      output: "true"
+    }
+  },
+  {
+    id: "classes",
+    number: "08",
+    title: "Klassen",
+    subtitle: "Ein Azubi als eigenes Modell",
+    concepts: [
+      "Eine Klasse ist ein Bauplan für zusammengehörige Daten.",
+      "Die Werte eines Azubis gehören fachlich zusammen: Vorname, Lehrjahr, Anwesenheit und letzte Noten.",
+      "Ein Feld ist eine Variable, die zu einer Klasse gehört.",
+      "Mit new entsteht aus einer Klasse ein konkretes Objekt."
+    ],
+    explanation: [
+      {
+        heading: "Warum jetzt Klassen?",
+        text: "Bisher lagen die Werte eines Azubis lose nebeneinander. Mit einer Klasse kann Java ausdrücken, dass diese Werte zusammen ein Modell für einen Azubi bilden."
+      },
+      {
+        heading: "Java-Regel",
+        text: "Eine Klasse beginnt mit class und einem Namen. Im Klassenblock stehen Felder und später auch Methoden, die zu diesem Modell gehören."
+      }
+    ],
+    examples: [
+      {
+        title: "Azubi-Klasse anlegen",
+        code: `// Die Klasse beschreibt, welche Daten ein Azubi haben kann.\n// Noch werden die Felder bewusst einfach gehalten.\nclass Apprentice {\n    String firstName;\n    int trainingYear;\n    boolean presentToday;\n    double[] lastGrades;\n}`,
+        output: "Keine Ausgabe",
+        info: {
+          title: "Warum gibt es hier keine Ausgabe?",
+          body: [
+            "Eine Klasse ist zuerst nur ein Bauplan.",
+            "Erst wenn ein Objekt erzeugt und verwendet wird, entstehen konkrete Werte, die ausgegeben werden können."
+          ]
+        }
+      },
+      {
+        title: "Objekt erzeugen",
+        code: `// Aus dem Bauplan entsteht ein konkreter Azubi.\n// Danach werden die Felder mit Werten gefüllt.\nclass Apprentice {\n    String firstName;\n    int trainingYear;\n    boolean presentToday;\n    double[] lastGrades;\n}\n\nApprentice maya = new Apprentice();\nmaya.firstName = "Maya";\nmaya.trainingYear = 1;\nmaya.presentToday = true;\nmaya.lastGrades = new double[] {2.0, 2.3, 1.7};\n\nSystem.out.println(maya.firstName);`,
+        output: "Maya"
+      },
+      {
+        title: "Methode in der Klasse",
+        code: `// Eine Klasse kann auch Verhalten enthalten.\n// Diese Methode prüft die letzte bekannte Note des Azubis.\nclass Apprentice {\n    String firstName;\n    double lastGrade;\n\n    boolean needsSupport() {\n        return lastGrade > 4.0;\n    }\n}\n\nApprentice maya = new Apprentice();\nmaya.firstName = "Maya";\nmaya.lastGrade = 4.3;\n\nSystem.out.println(maya.needsSupport());`,
+        output: "true"
+      }
+    ],
+    quiz: [
+      {
+        question: "Was beschreibt eine Klasse in Java?",
+        options: [
+          "Einen Bauplan für zusammengehörige Daten und Verhalten",
+          "Nur eine einzelne Zahl",
+          "Eine fertige Konsolenausgabe",
+          "Eine automatisch sortierte Liste"
+        ],
+        correct: 0,
+        explanation: "Eine Klasse beschreibt, welche Daten und welches Verhalten ein Objekt haben kann."
+      },
+      {
+        question: "Warum passt eine Klasse gut zu einem Azubi?",
+        options: [
+          "Weil mehrere fachlich zusammengehörige Werte gebündelt werden",
+          "Weil dadurch keine Variablen mehr gebraucht werden",
+          "Weil Noten dann keine Zahlen mehr sind",
+          "Weil Arrays dadurch bei 1 beginnen"
+        ],
+        correct: 0,
+        explanation: "Vorname, Lehrjahr, Anwesenheit und Noten gehören fachlich zu einem Azubi."
+      },
+      {
+        question: "Was entsteht mit new?",
+        options: [
+          "Ein konkretes Objekt aus einer Klasse",
+          "Ein neuer Datentyp für wahr/falsch",
+          "Eine neue if-Bedingung",
+          "Ein automatischer Test"
+        ],
+        correct: 0,
+        explanation: "`new` erzeugt ein konkretes Objekt aus dem Bauplan der Klasse."
+      }
+    ],
+    completion: {
+      prompt: "Vervollständige die Klasse für einen Azubi mit Vorname und Lehrjahr.",
+      parts: [
+        { text: "" },
+        { blank: "classKeyword", answers: ["class"] },
+        { text: " Apprentice {\n    " },
+        { blank: "nameType", answers: ["String"] },
+        { text: " firstName;\n    " },
+        { blank: "yearType", answers: ["int"] },
+        { text: " trainingYear;\n}" }
+      ],
+      output: "Keine Ausgabe"
+    }
+  },
+  {
+    id: "object-lists",
+    number: "09",
+    title: "Objekte in Listen",
+    subtitle: "Die Gruppe aus echten Azubis",
+    concepts: [
+      "Eine Liste kann nicht nur Strings speichern, sondern auch Objekte.",
+      "Mit ArrayList<Apprentice> entsteht eine flexible Liste von Azubis.",
+      "Jedes Objekt in der Liste hat eigene Feldwerte.",
+      "Mit einer Schleife kann Java alle Azubi-Objekte der Gruppe durchgehen."
+    ],
+    explanation: [
+      {
+        heading: "Warum jetzt Objekte in Listen?",
+        text: "Eine reine Namensliste reicht nicht mehr aus. Frau Kaya möchte pro Azubi mehrere Informationen speichern und trotzdem die ganze Gruppe durchgehen können."
+      },
+      {
+        heading: "Java-Regel",
+        text: "In den spitzen Klammern einer ArrayList steht der Typ der gespeicherten Werte. Bei ArrayList<Apprentice> sind die Werte keine Texte, sondern Azubi-Objekte."
+      }
+    ],
+    examples: [
+      {
+        title: "Azubis in eine Liste legen",
+        code: `// Die Gruppe besteht jetzt aus echten Azubi-Objekten.\n// Jedes Objekt bekommt eigene Werte.\nimport java.util.ArrayList;\n\nclass Apprentice {\n    String firstName;\n    int trainingYear;\n}\n\nArrayList<Apprentice> apprentices = new ArrayList<>();\n\nApprentice maya = new Apprentice();\nmaya.firstName = "Maya";\nmaya.trainingYear = 1;\napprentices.add(maya);\n\nApprentice noah = new Apprentice();\nnoah.firstName = "Noah";\nnoah.trainingYear = 2;\napprentices.add(noah);\n\nSystem.out.println(apprentices.size());`,
+        output: "2"
+      },
+      {
+        title: "Objekte ausgeben",
+        code: `// Die Schleife läuft über Azubi-Objekte statt über einzelne Namen.\n// Pro Objekt kann auf die Felder zugegriffen werden.\nimport java.util.ArrayList;\n\nclass Apprentice {\n    String firstName;\n    int trainingYear;\n}\n\nArrayList<Apprentice> apprentices = new ArrayList<>();\n\nApprentice maya = new Apprentice();\nmaya.firstName = "Maya";\nmaya.trainingYear = 1;\napprentices.add(maya);\n\nfor (Apprentice apprentice : apprentices) {\n    System.out.println(apprentice.firstName);\n    System.out.println(apprentice.trainingYear);\n}`,
+        output: "Maya\n1"
+      },
+      {
+        title: "Anwesenheit in der Gruppe zählen",
+        code: `// Jedes Objekt enthält seine eigene Anwesenheit.\n// Die Schleife zählt nur die anwesenden Azubis.\nimport java.util.ArrayList;\n\nclass Apprentice {\n    String firstName;\n    boolean presentToday;\n}\n\nArrayList<Apprentice> apprentices = new ArrayList<>();\n\nApprentice maya = new Apprentice();\nmaya.firstName = "Maya";\nmaya.presentToday = true;\napprentices.add(maya);\n\nApprentice noah = new Apprentice();\nnoah.firstName = "Noah";\nnoah.presentToday = false;\napprentices.add(noah);\n\nint presentCount = 0;\n\nfor (Apprentice apprentice : apprentices) {\n    if (apprentice.presentToday) {\n        presentCount = presentCount + 1;\n    }\n}\n\nSystem.out.println(presentCount);`,
+        output: "1"
+      }
+    ],
+    quiz: [
+      {
+        question: "Was ist der Vorteil von ArrayList<Apprentice> gegenüber ArrayList<String>?",
+        options: [
+          "Jeder Listeneintrag kann mehrere Azubi-Daten zusammenhalten",
+          "Die Liste braucht keine Imports mehr",
+          "Die Liste kann keine Schleifen verwenden",
+          "Alle Werte werden automatisch wahr"
+        ],
+        correct: 0,
+        explanation: "Ein Apprentice-Objekt kann mehrere zusammengehörige Werte eines Azubis enthalten."
+      },
+      {
+        question: "Was bedeutet ein einzelner Eintrag in einer Liste von Apprentice-Objekten?",
+        options: [
+          "Ein konkreter Azubi mit eigenen Feldwerten",
+          "Immer nur ein einzelner Buchstabe",
+          "Eine leere Methode",
+          "Ein fest eingebauter Java-Befehl"
+        ],
+        correct: 0,
+        explanation: "Jeder Eintrag ist ein eigenes Objekt, zum Beispiel Maya oder Noah."
+      },
+      {
+        question: "Warum bleibt eine Schleife auch bei Objektlisten nützlich?",
+        options: [
+          "Weil sie alle Objekte der Gruppe nacheinander verarbeiten kann",
+          "Weil sie Klassen automatisch erzeugt",
+          "Weil sie Datentypen abschaltet",
+          "Weil sie Rückgabewerte verbietet"
+        ],
+        correct: 0,
+        explanation: "Eine Schleife kann über jedes Objekt in der Liste laufen."
+      }
+    ],
+    completion: {
+      prompt: "Vervollständige den Code, sodass eine Liste von Azubi-Objekten entsteht.",
+      parts: [
+        { text: "import java.util.ArrayList;\n\nclass Apprentice {\n    String firstName;\n}\n\n" },
+        { blank: "listType", answers: ["ArrayList"] },
+        { text: "<" },
+        { blank: "objectType", answers: ["Apprentice"] },
+        { text: "> apprentices = new ArrayList<>();\n\nApprentice maya = new Apprentice();\nmaya.firstName = \"Maya\";\napprentices." },
+        { blank: "addMethod", answers: ["add"] },
+        { text: "(maya);\n\nSystem.out.println(apprentices.size());" }
+      ],
+      output: "1"
+    }
+  },
+  {
+    id: "encapsulation",
+    number: "10",
+    title: "Kapselung",
+    subtitle: "Azubi-Daten kontrolliert ändern",
+    concepts: [
+      "Kapselung bedeutet: Daten werden nicht beliebig von außen verändert.",
+      "Mit private werden Felder vor direktem Zugriff geschützt.",
+      "Ein Konstruktor setzt wichtige Startwerte beim Erzeugen eines Objekts.",
+      "Getter und Setter erlauben kontrolliertes Lesen und Ändern von Feldern."
+    ],
+    explanation: [
+      {
+        heading: "Warum jetzt Kapselung?",
+        text: "In den bisherigen Klassen konnten Felder direkt verändert werden. Bei echten Azubi-Daten möchte Frau Kaya genauer steuern, welche Werte gesetzt werden dürfen."
+      },
+      {
+        heading: "Java-Regel",
+        text: "Private Felder werden innerhalb der Klasse gespeichert. Von außen arbeitet man über Methoden wie getFirstName oder setTrainingYear."
+      }
+    ],
+    examples: [
+      {
+        title: "Private Felder und Konstruktor",
+        code: `// Der Name und das Lehrjahr sollen nicht direkt von außen geändert werden.\n// Der Konstruktor setzt die Startwerte beim Erzeugen des Objekts.\nclass Apprentice {\n    private String firstName;\n    private int trainingYear;\n\n    Apprentice(String firstName, int trainingYear) {\n        this.firstName = firstName;\n        this.trainingYear = trainingYear;\n    }\n\n    String getFirstName() {\n        return firstName;\n    }\n}\n\nApprentice maya = new Apprentice("Maya", 1);\nSystem.out.println(maya.getFirstName());`,
+        output: "Maya",
+        info: {
+          title: "Was bedeutet this?",
+          body: [
+            "`this` meint das aktuelle Objekt.",
+            "In `this.firstName = firstName;` steht links das Feld des Objekts und rechts der Parameter aus dem Konstruktor."
+          ]
+        }
+      },
+      {
+        title: "Getter für geschützte Daten",
+        code: `// Das Lehrjahr bleibt private.\n// Von außen wird es nur über einen Getter gelesen.\nclass Apprentice {\n    private int trainingYear;\n\n    Apprentice(int trainingYear) {\n        this.trainingYear = trainingYear;\n    }\n\n    int getTrainingYear() {\n        return trainingYear;\n    }\n}\n\nApprentice maya = new Apprentice(1);\nSystem.out.println(maya.getTrainingYear());`,
+        output: "1"
+      },
+      {
+        title: "Setter für kontrollierte Änderung",
+        code: `// Die Anwesenheit darf geändert werden,\n// aber nur über eine passende Methode der Klasse.\nclass Apprentice {\n    private boolean presentToday;\n\n    void setPresentToday(boolean presentToday) {\n        this.presentToday = presentToday;\n    }\n\n    boolean isPresentToday() {\n        return presentToday;\n    }\n}\n\nApprentice maya = new Apprentice();\nmaya.setPresentToday(true);\nSystem.out.println(maya.isPresentToday());`,
+        output: "true"
+      },
+      {
+        title: "Note kontrolliert setzen",
+        code: `// Eine Note soll nur übernommen werden, wenn sie im plausiblen Bereich liegt.\n// Ungültige Werte ändern das Feld hier nicht.\nclass Apprentice {\n    private double lastGrade = 2.0;\n\n    void setLastGrade(double lastGrade) {\n        if (lastGrade >= 1.0 && lastGrade <= 6.0) {\n            this.lastGrade = lastGrade;\n        }\n    }\n\n    double getLastGrade() {\n        return lastGrade;\n    }\n}\n\nApprentice maya = new Apprentice();\nmaya.setLastGrade(2.3);\nSystem.out.println(maya.getLastGrade());`,
+        output: "2.3"
+      }
+    ],
+    quiz: [
+      {
+        question: "Wozu dient Kapselung?",
+        options: [
+          "Daten werden geschützt und kontrolliert geändert",
+          "Alle Felder werden automatisch gelöscht",
+          "Arrays werden ohne Index verwendet",
+          "Schleifen werden schneller geschrieben"
+        ],
+        correct: 0,
+        explanation: "Kapselung schützt Daten vor beliebigen Änderungen von außen."
+      },
+      {
+        question: "Welche Aufgabe hat ein Konstruktor?",
+        options: [
+          "Er setzt Startwerte beim Erzeugen eines Objekts",
+          "Er ersetzt jede Schleife",
+          "Er sortiert automatisch eine Liste",
+          "Er gibt immer true zurück"
+        ],
+        correct: 0,
+        explanation: "Ein Konstruktor wird beim Erzeugen eines Objekts aufgerufen und kann Startwerte setzen."
+      },
+      {
+        question: "Warum nutzt man Getter?",
+        options: [
+          "Um geschützte Felder kontrolliert zu lesen",
+          "Um eine Klasse in einen String umzuwandeln",
+          "Um Java ohne Methoden zu schreiben",
+          "Um alle Fehler zu ignorieren"
+        ],
+        correct: 0,
+        explanation: "Getter geben kontrolliert Werte aus privaten Feldern zurück."
+      }
+    ],
+    completion: {
+      prompt: "Vervollständige die gekapselte Klasse mit privatem Feld und Getter.",
+      parts: [
+        { text: "class Apprentice {\n    " },
+        { blank: "privateKeyword", answers: ["private"] },
+        { text: " String firstName;\n\n    Apprentice(String firstName) {\n        " },
+        { blank: "thisKeyword", answers: ["this"] },
+        { text: ".firstName = firstName;\n    }\n\n    String getFirstName() {\n        " },
+        { blank: "returnKeyword", answers: ["return"] },
+        { text: " firstName;\n    }\n}" }
+      ],
+      output: "Keine Ausgabe"
+    }
+  },
+  {
+    id: "error-handling",
+    number: "11",
+    title: "Fehlerbehandlung",
+    subtitle: "Ungültige Gruppendaten erkennen",
+    concepts: [
+      "Fehlerbehandlung bedeutet: Ein Programm erkennt problematische Werte und reagiert bewusst.",
+      "Validierung prüft, ob Daten fachlich plausibel sind.",
+      "Mit throw kann Java einen Fehler ausdrücklich melden.",
+      "try/catch kann einen gemeldeten Fehler auffangen und eine passende Reaktion ausführen."
+    ],
+    explanation: [
+      {
+        heading: "Warum jetzt Fehlerbehandlung?",
+        text: "Nach Kapselung kann die Klasse selbst entscheiden, welche Daten erlaubt sind. Jetzt geht es darum, ungültige Namen, Lehrjahre oder Noten nicht still zu übernehmen."
+      },
+      {
+        heading: "Java-Regel",
+        text: "IllegalArgumentException passt, wenn ein übergebener Wert fachlich ungültig ist, zum Beispiel ein Lehrjahr außerhalb von 1 bis 3."
+      }
+    ],
+    examples: [
+      {
+        title: "Name validieren",
+        code: `// Ein leerer Name wäre für die Ausbildungsgruppe nicht hilfreich.\n// Die Methode prüft deshalb, ob wirklich Text vorhanden ist.\nstatic boolean hasValidName(String firstName) {\n    return firstName != null && !firstName.isBlank();\n}\n\nSystem.out.println(hasValidName("Maya"));`,
+        output: "true",
+        info: {
+          title: "Was bedeutet isBlank?",
+          body: [
+            "`isBlank()` prüft, ob ein Text leer ist oder nur aus Leerzeichen besteht.",
+            "Der Ausdruck `!firstName.isBlank()` bedeutet: Der Text ist nicht leer."
+          ]
+        }
+      },
+      {
+        title: "Ungültiges Lehrjahr melden",
+        code: `// Das Lehrjahr muss in dieser Ausbildung zwischen 1 und 3 liegen.\n// Bei einem ungültigen Wert meldet die Methode einen Fehler.\nclass Apprentice {\n    private int trainingYear;\n\n    void setTrainingYear(int trainingYear) {\n        if (trainingYear < 1 || trainingYear > 3) {\n            throw new IllegalArgumentException("Lehrjahr muss zwischen 1 und 3 liegen");\n        }\n\n        this.trainingYear = trainingYear;\n    }\n}\n\nApprentice maya = new Apprentice();\nmaya.setTrainingYear(1);\nSystem.out.println("Lehrjahr gespeichert");`,
+        output: "Lehrjahr gespeichert"
+      },
+      {
+        title: "Fehler auffangen",
+        code: `// Frau Kaya kann auf ungültige Daten reagieren,\n// statt das Programm unkontrolliert abbrechen zu lassen.\ntry {\n    int trainingYear = 4;\n\n    if (trainingYear < 1 || trainingYear > 3) {\n        throw new IllegalArgumentException("Lehrjahr prüfen");\n    }\n\n    System.out.println("Lehrjahr gespeichert");\n} catch (IllegalArgumentException error) {\n    System.out.println("Eingabe korrigieren");\n}`,
+        output: "Eingabe korrigieren"
+      },
+      {
+        title: "Note prüfen",
+        code: `// Auch Noten haben einen erlaubten Bereich.\n// Eine eigene Prüfmethode macht die Regel wiederverwendbar.\nstatic boolean isValidGrade(double grade) {\n    return grade >= 1.0 && grade <= 6.0;\n}\n\nSystem.out.println(isValidGrade(2.3));`,
+        output: "true"
+      }
+    ],
+    quiz: [
+      {
+        question: "Was bedeutet Validierung?",
+        options: [
+          "Daten werden auf erlaubte oder plausible Werte geprüft",
+          "Eine Liste wird automatisch ausgegeben",
+          "Ein Objekt wird ohne Klasse erzeugt",
+          "Alle Methoden werden gelöscht"
+        ],
+        correct: 0,
+        explanation: "Validierung prüft, ob ein Wert fachlich erlaubt ist."
+      },
+      {
+        question: "Wann passt eine IllegalArgumentException?",
+        options: [
+          "Wenn ein übergebener Wert für die Regel ungültig ist",
+          "Wenn eine Schleife fertig ist",
+          "Wenn eine Ausgabe erfolgreich war",
+          "Wenn ein Getter einen Wert liest"
+        ],
+        correct: 0,
+        explanation: "Eine IllegalArgumentException beschreibt einen ungültigen übergebenen Wert."
+      },
+      {
+        question: "Wozu dient catch?",
+        options: [
+          "Ein gemeldeter Fehler kann aufgefangen und behandelt werden",
+          "Ein Feld wird automatisch private",
+          "Eine Klasse bekommt einen Konstruktor",
+          "Ein Array bekommt eine neue Länge"
+        ],
+        correct: 0,
+        explanation: "`catch` reagiert auf einen Fehler, der im try-Block gemeldet wurde."
+      }
+    ],
+    completion: {
+      prompt: "Vervollständige die Prüfung, die ein ungültiges Lehrjahr meldet.",
+      parts: [
+        { text: "int trainingYear = 4;\n\nif (trainingYear < 1 || trainingYear > 3) {\n    " },
+        { blank: "throwKeyword", answers: ["throw"] },
+        { text: " new " },
+        { blank: "exceptionType", answers: ["IllegalArgumentException"] },
+        { text: "(\"Lehrjahr prüfen\");\n}" }
+      ],
+      output: "Fehler: Lehrjahr prüfen"
+    }
+  },
+  {
+    id: "tests",
+    number: "12",
+    title: "Tests",
+    subtitle: "Regeln der Ausbildungsgruppe absichern",
+    concepts: [
+      "Tests prüfen automatisch, ob eine Regel weiterhin funktioniert.",
+      "Ein Test hat eine klare Erwartung: Bei bestimmter Eingabe soll ein bestimmtes Ergebnis entstehen.",
+      "Assert bedeutet: Das Programm vergleicht Ergebnis und Erwartung.",
+      "Tests helfen, Änderungen sicherer zu machen, wenn das Modell größer wird."
+    ],
+    explanation: [
+      {
+        heading: "Warum jetzt Tests?",
+        text: "Die Ausbildungsgruppe hat inzwischen Regeln für Anwesenheit, Noten und gültige Daten. Tests sorgen dafür, dass diese Regeln nach späteren Änderungen nicht versehentlich kaputtgehen."
+      },
+      {
+        heading: "Java-Regel",
+        text: "In echten Projekten wird häufig JUnit genutzt. Hier zeigen die Beispiele zuerst das Prinzip: Regel ausführen, Ergebnis prüfen, Rückmeldung ausgeben."
+      }
+    ],
+    examples: [
+      {
+        title: "Eine Regel testen",
+        code: `// Die Regel soll true liefern, wenn eine Note schlechter als 4.0 ist.\n// Der Test vergleicht das tatsächliche Ergebnis mit der Erwartung.\nstatic boolean needsSupport(double lastGrade) {\n    return lastGrade > 4.0;\n}\n\nboolean result = needsSupport(4.3);\nboolean expected = true;\n\nSystem.out.println(result == expected);`,
+        output: "true"
+      },
+      {
+        title: "Anwesenheit zählen testen",
+        code: `// Der Test kennt die erwartete Anzahl anwesender Azubis.\n// Wenn die Methode 2 liefert, ist diese Regel erfüllt.\nstatic int countPresent(boolean[] presentToday) {\n    int count = 0;\n\n    for (boolean present : presentToday) {\n        if (present) {\n            count = count + 1;\n        }\n    }\n\n    return count;\n}\n\nboolean[] presentToday = {true, false, true};\nSystem.out.println(countPresent(presentToday) == 2);`,
+        output: "true"
+      },
+      {
+        title: "Ungültige Note testen",
+        code: `// Auch Fehlerregeln lassen sich testen.\n// Diese Prüfung erwartet, dass 7.0 keine gültige Note ist.\nstatic boolean isValidGrade(double grade) {\n    return grade >= 1.0 && grade <= 6.0;\n}\n\nboolean result = isValidGrade(7.0);\nSystem.out.println(result == false);`,
+        output: "true"
+      },
+      {
+        title: "JUnit als Ausblick",
+        code: `// In echten Java-Projekten schreibt man Tests oft mit JUnit.\n// Diese Schreibweise ist ein Ausblick auf professionelle Testdateien.\n@Test\nvoid detectsSupportNeed() {\n    boolean result = needsSupport(4.3);\n\n    assertTrue(result);\n}`,
+        output: "Test erfolgreich",
+        info: {
+          title: "Warum nur als Ausblick?",
+          body: [
+            "JUnit braucht ein richtiges Java-Projekt mit Test-Bibliothek und Build-Werkzeug.",
+            "Diese Lernplattform bleibt bewusst statisch und simuliert Ausgaben nur."
+          ]
+        }
+      }
+    ],
+    quiz: [
+      {
+        question: "Was prüft ein Test?",
+        options: [
+          "Ob eine Regel bei bekannten Eingaben das erwartete Ergebnis liefert",
+          "Ob ein Variablenname besonders lang ist",
+          "Ob ein Browserfenster geöffnet ist",
+          "Ob eine Liste nie verändert werden kann"
+        ],
+        correct: 0,
+        explanation: "Ein Test vergleicht ein tatsächliches Ergebnis mit einer Erwartung."
+      },
+      {
+        question: "Warum sind Tests bei späteren Änderungen hilfreich?",
+        options: [
+          "Sie zeigen schnell, ob bestehende Regeln noch funktionieren",
+          "Sie ersetzen jede Erklärung im Code",
+          "Sie verhindern alle Tippfehler in Kommentaren",
+          "Sie machen private Felder öffentlich"
+        ],
+        correct: 0,
+        explanation: "Tests geben Rückmeldung, wenn eine Änderung bestehendes Verhalten beschädigt."
+      },
+      {
+        question: "Wofür steht eine Assertion im Test?",
+        options: [
+          "Eine Erwartung wird mit dem tatsächlichen Ergebnis verglichen",
+          "Ein Objekt wird ohne Klasse erzeugt",
+          "Ein Konstruktor wird gelöscht",
+          "Eine Exception wird immer ignoriert"
+        ],
+        correct: 0,
+        explanation: "Eine Assertion hält fest, was im Test wahr sein soll."
+      }
+    ],
+    completion: {
+      prompt: "Vervollständige den einfachen Test für die Unterstützungsregel.",
+      parts: [
+        { text: "boolean result = needsSupport(4.3);\nboolean expected = true;\n\nSystem.out.println(result " },
+        { blank: "comparison", answers: ["=="] },
+        { text: " " },
+        { blank: "expectedName", answers: ["expected"] },
+        { text: ");" }
+      ],
+      output: "true"
     }
   }
 ];
-
-const STORAGE_KEY = "java-learning-platform-progress-v1";
 
 const glossaryTerms = [
   {
@@ -263,7 +1079,7 @@ const glossaryTerms = [
   {
     title: "String",
     matches: ["String"],
-    description: "Datentyp für Text, zum Beispiel \"Drucker defekt\"."
+    description: "Datentyp für Text, zum Beispiel \"Maya\"."
   },
   {
     title: "boolean",
@@ -273,7 +1089,7 @@ const glossaryTerms = [
   {
     title: "double",
     matches: ["double"],
-    description: "Datentyp für Kommazahlen, zum Beispiel 2.5."
+    description: "Datentyp für Kommazahlen, zum Beispiel 62.5."
   },
   {
     title: "Klasse",
@@ -289,6 +1105,96 @@ const glossaryTerms = [
     title: "Array",
     matches: ["Array", "Arrays"],
     description: "Ein zusammengesetzter Datentyp, der mehrere Werte gleicher Art speichert."
+  },
+  {
+    title: "Liste",
+    matches: ["Liste", "Listen"],
+    description: "Ein flexibler Speicher für mehrere Werte, der wachsen kann."
+  },
+  {
+    title: "ArrayList",
+    matches: ["ArrayList"],
+    description: "Eine häufig genutzte Listenklasse in Java, die Werte hinzufügen und zählen kann."
+  },
+  {
+    title: "Methode",
+    matches: ["Methode", "Methoden"],
+    description: "Ein benannter Codeblock, der eine bestimmte Aufgabe übernimmt und wiederverwendet werden kann."
+  },
+  {
+    title: "Parameter",
+    matches: ["Parameter", "Parametern"],
+    description: "Ein Wert, der beim Aufruf in eine Methode hineingegeben wird."
+  },
+  {
+    title: "return",
+    matches: ["return"],
+    description: "Gibt ein Ergebnis aus einer Methode an die aufrufende Stelle zurück."
+  },
+  {
+    title: "Feld",
+    matches: ["Feld", "Felder", "Feldern"],
+    description: "Eine Variable, die zu einer Klasse oder zu einem Objekt gehört."
+  },
+  {
+    title: "new",
+    matches: ["new"],
+    description: "Erzeugt ein neues Objekt aus einer Klasse."
+  },
+  {
+    title: "Kapselung",
+    matches: ["Kapselung"],
+    description: "Schützt Daten in einer Klasse und erlaubt Änderungen nur über passende Methoden."
+  },
+  {
+    title: "private",
+    matches: ["private"],
+    description: "Sichtbarkeit für Felder oder Methoden, die nur innerhalb der eigenen Klasse direkt genutzt werden dürfen."
+  },
+  {
+    title: "Konstruktor",
+    matches: ["Konstruktor", "Konstruktoren"],
+    description: "Eine besondere Methode, die beim Erzeugen eines Objekts Startwerte setzen kann."
+  },
+  {
+    title: "Getter",
+    matches: ["Getter"],
+    description: "Methode, die einen geschützten Wert kontrolliert zurückgibt."
+  },
+  {
+    title: "Setter",
+    matches: ["Setter"],
+    description: "Methode, die einen geschützten Wert kontrolliert ändern kann."
+  },
+  {
+    title: "Validierung",
+    matches: ["Validierung"],
+    description: "Prüft, ob ein Wert fachlich erlaubt oder plausibel ist."
+  },
+  {
+    title: "Exception",
+    matches: ["Exception", "Exceptions", "IllegalArgumentException"],
+    description: "Ein gemeldeter Fehler, auf den ein Programm reagieren kann."
+  },
+  {
+    title: "try/catch",
+    matches: ["try/catch", "try", "catch"],
+    description: "Java-Struktur, um Fehler in einem Bereich abzufangen und zu behandeln."
+  },
+  {
+    title: "Test",
+    matches: ["Test", "Tests"],
+    description: "Prüft automatisch, ob eine Regel bei bekannter Eingabe das erwartete Ergebnis liefert."
+  },
+  {
+    title: "Assertion",
+    matches: ["Assertion", "Assert", "assertTrue"],
+    description: "Eine Erwartung im Test, die mit dem tatsächlichen Ergebnis verglichen wird."
+  },
+  {
+    title: "JUnit",
+    matches: ["JUnit"],
+    description: "Häufig verwendetes Test-Framework für Java-Projekte."
   },
   {
     title: "Bedingung",
@@ -313,50 +1219,45 @@ const glossaryTerms = [
   {
     title: "switch",
     matches: ["switch"],
-    description: "Kontrollstruktur für mehrere feste Fälle, zum Beispiel Menüauswahl oder Status."
+    description: "Kontrollstruktur für mehrere feste Fälle, zum Beispiel Lehrjahr 1, 2 oder 3."
   }
 ];
 
+const exampleContext = {
+  title: "Beispiel im Kurs: Ausbildungsgruppe AE-2026",
+  text: "In den Beispielen verwaltet eine Ausbilderin eine kleine Ausbildungsgruppe. Zuerst betrachten wir einzelne Werte eines Azubis, später wächst daraus eine Gruppe mit mehreren Azubis.",
+  fields: [
+    "Gruppe: AE-2026",
+    "Azubi: Maya",
+    "Lehrjahr: 1",
+    "Anwesend: true",
+    "Letzte drei Noten: 2.0, 2.3, 1.7",
+    "Ausbilderin: Frau Kaya"
+  ]
+};
+
 let activeModuleIndex = 0;
-let progress = loadProgress();
+let activeView = "module";
 
 const moduleNav = document.querySelector("#moduleNav");
 const moduleTitle = document.querySelector("#moduleTitle");
+const conceptHeading = document.querySelector("#conceptHeading");
 const conceptContent = document.querySelector("#conceptContent");
 const examplesContent = document.querySelector("#examplesContent");
 const quizContent = document.querySelector("#quizContent");
 const codeContent = document.querySelector("#codeContent");
-const quizCounter = document.querySelector("#quizCounter");
-const codeCounter = document.querySelector("#codeCounter");
-const progressText = document.querySelector("#progressText");
-const progressFill = document.querySelector("#progressFill");
-const resetProgressButton = document.querySelector("#resetProgressButton");
-
-function loadProgress() {
-  try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY)) ?? {};
-  } catch {
-    return {};
-  }
-}
-
-function saveProgress() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
-}
-
-function getModuleProgress(moduleId) {
-  if (!progress[moduleId]) {
-    progress[moduleId] = { quiz: {}, codeDone: false };
-  }
-  return progress[moduleId];
-}
+const glossaryButton = document.querySelector("#glossaryButton");
+const conceptSection = document.querySelector("#conceptSection");
+const examplesSection = document.querySelector("#examplesSection");
+const quizSection = document.querySelector("#quizSection");
+const codeSection = document.querySelector("#codeSection");
 
 function renderNav() {
   moduleNav.innerHTML = "";
   modules.forEach((module, index) => {
     const button = document.createElement("button");
     button.type = "button";
-    button.className = `module-button${index === activeModuleIndex ? " active" : ""}`;
+    button.className = `module-button${activeView === "module" && index === activeModuleIndex ? " active" : ""}`;
     button.innerHTML = `
       <span class="module-number">${module.number}</span>
       <span>
@@ -366,6 +1267,7 @@ function renderNav() {
     `;
     button.addEventListener("click", () => {
       activeModuleIndex = index;
+      activeView = "module";
       render();
     });
     moduleNav.appendChild(button);
@@ -377,6 +1279,7 @@ function renderModule() {
   const glossaryState = new Set();
   const glossary = (value) => annotateGlossary(value, glossaryState);
   moduleTitle.textContent = `${module.number} ${module.title}`;
+  conceptHeading.textContent = "Konzept";
 
   conceptContent.innerHTML = `
     <ul class="concept-list">
@@ -389,6 +1292,7 @@ function renderModule() {
   `;
 
   examplesContent.innerHTML = `
+    ${shouldShowExampleContext(module) ? renderExampleContext() : ""}
     <div class="example-grid">
       ${module.examples.map((example, exampleIndex) => `
         <div class="example-item">
@@ -413,6 +1317,14 @@ function renderModule() {
               </div>
             </details>
           ` : ""}
+          ${(example.infoBlocks ?? []).map((infoBlock) => `
+            <details class="info-box">
+              <summary>${escapeHtml(infoBlock.title)}</summary>
+              <div class="info-box-content">
+                ${infoBlock.body.map((paragraph) => `<p>${formatInlineCode(paragraph)}</p>`).join("")}
+              </div>
+            </details>
+          `).join("")}
         </div>
       `).join("")}
     </div>
@@ -427,20 +1339,53 @@ function renderModule() {
     });
   });
 
-  renderQuiz(module, glossary);
+  renderQuiz(module);
   renderCompletion(module, glossary);
 }
 
-function renderQuiz(module, glossary = escapeHtml) {
-  const moduleProgress = getModuleProgress(module.id);
-  const solvedCount = Object.values(moduleProgress.quiz).filter(Boolean).length;
-  quizCounter.textContent = `${solvedCount}/${module.quiz.length}`;
+function shouldShowExampleContext(module) {
+  return Number(module.number) >= 4;
+}
 
+function renderExampleContext() {
+  return `
+    <section class="example-context" aria-label="${escapeHtml(exampleContext.title)}">
+      <div class="group-overview" aria-hidden="true">
+        <div class="group-overview-header">
+          <span>AE-2026</span>
+          <strong>Ausbildungsgruppe</strong>
+        </div>
+        <div class="group-overview-list">
+          <span>Maya</span>
+          <span>Noah</span>
+          <span>Lea</span>
+        </div>
+      </div>
+      <div>
+        <h4>${escapeHtml(exampleContext.title)}</h4>
+        <p>${escapeHtml(exampleContext.text)}</p>
+        <dl class="group-field-list">
+          ${exampleContext.fields.map((field) => {
+            const [label, ...valueParts] = field.split(":");
+            return `
+              <div>
+                <dt>${escapeHtml(label)}</dt>
+                <dd>${escapeHtml(valueParts.join(":").trim())}</dd>
+              </div>
+            `;
+          }).join("")}
+        </dl>
+      </div>
+    </section>
+  `;
+}
+
+function renderQuiz(module) {
   quizContent.innerHTML = module.quiz.map((question, questionIndex) => {
-    const solved = moduleProgress.quiz[questionIndex];
+    const options = shuffleOptions(question.options);
     return `
       <div class="quiz-question" data-question="${questionIndex}">
-        <p><strong>${questionIndex + 1}. ${glossary(question.question)}</strong></p>
+        <p><strong>${questionIndex + 1}. ${formatInlineCode(question.question)}</strong></p>
         ${question.code ? `
           <div class="code-runner quiz-code">
             <div class="code-gutter muted-gutter">
@@ -448,21 +1393,15 @@ function renderQuiz(module, glossary = escapeHtml) {
             </div>
             <pre class="code-block"><code>${escapeHtml(question.code)}</code></pre>
           </div>
-          <div class="fake-output quiz-output" data-quiz-output="${questionIndex}" ${solved ? "" : "hidden"}>
-            <div class="fake-output-label">Konsolenausgabe</div>
-            <pre>${escapeHtml(question.output ?? "Keine Ausgabe")}</pre>
-          </div>
         ` : ""}
         <div class="quiz-options">
-          ${question.options.map((option, optionIndex) => `
-            <button class="choice-button" type="button" data-question="${questionIndex}" data-option="${optionIndex}" ${solved ? "disabled" : ""}>
-              ${glossary(option)}
+          ${options.map((option) => `
+            <button class="choice-button" type="button" data-question="${questionIndex}" data-option="${option.originalIndex}">
+              ${formatInlineCode(option.text)}
             </button>
           `).join("")}
         </div>
-        <div class="feedback ${solved ? "ok" : ""}" data-feedback="${questionIndex}">
-          ${solved ? `Richtig. ${escapeHtml(question.explanation)}` : ""}
-        </div>
+        <div class="feedback" data-feedback="${questionIndex}"></div>
       </div>
     `;
   }).join("");
@@ -476,9 +1415,19 @@ function renderQuiz(module, glossary = escapeHtml) {
   });
 }
 
+function shuffleOptions(options) {
+  const shuffled = options.map((text, originalIndex) => ({ text, originalIndex }));
+
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    const randomIndex = Math.floor(Math.random() * (index + 1));
+    [shuffled[index], shuffled[randomIndex]] = [shuffled[randomIndex], shuffled[index]];
+  }
+
+  return shuffled;
+}
+
 function answerQuiz(module, questionIndex, optionIndex) {
   const question = module.quiz[questionIndex];
-  const moduleProgress = getModuleProgress(module.id);
   const questionElement = quizContent.querySelector(`[data-question="${questionIndex}"]`);
   const feedback = quizContent.querySelector(`[data-feedback="${questionIndex}"]`);
   const buttons = questionElement.querySelectorAll(".choice-button");
@@ -490,13 +1439,8 @@ function answerQuiz(module, questionIndex, optionIndex) {
       button.classList.toggle("correct", currentOption === question.correct);
       button.classList.remove("incorrect");
     });
-    moduleProgress.quiz[questionIndex] = true;
     feedback.textContent = `Richtig. ${question.explanation}`;
     feedback.className = "feedback ok";
-    const output = quizContent.querySelector(`[data-quiz-output="${questionIndex}"]`);
-    if (output) {
-      output.hidden = false;
-    }
   } else {
     buttons.forEach((button) => {
       const currentOption = Number(button.dataset.option);
@@ -508,17 +1452,101 @@ function answerQuiz(module, questionIndex, optionIndex) {
     feedback.textContent = `Noch nicht. ${question.explanation}`;
     feedback.className = "feedback error";
   }
+}
 
-  saveProgress();
-  updateProgress();
-  renderNav();
-  quizCounter.textContent = `${Object.values(moduleProgress.quiz).filter(Boolean).length}/${module.quiz.length}`;
+function renderGlossaryPage() {
+  moduleTitle.textContent = "Glossar";
+  conceptHeading.textContent = "Begriffe";
+  conceptContent.innerHTML = `
+    <div class="glossary-search">
+      <label for="glossarySearchInput">Glossar durchsuchen</label>
+      <input id="glossarySearchInput" type="search" autocomplete="off" placeholder="Suchbegriff eingeben">
+    </div>
+    <div id="glossaryResults" class="glossary-table"></div>
+  `;
+  examplesContent.innerHTML = "";
+  quizContent.innerHTML = "";
+  codeContent.innerHTML = "";
+
+  const input = document.querySelector("#glossarySearchInput");
+  const results = document.querySelector("#glossaryResults");
+  const renderResults = () => {
+    results.innerHTML = renderGlossaryResults(input.value);
+  };
+
+  input.addEventListener("input", renderResults);
+  renderResults();
+}
+
+function renderGlossaryResults(query) {
+  const normalizedQuery = normalizeSearch(query);
+  const results = getGlossaryResults(normalizedQuery);
+
+  if (results.length === 0) {
+    return `<p class="empty-state">Keine passenden Begriffe gefunden.</p>`;
+  }
+
+  return `
+    <div class="glossary-table-header" aria-hidden="true">
+      <span>Titel</span>
+      <span>Beschreibung</span>
+    </div>
+    ${results.map((term) => `
+      <article class="glossary-row">
+        <h4>${highlightSearch(term.title, normalizedQuery)}</h4>
+        <p>${highlightSearch(term.description, normalizedQuery)}</p>
+      </article>
+    `).join("")}
+  `;
+}
+
+function getGlossaryResults(normalizedQuery) {
+  if (!normalizedQuery) {
+    return glossaryTerms;
+  }
+
+  const titleMatches = [];
+  const descriptionMatches = [];
+
+  glossaryTerms.forEach((term) => {
+    const title = normalizeSearch(term.title);
+    const description = normalizeSearch(term.description);
+
+    if (title.includes(normalizedQuery)) {
+      titleMatches.push(term);
+      return;
+    }
+
+    if (description.includes(normalizedQuery)) {
+      descriptionMatches.push(term);
+    }
+  });
+
+  return [...titleMatches, ...descriptionMatches];
+}
+
+function normalizeSearch(value) {
+  return String(value).trim().toLocaleLowerCase("de-DE");
+}
+
+function highlightSearch(value, normalizedQuery) {
+  const raw = String(value);
+  if (!normalizedQuery) {
+    return escapeHtml(raw);
+  }
+
+  const normalizedRaw = normalizeSearch(raw);
+  const index = normalizedRaw.indexOf(normalizedQuery);
+
+  if (index === -1) {
+    return escapeHtml(raw);
+  }
+
+  const end = index + normalizedQuery.length;
+  return `${escapeHtml(raw.slice(0, index))}<mark>${escapeHtml(raw.slice(index, end))}</mark>${escapeHtml(raw.slice(end))}`;
 }
 
 function renderCompletion(module, glossary = escapeHtml) {
-  const moduleProgress = getModuleProgress(module.id);
-  codeCounter.textContent = moduleProgress.codeDone ? "erledigt" : "offen";
-
   const codeHtml = module.completion.parts.map((part) => {
     if (part.text !== undefined) {
       return escapeHtml(part.text);
@@ -531,9 +1559,8 @@ function renderCompletion(module, glossary = escapeHtml) {
     <div class="completion">
       <p>${glossary(module.completion.prompt)}</p>
       <div class="completion-code">${codeHtml}</div>
-      <p class="hint">${glossary(module.completion.hint)}</p>
       <button class="primary-button" id="checkCodeButton" type="button">Code prüfen</button>
-      <div class="fake-output" id="completionOutput" ${moduleProgress.codeDone ? "" : "hidden"}>
+      <div class="fake-output" id="completionOutput" hidden>
         <div class="fake-output-label">Konsolenausgabe</div>
         <pre>${escapeHtml(module.completion.output ?? "Keine Ausgabe")}</pre>
       </div>
@@ -561,7 +1588,6 @@ function checkCompletion(module) {
 
   const feedback = document.querySelector("#codeFeedback");
   if (allCorrect) {
-    getModuleProgress(module.id).codeDone = true;
     feedback.textContent = "Richtig. Die Code-Lücken passen.";
     feedback.className = "feedback ok";
     document.querySelector("#completionOutput").hidden = false;
@@ -570,31 +1596,10 @@ function checkCompletion(module) {
     feedback.className = "feedback error";
     document.querySelector("#completionOutput").hidden = true;
   }
-
-  saveProgress();
-  updateProgress();
-  renderNav();
-  codeCounter.textContent = getModuleProgress(module.id).codeDone ? "erledigt" : "offen";
 }
 
 function normalizeAnswer(value) {
   return value.trim().replace(/\s+/g, " ");
-}
-
-function updateProgress() {
-  let completed = 0;
-  let total = 0;
-
-  modules.forEach((module) => {
-    const moduleProgress = getModuleProgress(module.id);
-    completed += Object.values(moduleProgress.quiz).filter(Boolean).length;
-    completed += moduleProgress.codeDone ? 1 : 0;
-    total += module.quiz.length + 1;
-  });
-
-  const percent = total === 0 ? 0 : Math.round((completed / total) * 100);
-  progressText.textContent = `${percent}%`;
-  progressFill.style.width = `${percent}%`;
 }
 
 function escapeHtml(value) {
@@ -688,13 +1693,24 @@ function formatInlineCode(value) {
 
 function render() {
   renderNav();
-  renderModule();
-  updateProgress();
+  glossaryButton.classList.toggle("active", activeView === "glossary");
+  if (activeView === "glossary") {
+    conceptSection.hidden = false;
+    examplesSection.hidden = true;
+    quizSection.hidden = true;
+    codeSection.hidden = true;
+    renderGlossaryPage();
+  } else {
+    conceptSection.hidden = false;
+    examplesSection.hidden = false;
+    quizSection.hidden = false;
+    codeSection.hidden = false;
+    renderModule();
+  }
 }
 
-resetProgressButton.addEventListener("click", () => {
-  progress = {};
-  saveProgress();
+glossaryButton.addEventListener("click", () => {
+  activeView = "glossary";
   render();
 });
 
