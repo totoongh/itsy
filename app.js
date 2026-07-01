@@ -960,6 +960,7 @@ const modules = [
     id: "tests",
     number: "12",
     title: "Tests",
+    disabled: true,
     subtitle: "Regeln der Ausbildungsgruppe absichern",
     concepts: [
       "Tests prüfen automatisch, ob eine Regel weiterhin funktioniert.",
@@ -1236,8 +1237,190 @@ const exampleContext = {
   ]
 };
 
+const implementationTasks = [
+  {
+    level: "Grundlagen",
+    topic: "Variablen und Ausgabe",
+    title: "Azubi-Steckbrief ausgeben",
+    description: "Speichere Vorname, Lehrjahr und Anwesenheit eines Azubis in Variablen und gib daraus einen kleinen Steckbrief aus.",
+    requirements: [
+      "Verwende `String`, `int` und `boolean`.",
+      "Nutze sprechende Variablennamen.",
+      "Gib jede Information in einer eigenen Zeile aus."
+    ],
+    output: "Name: Maya\nLehrjahr: 1\nHeute anwesend: true"
+  },
+  {
+    level: "Grundlagen",
+    topic: "Rechnen mit Zahlen",
+    title: "Notendurchschnitt berechnen",
+    description: "Speichere drei Noten als `double`-Werte und berechne daraus den Durchschnitt.",
+    requirements: [
+      "Verwende drei einzelne Variablen für die Noten.",
+      "Berechne die Summe und teile sie durch 3.",
+      "Gib den Durchschnitt mit einem passenden Text aus."
+    ],
+    output: "Durchschnitt: 2.0"
+  },
+  {
+    level: "Grundlagen",
+    topic: "if/else",
+    title: "Unterstützungsbedarf prüfen",
+    description: "Prüfe anhand einer letzten Note, ob Frau Kaya Unterstützung einplanen soll.",
+    requirements: [
+      "Wenn die Note schlechter als 4.0 ist, soll Unterstützung eingeplant werden.",
+      "Sonst soll selbstständiges Üben ausgegeben werden.",
+      "Verwende einen Zahlenvergleich."
+    ],
+    output: "Unterstützung einplanen"
+  },
+  {
+    level: "Grundlagen",
+    topic: "switch",
+    title: "Hinweis zum Lehrjahr ausgeben",
+    description: "Gib je nach Lehrjahr einen passenden Hinweis für die Ausbildungsgruppe aus.",
+    requirements: [
+      "Nutze `switch` für Lehrjahr 1, 2 und 3.",
+      "Lehrjahr 1 soll Grundlagen festigen ausgeben.",
+      "Baue einen `default`-Fall für ungültige Werte ein."
+    ],
+    output: "Grundlagen festigen"
+  },
+  {
+    level: "Grundlagen plus",
+    topic: "Arrays",
+    title: "Drei Azubi-Namen ausgeben",
+    description: "Lege ein Array mit drei Namen an und gib alle Namen in der gespeicherten Reihenfolge aus.",
+    requirements: [
+      "Verwende `String[]`.",
+      "Greife mit Index 0, 1 und 2 auf die Werte zu.",
+      "Gib jeden Namen in einer eigenen Zeile aus."
+    ],
+    output: "Maya\nNoah\nLea"
+  },
+  {
+    level: "Grundlagen plus",
+    topic: "Schleifen",
+    title: "Anwesenheiten zählen",
+    description: "Zähle in einem `boolean[]`, wie viele Azubis heute anwesend sind.",
+    requirements: [
+      "Verwende ein Array mit `true`, `false`, `true`, `true`.",
+      "Nutze eine Schleife.",
+      "Erhöhe einen Zähler nur bei `true`."
+    ],
+    output: "Anwesend: 3"
+  },
+  {
+    level: "Grundlagen plus",
+    topic: "ArrayList",
+    title: "Gruppenliste erweitern",
+    description: "Lege eine flexible Liste mit Azubi-Namen an, füge drei Namen hinzu und gib die Gruppengröße aus.",
+    requirements: [
+      "Verwende `ArrayList<String>`.",
+      "Füge `Maya`, `Noah` und `Lea` mit `add` hinzu.",
+      "Gib die Anzahl mit `size()` aus."
+    ],
+    output: "Gruppengröße: 3"
+  },
+  {
+    level: "Mittel",
+    topic: "Methoden",
+    title: "Methode für Notenprüfung schreiben",
+    description: "Schreibe eine Methode `needsSupport`, die für eine Note zurückgibt, ob Unterstützung nötig ist.",
+    requirements: [
+      "Die Methode bekommt eine `double`-Note als Parameter.",
+      "Sie gibt `true` zurück, wenn die Note schlechter als 4.0 ist.",
+      "Gib das Ergebnis für 4.3 aus."
+    ],
+    output: "true"
+  },
+  {
+    level: "Mittel",
+    topic: "Methoden und Arrays",
+    title: "Durchschnitt als Methode",
+    description: "Schreibe eine Methode `averageGrade`, die den Durchschnitt eines Noten-Arrays berechnet.",
+    requirements: [
+      "Die Methode bekommt `double[] lastGrades`.",
+      "Nutze eine Schleife für die Summe.",
+      "Gib den Durchschnitt für 2.0, 2.3 und 1.7 aus."
+    ],
+    output: "2.0"
+  },
+  {
+    level: "Mittel",
+    topic: "Scanner",
+    title: "Namen über die Konsole einlesen",
+    description: "Lies einen Namen über die Konsole ein und begrüße den Azubi mit diesem Namen.",
+    requirements: [
+      "Verwende `Scanner` zum Einlesen.",
+      "Lies eine komplette Textzeile.",
+      "Gib danach eine Begrüßung aus."
+    ],
+    output: "Eingabe: Maya\nHallo Maya",
+    concept: {
+      title: "Neues Konzept: Scanner",
+      text: "`Scanner` kann Eingaben aus der Konsole lesen. Dafür wird er mit `System.in` verbunden. Mit `nextLine()` liest du eine ganze Textzeile.",
+      example: `import java.util.Scanner;\n\nScanner scanner = new Scanner(System.in);\nString firstName = scanner.nextLine();\nSystem.out.println("Hallo " + firstName);`
+    }
+  },
+  {
+    level: "Mittel plus",
+    topic: "Klassen",
+    title: "Azubi-Klasse modellieren",
+    description: "Erstelle eine Klasse `Apprentice` mit Vorname, Lehrjahr und Anwesenheit und gib die Daten eines Objekts aus.",
+    requirements: [
+      "Lege Felder für `firstName`, `trainingYear` und `presentToday` an.",
+      "Erzeuge ein Objekt für Maya.",
+      "Gib Vorname und Lehrjahr aus."
+    ],
+    output: "Maya\n1"
+  },
+  {
+    level: "Mittel plus",
+    topic: "Objekte in Listen",
+    title: "Objektliste durchsuchen",
+    description: "Lege mehrere Azubi-Objekte in eine Liste und gib nur die anwesenden Azubis aus.",
+    requirements: [
+      "Verwende `ArrayList<Apprentice>`.",
+      "Jedes Objekt soll einen Namen und `presentToday` haben.",
+      "Nutze eine Schleife und eine `if`-Bedingung."
+    ],
+    output: "Maya\nLea"
+  },
+  {
+    level: "Fortgeschritten",
+    topic: "Kapselung",
+    title: "Gültiges Lehrjahr schützen",
+    description: "Kapsele das Lehrjahr und verhindere, dass Werte außerhalb von 1 bis 3 übernommen werden.",
+    requirements: [
+      "Verwende ein `private int trainingYear`.",
+      "Schreibe einen Setter mit Prüfung.",
+      "Gib nach einem gültigen Setzen das Lehrjahr aus."
+    ],
+    output: "Lehrjahr: 2"
+  },
+  {
+    level: "Fortgeschritten",
+    topic: "Fehlerbehandlung",
+    title: "Ungültige Note melden",
+    description: "Schreibe eine Prüfung, die bei einer ungültigen Note eine `IllegalArgumentException` auslöst und diese auffängt.",
+    requirements: [
+      "Noten sind nur von 1.0 bis 6.0 gültig.",
+      "Teste den Wert 7.0.",
+      "Fange den Fehler mit `try/catch` ab."
+    ],
+    output: "Ungültige Note",
+    concept: {
+      title: "Neues Konzept: Exception bewusst auslösen",
+      text: "Mit `throw new IllegalArgumentException(...)` meldest du, dass ein übergebener Wert nicht erlaubt ist. Mit `catch` kannst du darauf reagieren.",
+      example: `try {\n    throw new IllegalArgumentException("Ungültige Note");\n} catch (IllegalArgumentException error) {\n    System.out.println(error.getMessage());\n}`
+    }
+  }
+];
+
 let activeModuleIndex = 0;
 let activeView = "module";
+let previousViewBeforeGlossary = "module";
 
 const moduleNav = document.querySelector("#moduleNav");
 const moduleTitle = document.querySelector("#moduleTitle");
@@ -1255,6 +1438,10 @@ const codeSection = document.querySelector("#codeSection");
 function renderNav() {
   moduleNav.innerHTML = "";
   modules.forEach((module, index) => {
+    if (module.disabled) {
+      return;
+    }
+
     const button = document.createElement("button");
     button.type = "button";
     button.className = `module-button${activeView === "module" && index === activeModuleIndex ? " active" : ""}`;
@@ -1272,6 +1459,22 @@ function renderNav() {
     });
     moduleNav.appendChild(button);
   });
+
+  const tasksButton = document.createElement("button");
+  tasksButton.type = "button";
+  tasksButton.className = `module-button task-nav-button${activeView === "tasks" ? " active" : ""}`;
+  tasksButton.innerHTML = `
+    <span class="module-number">★</span>
+    <span>
+      <span class="module-title">Aufgaben</span>
+      <span class="module-subtitle">Implementieren und Output vergleichen</span>
+    </span>
+  `;
+  tasksButton.addEventListener("click", () => {
+    activeView = "tasks";
+    render();
+  });
+  moduleNav.appendChild(tasksButton);
 }
 
 function renderModule() {
@@ -1476,6 +1679,60 @@ function renderGlossaryPage() {
 
   input.addEventListener("input", renderResults);
   renderResults();
+}
+
+function renderTasksPage() {
+  moduleTitle.textContent = "Implementierungsaufgaben";
+  conceptHeading.textContent = "Aufgaben";
+  conceptContent.innerHTML = `
+    <div class="task-page-intro">
+      <p>Diese Sammlung ist zum selbstständigen Implementieren gedacht. Schreibe jeweils ein kleines Java-Programm und vergleiche deine Konsolenausgabe mit der erwarteten Ausgabe.</p>
+      <p>Die Aufgaben sind bewusst gemischt: einige passen direkt zu den frühen Grundlagen, andere verlangen Methoden, Klassen, Kapselung oder Fehlerbehandlung.</p>
+    </div>
+    <div class="task-list">
+      ${implementationTasks.map((task, index) => renderImplementationTask(task, index)).join("")}
+    </div>
+  `;
+  examplesContent.innerHTML = "";
+  quizContent.innerHTML = "";
+  codeContent.innerHTML = "";
+}
+
+function renderImplementationTask(task, index) {
+  return `
+    <article class="implementation-task">
+      <header class="task-header">
+        <div>
+          <span class="task-index">Aufgabe ${index + 1}</span>
+          <h4>${escapeHtml(task.title)}</h4>
+        </div>
+        <div class="task-meta">
+          <span>${escapeHtml(task.level)}</span>
+          <span>${escapeHtml(task.topic)}</span>
+        </div>
+      </header>
+      <p>${formatInlineCode(task.description)}</p>
+      <div class="task-section">
+        <h5>Anforderungen</h5>
+        <ul>
+          ${task.requirements.map((requirement) => `<li>${formatInlineCode(requirement)}</li>`).join("")}
+        </ul>
+      </div>
+      ${task.concept ? `
+        <details class="task-concept">
+          <summary>${escapeHtml(task.concept.title)}</summary>
+          <div class="task-concept-body">
+            <p>${formatInlineCode(task.concept.text)}</p>
+            <pre class="code-block"><code>${escapeHtml(task.concept.example)}</code></pre>
+          </div>
+        </details>
+      ` : ""}
+      <div class="expected-output">
+        <div class="fake-output-label">Erwartete Konsolenausgabe</div>
+        <pre>${escapeHtml(task.output)}</pre>
+      </div>
+    </article>
+  `;
 }
 
 function renderGlossaryResults(query) {
@@ -1700,6 +1957,12 @@ function render() {
     quizSection.hidden = true;
     codeSection.hidden = true;
     renderGlossaryPage();
+  } else if (activeView === "tasks") {
+    conceptSection.hidden = false;
+    examplesSection.hidden = true;
+    quizSection.hidden = true;
+    codeSection.hidden = true;
+    renderTasksPage();
   } else {
     conceptSection.hidden = false;
     examplesSection.hidden = false;
@@ -1710,7 +1973,12 @@ function render() {
 }
 
 glossaryButton.addEventListener("click", () => {
-  activeView = "glossary";
+  if (activeView === "glossary") {
+    activeView = previousViewBeforeGlossary;
+  } else {
+    previousViewBeforeGlossary = activeView;
+    activeView = "glossary";
+  }
   render();
 });
 

@@ -114,6 +114,23 @@ input:focus-visible {
   border-color: rgba(255, 255, 255, 0.28);
 }
 
+.task-nav-button {
+  margin-top: 16px;
+  border-color: rgba(245, 158, 11, 0.65);
+  background: rgba(245, 158, 11, 0.16);
+}
+
+.task-nav-button .module-number {
+  background: #f59e0b;
+  color: #17202a;
+}
+
+.task-nav-button:hover,
+.task-nav-button.active {
+  border-color: rgba(245, 158, 11, 0.95);
+  background: rgba(245, 158, 11, 0.28);
+}
+
 .module-number {
   width: 34px;
   height: 34px;
@@ -452,6 +469,135 @@ input:focus-visible {
 
 .info-box-content p {
   margin: 8px 0;
+}
+
+.task-page-intro {
+  max-width: 920px;
+  margin-bottom: 18px;
+  color: #24313d;
+}
+
+.task-page-intro p {
+  margin: 0 0 10px;
+}
+
+.task-list {
+  display: grid;
+  gap: 14px;
+}
+
+.implementation-task {
+  border: 1px solid var(--line);
+  border-left: 4px solid #f59e0b;
+  border-radius: 8px;
+  padding: 16px;
+  background: #ffffff;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.task-index {
+  display: block;
+  margin-bottom: 4px;
+  color: #a85510;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.implementation-task h4 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.implementation-task h5 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.task-meta {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.task-meta span {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  border: 1px solid #f1c27d;
+  border-radius: 999px;
+  padding: 4px 9px;
+  background: #fff7ed;
+  color: #8a4b0f;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.task-section {
+  margin-top: 12px;
+}
+
+.task-section ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.task-section li {
+  margin: 5px 0;
+}
+
+.task-concept {
+  margin-top: 12px;
+  border: 1px solid #b8d9d4;
+  border-radius: 8px;
+  background: #f0fbf8;
+  overflow: hidden;
+}
+
+.task-concept summary {
+  cursor: pointer;
+  padding: 10px 12px;
+  font-weight: 900;
+  color: var(--accent-strong);
+}
+
+.task-concept-body {
+  display: grid;
+  gap: 10px;
+  padding: 0 12px 12px;
+}
+
+.task-concept-body p {
+  margin: 0;
+}
+
+.expected-output {
+  margin-top: 12px;
+  border: 1px solid #c6d3df;
+  border-radius: 8px;
+  background: #111827;
+  color: #d1fae5;
+  overflow: hidden;
+}
+
+.expected-output pre {
+  margin: 0;
+  padding: 12px;
+  overflow-x: auto;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
 }
 
 .glossary-term {

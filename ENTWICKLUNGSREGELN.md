@@ -42,6 +42,10 @@ Neue Konzepte sollen schrittweise eingeführt werden. Eine Aufgabe soll nicht zu
 
 Die ersten Module betrachten einzelne Werte eines Azubis. Arrays, Listen und Gruppen mit mehreren Azubis werden erst eingeführt, wenn das jeweilige Modul diese Konzepte erklärt. Frühe Beispiele vermeiden String-Vergleiche mit `.equals(...)`; Entscheidungen sollen zunächst über `boolean`, `int`, `double` und einfache Zahlenvergleiche laufen.
 
+Das Test-Modul bleibt fachlich vorbereitet, ist aber vorerst in der Navigation deaktiviert.
+
+Die Aufgaben-Seite ist ein eigenes hervorgehobenes Kapitel am Ende der Navigation. Jede Implementierungsaufgabe enthält Anforderungen und eine erwartete Konsolenausgabe, damit Lernende ihre Lösung gegen ein konkretes Ergebnis vergleichen können.
+
 ## Code-Beispiele
 
 - Code-Beispiele sind fake-runnable.

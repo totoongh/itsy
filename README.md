@@ -6,7 +6,7 @@ Der Kurs nutzt als roten Faden die Modellierung einer Ausbildungsgruppe: Eine Au
 
 ## Inhalt dieses Prototyps
 
-Der aktuelle Stand deckt zwölf Themen aus dem Ausbildungsrahmen ab:
+Der aktuelle Stand deckt elf aktive Themen aus dem Ausbildungsrahmen ab:
 
 1. Variablen
 2. Einfache Datentypen
@@ -19,7 +19,8 @@ Der aktuelle Stand deckt zwölf Themen aus dem Ausbildungsrahmen ab:
 9. Objekte in Listen
 10. Kapselung
 11. Fehlerbehandlung
-12. Tests
+
+Das vorbereitete Test-Modul ist vorerst deaktiviert.
 
 Jedes Thema enthält:
 
@@ -29,6 +30,8 @@ Jedes Thema enthält:
 - simulierte Code-Vervollständigung
 
 Die Code-Vervollständigung führt keinen Java-Code aus. Sie prüft nur die eingegebenen Lücken gegen erwartete Antworten. Das ist bewusst so, damit die Plattform ohne Backend und ohne lokale Java-Ausführung funktioniert.
+
+Zusätzlich gibt es ein eigenes Kapitel mit Implementierungsaufgaben. Diese Aufgaben sind nach Niveau gemischt und enthalten jeweils eine erwartete Konsolenausgabe zum Vergleichen.
 
 ## Lokal starten
 
