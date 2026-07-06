@@ -587,7 +587,7 @@ const modules = [
     concepts: [
       "Eine Klasse ist ein Bauplan für zusammengehörige Daten.",
       "Die Werte eines Azubis gehören fachlich zusammen: Vorname, Lehrjahr, Anwesenheit und letzte Noten.",
-      "Ein Feld ist eine Variable, die zu einer Klasse gehört.",
+      "Ein Feld (Attribut) ist eine Variable, die zu einer Klasse gehört.",
       "Mit new entsteht aus einer Klasse ein konkretes Objekt."
     ],
     explanation: [
@@ -597,13 +597,13 @@ const modules = [
       },
       {
         heading: "Java-Regel",
-        text: "Eine Klasse beginnt mit class und einem Namen. Im Klassenblock stehen Felder und später auch Methoden, die zu diesem Modell gehören."
+        text: "Eine Klasse beginnt mit class und einem Namen. Im Klassenblock stehen Felder (Attribute) und später auch Methoden, die zu diesem Modell gehören."
       }
     ],
     examples: [
       {
         title: "Azubi-Klasse anlegen",
-        code: `// Die Klasse beschreibt, welche Daten ein Azubi haben kann.\n// Noch werden die Felder bewusst einfach gehalten.\nclass Apprentice {\n    String firstName;\n    int trainingYear;\n    boolean presentToday;\n    double[] lastGrades;\n}`,
+        code: `// Die Klasse beschreibt, welche Daten ein Azubi haben kann.\n// Noch werden die Felder (Attribute) bewusst einfach gehalten.\nclass Apprentice {\n    String firstName;\n    int trainingYear;\n    boolean presentToday;\n    double[] lastGrades;\n}`,
         output: "Keine Ausgabe",
         info: {
           title: "Warum gibt es hier keine Ausgabe?",
@@ -615,7 +615,7 @@ const modules = [
       },
       {
         title: "Objekt erzeugen",
-        code: `// Aus dem Bauplan entsteht ein konkreter Azubi.\n// Danach werden die Felder mit Werten gefüllt.\nclass Apprentice {\n    String firstName;\n    int trainingYear;\n    boolean presentToday;\n    double[] lastGrades;\n}\n\nApprentice maya = new Apprentice();\nmaya.firstName = "Maya";\nmaya.trainingYear = 1;\nmaya.presentToday = true;\nmaya.lastGrades = new double[] {2.0, 2.3, 1.7};\n\nSystem.out.println(maya.firstName);`,
+        code: `// Aus dem Bauplan entsteht ein konkreter Azubi.\n// Danach werden die Felder (Attribute) mit Werten gefüllt.\nclass Apprentice {\n    String firstName;\n    int trainingYear;\n    boolean presentToday;\n    double[] lastGrades;\n}\n\nApprentice maya = new Apprentice();\nmaya.firstName = "Maya";\nmaya.trainingYear = 1;\nmaya.presentToday = true;\nmaya.lastGrades = new double[] {2.0, 2.3, 1.7};\n\nSystem.out.println(maya.firstName);`,
         output: "Maya"
       },
       {
@@ -681,7 +681,7 @@ const modules = [
     concepts: [
       "Eine Liste kann nicht nur Strings speichern, sondern auch Objekte.",
       "Mit ArrayList<Apprentice> entsteht eine flexible Liste von Azubis.",
-      "Jedes Objekt in der Liste hat eigene Feldwerte.",
+      "Jedes Objekt in der Liste hat eigene Feldwerte (Attributwerte).",
       "Mit einer Schleife kann Java alle Azubi-Objekte der Gruppe durchgehen."
     ],
     explanation: [
@@ -702,7 +702,7 @@ const modules = [
       },
       {
         title: "Objekte ausgeben",
-        code: `// Die Schleife läuft über Azubi-Objekte statt über einzelne Namen.\n// Pro Objekt kann auf die Felder zugegriffen werden.\nimport java.util.ArrayList;\n\nclass Apprentice {\n    String firstName;\n    int trainingYear;\n}\n\nArrayList<Apprentice> apprentices = new ArrayList<>();\n\nApprentice maya = new Apprentice();\nmaya.firstName = "Maya";\nmaya.trainingYear = 1;\napprentices.add(maya);\n\nfor (Apprentice apprentice : apprentices) {\n    System.out.println(apprentice.firstName);\n    System.out.println(apprentice.trainingYear);\n}`,
+        code: `// Die Schleife läuft über Azubi-Objekte statt über einzelne Namen.\n// Pro Objekt kann auf die Felder (Attribute) zugegriffen werden.\nimport java.util.ArrayList;\n\nclass Apprentice {\n    String firstName;\n    int trainingYear;\n}\n\nArrayList<Apprentice> apprentices = new ArrayList<>();\n\nApprentice maya = new Apprentice();\nmaya.firstName = "Maya";\nmaya.trainingYear = 1;\napprentices.add(maya);\n\nfor (Apprentice apprentice : apprentices) {\n    System.out.println(apprentice.firstName);\n    System.out.println(apprentice.trainingYear);\n}`,
         output: "Maya\n1"
       },
       {
@@ -726,7 +726,7 @@ const modules = [
       {
         question: "Was bedeutet ein einzelner Eintrag in einer Liste von Apprentice-Objekten?",
         options: [
-          "Ein konkreter Azubi mit eigenen Feldwerten",
+          "Ein konkreter Azubi mit eigenen Feldwerten (Attributwerten)",
           "Immer nur ein einzelner Buchstabe",
           "Eine leere Methode",
           "Ein fest eingebauter Java-Befehl"
@@ -767,30 +767,30 @@ const modules = [
     subtitle: "Azubi-Daten kontrolliert ändern",
     concepts: [
       "Kapselung bedeutet: Daten werden nicht beliebig von außen verändert.",
-      "Mit private werden Felder vor direktem Zugriff geschützt.",
+      "Mit private werden Felder (Attribute) vor direktem Zugriff geschützt.",
       "Ein Konstruktor setzt wichtige Startwerte beim Erzeugen eines Objekts.",
-      "Getter und Setter erlauben kontrolliertes Lesen und Ändern von Feldern."
+      "Getter und Setter erlauben kontrolliertes Lesen und Ändern von Feldern (Attributen)."
     ],
     explanation: [
       {
         heading: "Warum jetzt Kapselung?",
-        text: "In den bisherigen Klassen konnten Felder direkt verändert werden. Bei echten Azubi-Daten möchte Frau Kaya genauer steuern, welche Werte gesetzt werden dürfen."
+        text: "In den bisherigen Klassen konnten Felder (Attribute) direkt verändert werden. Bei echten Azubi-Daten möchte Frau Kaya genauer steuern, welche Werte gesetzt werden dürfen."
       },
       {
         heading: "Java-Regel",
-        text: "Private Felder werden innerhalb der Klasse gespeichert. Von außen arbeitet man über Methoden wie getFirstName oder setTrainingYear."
+        text: "Private Felder (Attribute) werden innerhalb der Klasse gespeichert. Von außen arbeitet man über Methoden wie getFirstName oder setTrainingYear."
       }
     ],
     examples: [
       {
-        title: "Private Felder und Konstruktor",
+        title: "Private Felder (Attribute) und Konstruktor",
         code: `// Der Name und das Lehrjahr sollen nicht direkt von außen geändert werden.\n// Der Konstruktor setzt die Startwerte beim Erzeugen des Objekts.\nclass Apprentice {\n    private String firstName;\n    private int trainingYear;\n\n    Apprentice(String firstName, int trainingYear) {\n        this.firstName = firstName;\n        this.trainingYear = trainingYear;\n    }\n\n    String getFirstName() {\n        return firstName;\n    }\n}\n\nApprentice maya = new Apprentice("Maya", 1);\nSystem.out.println(maya.getFirstName());`,
         output: "Maya",
         info: {
           title: "Was bedeutet this?",
           body: [
             "`this` meint das aktuelle Objekt.",
-            "In `this.firstName = firstName;` steht links das Feld des Objekts und rechts der Parameter aus dem Konstruktor."
+            "In `this.firstName = firstName;` steht links das Feld (Attribut) des Objekts und rechts der Parameter aus dem Konstruktor."
           ]
         }
       },
@@ -806,7 +806,7 @@ const modules = [
       },
       {
         title: "Note kontrolliert setzen",
-        code: `// Eine Note soll nur übernommen werden, wenn sie im plausiblen Bereich liegt.\n// Ungültige Werte ändern das Feld hier nicht.\nclass Apprentice {\n    private double lastGrade = 2.0;\n\n    void setLastGrade(double lastGrade) {\n        if (lastGrade >= 1.0 && lastGrade <= 6.0) {\n            this.lastGrade = lastGrade;\n        }\n    }\n\n    double getLastGrade() {\n        return lastGrade;\n    }\n}\n\nApprentice maya = new Apprentice();\nmaya.setLastGrade(2.3);\nSystem.out.println(maya.getLastGrade());`,
+        code: `// Eine Note soll nur übernommen werden, wenn sie im plausiblen Bereich liegt.\n// Ungültige Werte ändern das Feld (Attribut) hier nicht.\nclass Apprentice {\n    private double lastGrade = 2.0;\n\n    void setLastGrade(double lastGrade) {\n        if (lastGrade >= 1.0 && lastGrade <= 6.0) {\n            this.lastGrade = lastGrade;\n        }\n    }\n\n    double getLastGrade() {\n        return lastGrade;\n    }\n}\n\nApprentice maya = new Apprentice();\nmaya.setLastGrade(2.3);\nSystem.out.println(maya.getLastGrade());`,
         output: "2.3"
       }
     ],
@@ -815,7 +815,7 @@ const modules = [
         question: "Wozu dient Kapselung?",
         options: [
           "Daten werden geschützt und kontrolliert geändert",
-          "Alle Felder werden automatisch gelöscht",
+          "Alle Felder (Attribute) werden automatisch gelöscht",
           "Arrays werden ohne Index verwendet",
           "Schleifen werden schneller geschrieben"
         ],
@@ -836,17 +836,17 @@ const modules = [
       {
         question: "Warum nutzt man Getter?",
         options: [
-          "Um geschützte Felder kontrolliert zu lesen",
+          "Um geschützte Felder (Attribute) kontrolliert zu lesen",
           "Um eine Klasse in einen String umzuwandeln",
           "Um Java ohne Methoden zu schreiben",
           "Um alle Fehler zu ignorieren"
         ],
         correct: 0,
-        explanation: "Getter geben kontrolliert Werte aus privaten Feldern zurück."
+        explanation: "Getter geben kontrolliert Werte aus privaten Feldern (Attributen) zurück."
       }
     ],
     completion: {
-      prompt: "Vervollständige die gekapselte Klasse mit privatem Feld und Getter.",
+      prompt: "Vervollständige die gekapselte Klasse mit privatem Feld (Attribut) und Getter.",
       parts: [
         { text: "class Apprentice {\n    " },
         { blank: "privateKeyword", answers: ["private"] },
@@ -936,7 +936,7 @@ const modules = [
         question: "Wozu dient catch?",
         options: [
           "Ein gemeldeter Fehler kann aufgefangen und behandelt werden",
-          "Ein Feld wird automatisch private",
+          "Ein Feld (Attribut) wird automatisch private",
           "Eine Klasse bekommt einen Konstruktor",
           "Ein Array bekommt eine neue Länge"
         ],
@@ -957,8 +957,482 @@ const modules = [
     }
   },
   {
-    id: "tests",
+    id: "enums",
     number: "12",
+    title: "Enums",
+    subtitle: "Feste Auswahlwerte sicher modellieren",
+    concepts: [
+      "Ein enum ist ein eigener Datentyp für eine kleine, feste Auswahl von Werten.",
+      "Enum-Werte werden in Java meistens groß geschrieben, zum Beispiel PRESENT oder EXCUSED.",
+      "Enums verhindern Tippfehler, weil Java nur die festgelegten Werte erlaubt.",
+      "Enums passen gut zu Status, Rollen, festen Stufen oder festen Kategorien.",
+      "Wenn Werte frei eingegeben, berechnet oder regelmäßig erweitert werden, ist ein enum oft nicht die beste Wahl."
+    ],
+    explanation: [
+      {
+        heading: "Warum jetzt Enums?",
+        text: "Bisher haben wir für feste Bedeutungen oft int, boolean oder String verwendet. Ein enum macht solche Bedeutungen sichtbarer: Statt 1, 2, 3 oder beliebigem Text stehen klare Namen im Code."
+      },
+      {
+        heading: "Java-Regel",
+        text: "Ein enum wird ähnlich wie eine Klasse benannt. Im Block stehen die erlaubten Werte. Danach kann eine Variable genau einen dieser Werte speichern."
+      },
+      {
+        heading: "Entscheidungshilfe",
+        text: "Nutze boolean für genau zwei einfache Wahrheitswerte, Zahlen für echte Berechnungen, String für freien Text, Klassen für eigene Objekte und enums für eine geschlossene fachliche Auswahl."
+      }
+    ],
+    examples: [
+      {
+        title: "Lehrjahr als feste Auswahl",
+        code: `// Statt 1, 2 und 3 können feste Namen verwendet werden.\n// Dadurch ist im Code klarer, was der Wert bedeutet.\nenum TrainingYear {\n    FIRST,\n    SECOND,\n    THIRD\n}\n\nTrainingYear mayaYear = TrainingYear.FIRST;\nSystem.out.println(mayaYear);`,
+        output: "FIRST",
+        info: {
+          title: "Warum nicht einfach int?",
+          body: [
+            "`int` ist gut, wenn mit einer Zahl gerechnet wird.",
+            "Beim Lehrjahr ist aber meistens die fachliche Bedeutung wichtiger als Rechnen. Ein enum verhindert außerdem ungültige Werte wie 0 oder 7."
+          ]
+        }
+      },
+      {
+        title: "Anwesenheit genauer modellieren",
+        code: `// boolean kann nur true oder false speichern.\n// In einer echten Anwendung braucht Anwesenheit oft mehrere Zustände.\nenum AttendanceStatus {\n    PRESENT,\n    EXCUSED,\n    SICK,\n    UNKNOWN\n}\n\nAttendanceStatus status = AttendanceStatus.EXCUSED;\n\nswitch (status) {\n    case PRESENT -> System.out.println("Für die Tagesübung einplanen");\n    case EXCUSED -> System.out.println("Entschuldigt fehlen");\n    case SICK -> System.out.println("Krankmeldung notieren");\n    case UNKNOWN -> System.out.println("Anwesenheit klären");\n}`,
+        output: "Entschuldigt fehlen",
+        info: {
+          title: "Grenzfall: boolean oder enum?",
+          body: [
+            "Wenn nur die Frage zählt: anwesend oder nicht anwesend, reicht `boolean`.",
+            "Wenn es mehrere fachlich unterschiedliche Zustände gibt, ist ein enum klarer als mehrere booleans oder freie Texte."
+          ]
+        }
+      },
+      {
+        title: "Rollen in einer Anwendung",
+        code: `// Rollen sind ein typisches Enum-Beispiel aus echter Anwendungsentwicklung.\n// Eine Rolle entscheidet, was eine Person in der Anwendung darf.\nenum UserRole {\n    APPRENTICE,\n    TRAINER,\n    ADMIN\n}\n\nUserRole currentRole = UserRole.TRAINER;\n\nif (currentRole == UserRole.TRAINER) {\n    System.out.println("Gruppendaten bearbeiten erlaubt");\n}`,
+        output: "Gruppendaten bearbeiten erlaubt",
+        info: {
+          title: "Warum == bei enums?",
+          body: [
+            "Enum-Werte sind feste Einzelwerte.",
+            "Deshalb kann man sie in Java direkt mit `==` vergleichen."
+          ]
+        }
+      },
+      {
+        title: "Status eines Formulars",
+        code: `// In Anwendungen haben Datensätze oft einen Status.\n// Ein enum macht klar, welche Statuswerte überhaupt möglich sind.\nenum ProfileStatus {\n    DRAFT,\n    SUBMITTED,\n    REVIEWED,\n    ARCHIVED\n}\n\nProfileStatus status = ProfileStatus.SUBMITTED;\nSystem.out.println(status);`,
+        output: "SUBMITTED"
+      },
+      {
+        title: "Wann kein enum?",
+        code: `// Freie Daten sind keine gute Enum-Auswahl.\n// Namen und Noten werden eingegeben oder berechnet und sind nicht fest vorgegeben.\nString firstName = "Maya";\ndouble averageGrade = 2.0;\n\nSystem.out.println(firstName);\nSystem.out.println(averageGrade);`,
+        output: "Maya\n2.0",
+        infoBlocks: [
+          {
+            title: "Typische Entscheidung",
+            body: [
+              "`String`: Der Wert ist freier Text, zum Beispiel ein Name.",
+              "`double`: Der Wert ist eine Zahl, mit der gerechnet wird, zum Beispiel ein Durchschnitt.",
+              "`class`: Der Wert besteht aus mehreren zusammengehörigen Daten, zum Beispiel ein kompletter Azubi.",
+              "`enum`: Der Wert kommt aus einer kleinen, stabilen Auswahl, zum Beispiel Status oder Rolle."
+            ]
+          }
+        ]
+      }
+    ],
+    quiz: [
+      {
+        question: "Wann ist ein enum besonders passend?",
+        options: [
+          "Wenn es eine kleine, feste Auswahl erlaubter Werte gibt",
+          "Wenn ein Name frei eingegeben wird",
+          "Wenn eine Note berechnet werden soll",
+          "Wenn beliebig viele neue Werte zur Laufzeit entstehen"
+        ],
+        correct: 0,
+        explanation: "Ein enum beschreibt eine geschlossene Auswahl, zum Beispiel Status, Rolle oder Stufe."
+      },
+      {
+        question: "Was gibt dieses Beispiel aus?",
+        code: `enum UserRole {\n    APPRENTICE,\n    TRAINER,\n    ADMIN\n}\n\nUserRole role = UserRole.ADMIN;\nSystem.out.println(role);`,
+        options: ["ADMIN", "TRAINER", "UserRole", "true"],
+        correct: 0,
+        explanation: "Die Variable speichert den Enum-Wert ADMIN."
+      },
+      {
+        question: "Welche Modellierung passt am besten für `PRESENT`, `EXCUSED`, `SICK` und `UNKNOWN`?",
+        options: ["enum AttendanceStatus", "double AttendanceStatus", "boolean presentToday", "String[] firstName"],
+        correct: 0,
+        explanation: "Mehrere feste Anwesenheitszustände sind ein typischer Fall für ein enum."
+      },
+      {
+        question: "Wann sollte eher kein enum verwendet werden?",
+        options: [
+          "Für frei eingegebene Namen wie Maya, Noah oder Lea",
+          "Für feste Rollen wie APPRENTICE, TRAINER und ADMIN",
+          "Für feste Formularstatus wie DRAFT und SUBMITTED",
+          "Für feste Stufen wie FIRST, SECOND und THIRD"
+        ],
+        correct: 0,
+        explanation: "Namen sind freie Daten und können beliebig viele Werte haben."
+      }
+    ],
+    implementationTasks: [
+      {
+        level: "Grundlagen plus",
+        topic: "Enums",
+        title: "Anwesenheitsstatus mit enum ausgeben",
+        description: "Erstelle ein enum `AttendanceStatus` und speichere darin den Status eines Azubis.",
+        requirements: [
+          "Lege die Werte `PRESENT`, `EXCUSED`, `SICK` und `UNKNOWN` an.",
+          "Speichere für Maya den Wert `EXCUSED`.",
+          "Gib den gespeicherten Wert aus."
+        ],
+        output: "EXCUSED"
+      },
+      {
+        level: "Mittel",
+        topic: "Enums und switch",
+        title: "Mehrere Anwesenheitsstatus ausgeben",
+        description: "Erstelle mehrere Anwesenheitsstatus für Azubis, sodass in der Konsolenausgabe jeder Status einmal vorkommt.",
+        requirements: [
+          "Verwende das enum `AttendanceStatus`.",
+          "Lege für Maya, Noah, Lea und Sam je einen Status an.",
+          "Nutze die Werte `PRESENT`, `EXCUSED`, `SICK` und `UNKNOWN` jeweils genau einmal.",
+          "Gib die vier gespeicherten Statuswerte untereinander aus."
+        ],
+        output: "PRESENT\nEXCUSED\nSICK\nUNKNOWN"
+      },
+      {
+        level: "Mittel",
+        topic: "Enums in Anwendungen",
+        title: "Rolle prüfen",
+        description: "Modelliere Rollen in einer kleinen Lernanwendung und prüfe, ob Gruppendaten bearbeitet werden dürfen.",
+        requirements: [
+          "Erstelle ein enum `UserRole` mit `APPRENTICE`, `TRAINER` und `ADMIN`.",
+          "Speichere `TRAINER` als aktuelle Rolle.",
+          "Gib nur bei `TRAINER` oder `ADMIN` den Text `Bearbeiten erlaubt` aus."
+        ],
+        output: "Bearbeiten erlaubt"
+      },
+      {
+        level: "Mittel plus",
+        topic: "Enums und Klassen",
+        title: "Enum als Feld (Attribut) in einer Klasse",
+        description: "Erweitere eine Klasse `Apprentice` um einen Anwesenheitsstatus.",
+        requirements: [
+          "Lege ein enum `AttendanceStatus` an.",
+          "Die Klasse `Apprentice` soll ein Feld (Attribut) `status` dieses Enum-Typs haben.",
+          "Erzeuge ein Objekt für Maya und gib ihren Status aus."
+        ],
+        output: "PRESENT"
+      },
+      {
+        level: "Fortgeschritten",
+        topic: "Modellierungsentscheidung",
+        title: "Enum oder anderer Typ?",
+        description: "Baue ein kleines Programm, das bewusst verschiedene Typen passend einsetzt: Name, Durchschnittsnote, Rolle und vollständiger Azubi.",
+        requirements: [
+          "Verwende `String` für den frei eingegebenen Namen.",
+          "Verwende `double` für die berechnete Durchschnittsnote.",
+          "Verwende ein enum `UserRole` für feste Rollen.",
+          "Verwende eine Klasse `Apprentice`, um Name, Durchschnitt und Rolle zusammenzuhalten."
+        ],
+        output: "Maya\n2.0\nAPPRENTICE"
+      }
+    ],
+    completion: {
+      prompt: "Vervollständige das enum und die Fallunterscheidung für den Anwesenheitsstatus.",
+      parts: [
+        { blank: "enumKeyword", answers: ["enum"] },
+        { text: " AttendanceStatus {\n    PRESENT,\n    EXCUSED,\n    SICK,\n    UNKNOWN\n}\n\nAttendanceStatus status = AttendanceStatus.EXCUSED;\n\n" },
+        { blank: "switchKeyword", answers: ["switch"] },
+        { text: " (status) {\n    case PRESENT -> System.out.println(\"Einplanen\");\n    case " },
+        { blank: "excusedCase", answers: ["EXCUSED"] },
+        { text: " -> System.out.println(\"Entschuldigt fehlen\");\n    default -> System.out.println(\"Klären\");\n}" }
+      ],
+      output: "Entschuldigt fehlen"
+    }
+  },
+  {
+    id: "enum-properties",
+    number: "13",
+    title: "Enums mit Eigenschaften",
+    subtitle: "Enum-Werte mit lesbaren Labels ausgeben",
+    concepts: [
+      "Ein enum kann zu jedem festen Wert zusätzliche Informationen speichern.",
+      "Eine einfache Eigenschaft ist ein Label, also ein lesbarer Text für die Ausgabe.",
+      "Der Code arbeitet weiter mit sicheren Enum-Werten wie APPRENTICE, die Ausgabe kann aber Azubi anzeigen.",
+      "Ein enum mit Label passt gut, wenn interne Werte stabil bleiben und die Anzeige verständlicher sein soll."
+    ],
+    explanation: [
+      {
+        heading: "Warum Labels?",
+        text: "Enum-Werte sind im Code oft Englisch und groß geschrieben. Für eine Konsolenausgabe oder Oberfläche kann ein anderes Label angenehmer sein, zum Beispiel Azubi statt APPRENTICE."
+      },
+      {
+        heading: "Java-Regel",
+        text: "Jeder Enum-Wert kann beim Anlegen einen Text bekommen. Das enum speichert diesen Text in einem Feld (Attribut) und gibt ihn über eine Methode zurück."
+      }
+    ],
+    examples: [
+      {
+        title: "Rolle mit deutschem Label",
+        code: `// Im Code bleibt die Rolle eindeutig.\n// In der Ausgabe erscheint ein deutsches Label.\nenum UserRole {\n    APPRENTICE("Azubi"),\n    TRAINER("Ausbilderin"),\n    ADMIN("Administration");\n\n    private final String label;\n\n    UserRole(String label) {\n        this.label = label;\n    }\n\n    String getLabel() {\n        return label;\n    }\n}\n\nSystem.out.println(UserRole.APPRENTICE.getLabel());`,
+        output: "Azubi",
+        info: {
+          title: "Was ist hier neu?",
+          body: [
+            "Jeder Enum-Wert bekommt in Klammern ein Label.",
+            "Das Feld (Attribut) `label` speichert diesen Text.",
+            "`getLabel()` gibt den Text zurück, damit die Ausgabe nicht APPRENTICE, sondern Azubi zeigt."
+          ]
+        },
+        infoBlocks: [
+          {
+            title: "Was bedeutet diese Schreibweise APPRENTICE(\"Azubi\")?",
+            body: [
+              "`APPRENTICE` ist der feste Enum-Wert, den Java im Code verwendet.",
+              "`\"Azubi\"` ist ein zusätzlicher Text, der an diesen Enum-Wert übergeben wird.",
+              "Beim Erzeugen des Enum-Werts ruft Java intern den Konstruktor `UserRole(String label)` auf und speichert den Text im Feld (Attribut) `label`."
+            ]
+          },
+          {
+            title: "Wieso private final String label?",
+            body: [
+              "`String label` beschreibt, welche Art von Zusatzinformation gespeichert wird: ein Text.",
+              "`private` bedeutet: Von außen soll niemand dieses Feld (Attribut) direkt verändern oder lesen. Stattdessen wird kontrolliert über `getLabel()` darauf zugegriffen.",
+              "`final` bedeutet: Das Label wird beim Anlegen des Enum-Werts gesetzt und danach nicht mehr geändert. Das passt gut, weil `APPRENTICE` dauerhaft das Label `\"Azubi\"` behalten soll."
+            ]
+          }
+        ]
+      },
+      {
+        title: "Anwesenheit mit Anzeige-Text",
+        code: `// Die festen Statuswerte bleiben sicher.\n// Die Ausgabe kann trotzdem lesbarer sein.\nenum AttendanceStatus {\n    PRESENT("anwesend"),\n    EXCUSED("entschuldigt"),\n    SICK("krank"),\n    UNKNOWN("ungeklärt");\n\n    private final String label;\n\n    AttendanceStatus(String label) {\n        this.label = label;\n    }\n\n    String getLabel() {\n        return label;\n    }\n}\n\nAttendanceStatus status = AttendanceStatus.SICK;\nSystem.out.println(status.getLabel());`,
+        output: "krank"
+      },
+      {
+        title: "Label in einer Klasse nutzen",
+        code: `// Ein Objekt speichert den sicheren Enum-Wert.\n// Für die Ausgabe wird nur das Label verwendet.\nenum UserRole {\n    APPRENTICE("Azubi"),\n    TRAINER("Ausbilderin");\n\n    private final String label;\n\n    UserRole(String label) {\n        this.label = label;\n    }\n\n    String getLabel() {\n        return label;\n    }\n}\n\nclass Apprentice {\n    String firstName;\n    UserRole role;\n}\n\nApprentice maya = new Apprentice();\nmaya.firstName = "Maya";\nmaya.role = UserRole.APPRENTICE;\n\nSystem.out.println(maya.firstName);\nSystem.out.println(maya.role.getLabel());`,
+        output: "Maya\nAzubi"
+      }
+    ],
+    quiz: [
+      {
+        question: "Wozu dient ein Label bei einem enum?",
+        options: [
+          "Ein Enum-Wert kann intern sicher bleiben und trotzdem lesbar ausgegeben werden",
+          "Das enum wird dadurch zu einer ArrayList",
+          "Java erlaubt dadurch beliebige neue Werte zur Laufzeit",
+          "Ein Label ersetzt alle Klassen im Programm"
+        ],
+        correct: 0,
+        explanation: "Das Label ist ein zusätzlicher Text für die Ausgabe."
+      },
+      {
+        question: "Was gibt dieses Beispiel aus?",
+        code: `enum UserRole {\n    APPRENTICE("Azubi");\n\n    private final String label;\n\n    UserRole(String label) {\n        this.label = label;\n    }\n\n    String getLabel() {\n        return label;\n    }\n}\n\nSystem.out.println(UserRole.APPRENTICE.getLabel());`,
+        options: ["Azubi", "APPRENTICE", "label", "UserRole"],
+        correct: 0,
+        explanation: "`getLabel()` gibt den gespeicherten Label-Text zurück."
+      },
+      {
+        question: "Wann ist ein enum mit Label sinnvoll?",
+        options: [
+          "Wenn der Code feste Werte braucht, die Ausgabe aber einen anderen Text zeigen soll",
+          "Wenn Namen frei eingegeben werden sollen",
+          "Wenn eine Zahl berechnet werden soll",
+          "Wenn jedes Objekt automatisch gespeichert werden soll"
+        ],
+        correct: 0,
+        explanation: "Der feste Wert bleibt stabil, das Label macht die Anzeige verständlicher."
+      }
+    ],
+    completion: {
+      prompt: "Vervollständige das enum, sodass der sichere Wert APPRENTICE das Label Azubi ausgibt.",
+      parts: [
+        { text: "enum UserRole {\n    APPRENTICE(\"" },
+        { blank: "label", answers: ["Azubi"] },
+        { text: "\");\n\n    private final String label;\n\n    UserRole(String label) {\n        this.label = label;\n    }\n\n    String " },
+        { blank: "methodName", answers: ["getLabel"] },
+        { text: "() {\n        return " },
+        { blank: "fieldName", answers: ["label"] },
+        { text: ";\n    }\n}\n\nSystem.out.println(UserRole.APPRENTICE.getLabel());" }
+      ],
+      output: "Azubi"
+    }
+  },
+  {
+    id: "classes-objects-recap",
+    number: "14",
+    title: "RECAP: Klassen vs. Objekte",
+    subtitle: "Bauplan und konkrete Instanz unterscheiden",
+    concepts: [],
+    explanation: [],
+    examples: [],
+    quiz: [
+      {
+        question: "Was beschreibt eine Klasse am besten?",
+        options: [
+          "Einen Bauplan für Objekte",
+          "Immer genau einen konkreten Azubi",
+          "Eine einzelne Konsolenausgabe",
+          "Eine feste Liste von Enum-Werten"
+        ],
+        correct: 0,
+        explanation: "Eine Klasse legt fest, welche Daten und welches Verhalten Objekte haben können."
+      },
+      {
+        question: "Was ist ein Objekt?",
+        options: [
+          "Ein konkretes Exemplar, das aus einer Klasse erzeugt wurde",
+          "Nur der Name einer Datei",
+          "Ein Platzhalter für jeden möglichen Datentyp",
+          "Ein anderer Name für if"
+        ],
+        correct: 0,
+        explanation: "Ein Objekt ist eine konkrete Instanz, zum Beispiel Maya als Apprentice."
+      },
+      {
+        question: "Was macht `new Apprentice()`?",
+        options: [
+          "Es erzeugt ein neues Objekt aus der Klasse Apprentice",
+          "Es löscht die Klasse Apprentice",
+          "Es gibt automatisch alle Felder (Attribute) aus",
+          "Es macht aus einem String ein enum"
+        ],
+        correct: 0,
+        explanation: "`new` erzeugt ein konkretes Objekt."
+      },
+      {
+        question: "Welche Zeile speichert ein konkretes Objekt in einer Variable?",
+        code: `class Apprentice {\n    String firstName;\n}\n\nApprentice maya = new Apprentice();`,
+        options: [
+          "Apprentice maya = new Apprentice();",
+          "class Apprentice {",
+          "String firstName;",
+          "}"
+        ],
+        correct: 0,
+        explanation: "Links steht der Typ, rechts wird mit `new` das Objekt erzeugt."
+      },
+      {
+        question: "Maya und Noah werden beide mit `new Apprentice()` erzeugt. Was ist daran wichtig?",
+        options: [
+          "Beide Objekte nutzen denselben Bauplan, können aber eigene Feldwerte (Attributwerte) haben",
+          "Beide Variablen müssen immer denselben Namen speichern",
+          "Nur das erste Objekt darf Felder (Attribute) besitzen",
+          "Das zweite Objekt überschreibt automatisch die Klasse"
+        ],
+        correct: 0,
+        explanation: "Mehrere Objekte derselben Klasse können unterschiedliche Zustände haben."
+      },
+      {
+        question: "Was ist `firstName` in diesem Code?",
+        code: `class Apprentice {\n    String firstName;\n}`,
+        options: [
+          "Ein Feld (Attribut) der Klasse Apprentice",
+          "Ein neues Objekt",
+          "Ein Konstruktor",
+          "Ein enum-Wert"
+        ],
+        correct: 0,
+        explanation: "`firstName` ist ein Feld (Attribut), das zu Apprentice-Objekten gehört."
+      },
+      {
+        question: "Welche Aussage passt zu einem Konstruktor?",
+        options: [
+          "Er kann Startwerte setzen, wenn ein Objekt erzeugt wird",
+          "Er ist immer eine Schleife",
+          "Er darf nie Parameter haben",
+          "Er ersetzt alle Felder (Attribute)"
+        ],
+        correct: 0,
+        explanation: "Ein Konstruktor läuft beim Erzeugen eines Objekts."
+      },
+      {
+        question: "Eine Klasse `Apprentice` hat die Felder (Attribute) `firstName` und `trainingYear`. Welche Einschätzung ist richtig?",
+        options: [
+          "Die Klasse beschreibt, welche Daten ein Apprentice-Objekt haben kann",
+          "Die Klasse enthält automatisch schon Maya und Noah",
+          "Die Felder (Attribute) sind Konsolenausgaben",
+          "Die Klasse kann nur ein einziges Objekt erzeugen"
+        ],
+        correct: 0,
+        explanation: "Die Klasse beschreibt die Struktur, noch nicht die konkreten Werte."
+      },
+      {
+        question: "Warum passt eine Methode wie `needsSupport()` gut in eine Klasse `Apprentice`?",
+        options: [
+          "Weil sie Verhalten beschreibt, das zu einem Azubi-Objekt gehört",
+          "Weil Methoden nur außerhalb von Klassen erlaubt sind",
+          "Weil dadurch alle Felder (Attribute) gelöscht werden",
+          "Weil sie aus einem Objekt eine Zahl macht"
+        ],
+        correct: 0,
+        explanation: "Methoden können Verhalten eines Objekts ausdrücken."
+      },
+      {
+        question: "Was bedeutet `maya.firstName = \"Maya\";`?",
+        options: [
+          "Beim Objekt maya wird das Feld (Attribut) firstName gesetzt",
+          "Die Klasse Apprentice wird umbenannt",
+          "Ein neues enum wird erzeugt",
+          "Alle Apprentice-Objekte bekommen automatisch denselben Namen"
+        ],
+        correct: 0,
+        explanation: "Der Punkt greift auf ein Feld (Attribut) oder eine Methode eines konkreten Objekts zu."
+      },
+      {
+        question: "In `ArrayList<Apprentice>` liegen mehrere Einträge. Was sind diese Einträge fachlich?",
+        options: [
+          "Mehrere konkrete Apprentice-Objekte",
+          "Mehrere Klassendefinitionen",
+          "Mehrere Java-Projekte",
+          "Mehrere if-Bedingungen"
+        ],
+        correct: 0,
+        explanation: "Die Liste enthält Objekte vom Typ Apprentice."
+      },
+      {
+        question: "Welche Modellierung ist für einen kompletten Azubi mit Name, Lehrjahr und Anwesenheit am passendsten?",
+        options: [
+          "Eine Klasse Apprentice mit passenden Feldern (Attributen)",
+          "Nur ein einzelner String",
+          "Nur ein einzelnes boolean",
+          "Nur ein einzelner int-Wert"
+        ],
+        correct: 0,
+        explanation: "Zusammengehörige Daten passen gut in eine Klasse."
+      }
+    ],
+    completionTitle: "Ausfülllücken",
+    completionButtonLabel: "Lücken prüfen",
+    completion: {
+      prompt: "Fülle die Theorie-Lücken zu Klassen und Objekten aus.",
+      parts: [
+        { text: "Eine Klasse ist ein " },
+        { blank: "classMeaning", answers: ["Bauplan"] },
+        { text: ".\nMan sagt auch: Ein Objekt ist eine " },
+        { blank: "objectMeaning", answers: ["Instanz"] },
+        { text: " einer Klasse. Konkret ist es ein Exemplar dieser Klasse.\nMit " },
+        { blank: "newKeyword", answers: ["new"] },
+        { text: " wird ein Objekt erzeugt.\nEin " },
+        { blank: "fieldTerm", answers: ["Feld", "Attribut"] },
+        { text: " speichert Zustand in einem Objekt. Man sagt auch: Attribut.\nEin " },
+        { blank: "constructorTerm", answers: ["Konstruktor"] },
+        { text: " kann Startwerte setzen.\nEine " },
+        { blank: "methodTerm", answers: ["Methode"] },
+        { text: " beschreibt Verhalten." }
+      ],
+      output: "Recap abgeschlossen"
+    }
+  },
+  {
+    id: "tests",
+    number: "15",
     title: "Tests",
     disabled: true,
     subtitle: "Regeln der Ausbildungsgruppe absichern",
@@ -1025,7 +1499,7 @@ const modules = [
           "Sie zeigen schnell, ob bestehende Regeln noch funktionieren",
           "Sie ersetzen jede Erklärung im Code",
           "Sie verhindern alle Tippfehler in Kommentaren",
-          "Sie machen private Felder öffentlich"
+          "Sie machen private Felder (Attribute) öffentlich"
         ],
         correct: 0,
         explanation: "Tests geben Rückmeldung, wenn eine Änderung bestehendes Verhalten beschädigt."
@@ -1133,9 +1607,9 @@ const glossaryTerms = [
     description: "Gibt ein Ergebnis aus einer Methode an die aufrufende Stelle zurück."
   },
   {
-    title: "Feld",
-    matches: ["Feld", "Felder", "Feldern"],
-    description: "Eine Variable, die zu einer Klasse oder zu einem Objekt gehört."
+    title: "Feld / Attribut",
+    matches: ["Feld", "Felder", "Feldern", "Attribut", "Attribute", "Attributen"],
+    description: "Eine Variable, die zu einer Klasse oder zu einem Objekt gehört. In diesem Kurs sagen wir dazu auch Attribut."
   },
   {
     title: "new",
@@ -1150,7 +1624,7 @@ const glossaryTerms = [
   {
     title: "private",
     matches: ["private"],
-    description: "Sichtbarkeit für Felder oder Methoden, die nur innerhalb der eigenen Klasse direkt genutzt werden dürfen."
+    description: "Sichtbarkeit für Felder (Attribute) oder Methoden, die nur innerhalb der eigenen Klasse direkt genutzt werden dürfen."
   },
   {
     title: "Konstruktor",
@@ -1181,6 +1655,36 @@ const glossaryTerms = [
     title: "try/catch",
     matches: ["try/catch", "try", "catch"],
     description: "Java-Struktur, um Fehler in einem Bereich abzufangen und zu behandeln."
+  },
+  {
+    title: "enum",
+    matches: ["enum", "Enums"],
+    description: "Ein eigener Datentyp für eine kleine, feste Auswahl erlaubter Werte."
+  },
+  {
+    title: "Enum-Wert",
+    matches: ["Enum-Wert", "Enum-Werte"],
+    description: "Ein einzelner erlaubter Wert eines enums, zum Beispiel PRESENT oder ADMIN."
+  },
+  {
+    title: "Label",
+    matches: ["Label", "Labels"],
+    description: "Ein lesbarer Text für die Ausgabe, der zu einem Wert gespeichert werden kann."
+  },
+  {
+    title: "final",
+    matches: ["final"],
+    description: "Java-Schlüsselwort für Werte, die nach dem Setzen nicht mehr geändert werden sollen."
+  },
+  {
+    title: "Status",
+    matches: ["Status"],
+    description: "Beschreibt den aktuellen Zustand eines Objekts oder Vorgangs, zum Beispiel DRAFT oder SUBMITTED."
+  },
+  {
+    title: "Rolle",
+    matches: ["Rolle", "Rollen"],
+    description: "Beschreibt, welche Aufgabe oder Berechtigung eine Person in einer Anwendung hat."
   },
   {
     title: "Test",
@@ -1369,7 +1873,7 @@ const implementationTasks = [
     title: "Azubi-Klasse modellieren",
     description: "Erstelle eine Klasse `Apprentice` mit Vorname, Lehrjahr und Anwesenheit und gib die Daten eines Objekts aus.",
     requirements: [
-      "Lege Felder für `firstName`, `trainingYear` und `presentToday` an.",
+      "Lege Felder (Attribute) für `firstName`, `trainingYear` und `presentToday` an.",
       "Erzeuge ein Objekt für Maya.",
       "Gib Vorname und Lehrjahr aus."
     ],
@@ -1418,9 +1922,49 @@ const implementationTasks = [
   }
 ];
 
+const learningTracks = [
+  {
+    id: "fundamentals",
+    title: "Java Grundlagen",
+    subtitle: "Grundlagenpfad ohne Enums und Recap",
+    description: "Starte mit Variablen, Datentypen, Kontrollstrukturen, Arrays, Listen, Methoden, Klassen, Kapselung und Fehlerbehandlung.",
+    moduleIds: [
+      "variables",
+      "data-types",
+      "control-flow",
+      "arrays",
+      "loops",
+      "lists",
+      "methods",
+      "classes",
+      "object-lists",
+      "encapsulation",
+      "error-handling"
+    ],
+    showTasks: true
+  },
+  {
+    id: "enums",
+    title: "Exkurs: Enums",
+    subtitle: "Feste Auswahlwerte und Labels",
+    description: "Lerne Enums als feste Auswahlwerte kennen und erweitere sie um einfache Labels für lesbare Ausgaben.",
+    moduleIds: ["enums", "enum-properties"],
+    showTasks: false
+  },
+  {
+    id: "oop",
+    title: "Java OOP",
+    subtitle: "Objektorientierung wiederholen",
+    description: "Wiederhole den Unterschied zwischen Klassen, Objekten, Instanzen, Feldern bzw. Attributen und Konstruktoren.",
+    moduleIds: ["classes-objects-recap"],
+    showTasks: false
+  }
+];
+
 let activeModuleIndex = 0;
-let activeView = "module";
-let previousViewBeforeGlossary = "module";
+let activeView = "home";
+let activeTrackId = null;
+let previousViewBeforeGlossary = "home";
 
 const moduleNav = document.querySelector("#moduleNav");
 const moduleTitle = document.querySelector("#moduleTitle");
@@ -1433,11 +1977,41 @@ const glossaryButton = document.querySelector("#glossaryButton");
 const conceptSection = document.querySelector("#conceptSection");
 const examplesSection = document.querySelector("#examplesSection");
 const quizSection = document.querySelector("#quizSection");
+const moduleTasksSection = document.querySelector("#moduleTasksSection");
+const moduleTasksContent = document.querySelector("#moduleTasksContent");
 const codeSection = document.querySelector("#codeSection");
+const codeSectionHeading = document.querySelector("#codeSectionHeading");
 
 function renderNav() {
   moduleNav.innerHTML = "";
-  modules.forEach((module, index) => {
+  const homeButton = document.createElement("button");
+  homeButton.type = "button";
+  homeButton.className = `module-button${activeView === "home" ? " active" : ""}`;
+  homeButton.innerHTML = `
+    <span class="module-number">S</span>
+    <span>
+      <span class="module-title">Startseite</span>
+      <span class="module-subtitle">Lernbereich auswählen</span>
+    </span>
+  `;
+  homeButton.addEventListener("click", () => {
+    activeView = "home";
+    activeTrackId = null;
+    render();
+  });
+  moduleNav.appendChild(homeButton);
+
+  const activeTrack = getActiveTrack();
+  if (!activeTrack) {
+    return;
+  }
+
+  const trackLabel = document.createElement("div");
+  trackLabel.className = "track-label";
+  trackLabel.textContent = activeTrack.title;
+  moduleNav.appendChild(trackLabel);
+
+  getTrackModules(activeTrack).forEach(({ module, index }) => {
     if (module.disabled) {
       return;
     }
@@ -1460,6 +2034,10 @@ function renderNav() {
     moduleNav.appendChild(button);
   });
 
+  if (!activeTrack.showTasks) {
+    return;
+  }
+
   const tasksButton = document.createElement("button");
   tasksButton.type = "button";
   tasksButton.className = `module-button task-nav-button${activeView === "tasks" ? " active" : ""}`;
@@ -1477,12 +2055,48 @@ function renderNav() {
   moduleNav.appendChild(tasksButton);
 }
 
+function getActiveTrack() {
+  return learningTracks.find((track) => track.id === activeTrackId) ?? null;
+}
+
+function getTrackModules(track) {
+  return track.moduleIds
+    .map((moduleId) => {
+      const index = modules.findIndex((module) => module.id === moduleId);
+      return index === -1 ? null : { module: modules[index], index };
+    })
+    .filter(Boolean);
+}
+
+function selectTrack(trackId) {
+  const track = learningTracks.find((candidate) => candidate.id === trackId);
+  if (!track) {
+    return;
+  }
+
+  const firstModule = getTrackModules(track).find(({ module }) => !module.disabled);
+  if (!firstModule) {
+    return;
+  }
+
+  activeTrackId = track.id;
+  activeModuleIndex = firstModule.index;
+  activeView = "module";
+  render();
+}
+
 function renderModule() {
   const module = modules[activeModuleIndex];
   const glossaryState = new Set();
   const glossary = (value) => annotateGlossary(value, glossaryState);
+  const hasConceptContent = module.concepts.length > 0 || module.explanation.length > 0;
+  const hasExamples = module.examples.length > 0;
   moduleTitle.textContent = `${module.number} ${module.title}`;
   conceptHeading.textContent = "Konzept";
+  codeSectionHeading.textContent = module.completionTitle ?? "Code-Vervollständigung";
+
+  conceptSection.hidden = !hasConceptContent;
+  examplesSection.hidden = !hasExamples;
 
   conceptContent.innerHTML = `
     <ul class="concept-list">
@@ -1494,44 +2108,44 @@ function renderModule() {
     `).join("")}
   `;
 
-  examplesContent.innerHTML = `
-    ${shouldShowExampleContext(module) ? renderExampleContext() : ""}
-    <div class="example-grid">
-      ${module.examples.map((example, exampleIndex) => `
-        <div class="example-item">
-          <h4>${glossary(example.title)}</h4>
-          <div class="code-runner">
-            <div class="code-gutter">
-              <button class="run-icon-button" type="button" data-example-run="${exampleIndex}" aria-label="Code ausführen">
-                <span aria-hidden="true">▶</span>
-              </button>
+  examplesContent.innerHTML = hasExamples ? `
+      ${shouldShowExampleContext(module) ? renderExampleContext() : ""}
+      <div class="example-grid">
+        ${module.examples.map((example, exampleIndex) => `
+          <div class="example-item">
+            <h4>${glossary(example.title)}</h4>
+            <div class="code-runner">
+              <div class="code-gutter">
+                <button class="run-icon-button" type="button" data-example-run="${exampleIndex}" aria-label="Code ausführen">
+                  <span aria-hidden="true">▶</span>
+                </button>
+              </div>
+              <pre class="code-block"><code>${escapeHtml(example.code)}</code></pre>
             </div>
-            <pre class="code-block"><code>${escapeHtml(example.code)}</code></pre>
+            <div class="fake-output" data-example-output="${exampleIndex}" hidden>
+              <div class="fake-output-label">Konsolenausgabe</div>
+              <pre>${escapeHtml(example.output ?? "Keine Ausgabe")}</pre>
+            </div>
+            ${example.info ? `
+              <details class="info-box">
+                <summary>${escapeHtml(example.info.title)}</summary>
+                <div class="info-box-content">
+                  ${example.info.body.map((paragraph) => `<p>${formatInlineCode(paragraph)}</p>`).join("")}
+                </div>
+              </details>
+            ` : ""}
+            ${(example.infoBlocks ?? []).map((infoBlock) => `
+              <details class="info-box">
+                <summary>${escapeHtml(infoBlock.title)}</summary>
+                <div class="info-box-content">
+                  ${infoBlock.body.map((paragraph) => `<p>${formatInlineCode(paragraph)}</p>`).join("")}
+                </div>
+              </details>
+            `).join("")}
           </div>
-          <div class="fake-output" data-example-output="${exampleIndex}" hidden>
-            <div class="fake-output-label">Konsolenausgabe</div>
-            <pre>${escapeHtml(example.output ?? "Keine Ausgabe")}</pre>
-          </div>
-          ${example.info ? `
-            <details class="info-box">
-              <summary>${escapeHtml(example.info.title)}</summary>
-              <div class="info-box-content">
-                ${example.info.body.map((paragraph) => `<p>${formatInlineCode(paragraph)}</p>`).join("")}
-              </div>
-            </details>
-          ` : ""}
-          ${(example.infoBlocks ?? []).map((infoBlock) => `
-            <details class="info-box">
-              <summary>${escapeHtml(infoBlock.title)}</summary>
-              <div class="info-box-content">
-                ${infoBlock.body.map((paragraph) => `<p>${formatInlineCode(paragraph)}</p>`).join("")}
-              </div>
-            </details>
-          `).join("")}
-        </div>
-      `).join("")}
-    </div>
-  `;
+        `).join("")}
+      </div>
+    ` : "";
 
   examplesContent.querySelectorAll("[data-example-run]").forEach((button) => {
     button.addEventListener("click", () => {
@@ -1543,6 +2157,7 @@ function renderModule() {
   });
 
   renderQuiz(module);
+  renderModuleTasks(module);
   renderCompletion(module, glossary);
 }
 
@@ -1652,9 +2267,59 @@ function answerQuiz(module, questionIndex, optionIndex) {
         button.classList.add("incorrect");
       }
     });
-    feedback.textContent = `Noch nicht. ${question.explanation}`;
+    feedback.textContent = question.wrongExplanation ?? "Noch nicht. Versuch es noch einmal.";
     feedback.className = "feedback error";
   }
+}
+
+function renderModuleTasks(module) {
+  const tasks = module.implementationTasks ?? [];
+
+  if (tasks.length === 0) {
+    moduleTasksSection.hidden = true;
+    moduleTasksContent.innerHTML = "";
+    return;
+  }
+
+  moduleTasksSection.hidden = false;
+  moduleTasksContent.innerHTML = `
+    <div class="task-page-intro">
+      <p>Diese Sammlung ist zum selbstständigen Implementieren gedacht. Schreibe jeweils ein kleines Java-Programm und vergleiche deine Konsolenausgabe mit der erwarteten Ausgabe.</p>
+      <p>Die Aufgaben sind bewusst gemischt: einige passen direkt zu den frühen Grundlagen, andere verlangen Methoden, Klassen, Kapselung oder Fehlerbehandlung.</p>
+    </div>
+    <div class="task-list">
+      ${tasks.map((task, index) => renderImplementationTask(task, index)).join("")}
+    </div>
+  `;
+}
+
+function renderHomePage() {
+  moduleTitle.textContent = "Startseite";
+  conceptHeading.textContent = "Lernbereich auswählen";
+  conceptContent.innerHTML = `
+    <div class="home-intro">
+      <p>Wähle aus, womit du starten möchtest. Die Navigation links zeigt danach nur die passenden Module für diesen Bereich.</p>
+    </div>
+    <div class="track-grid">
+      ${learningTracks.map((track) => `
+        <button class="track-card" type="button" data-track="${escapeHtml(track.id)}">
+          <span class="track-card-kicker">${escapeHtml(track.subtitle)}</span>
+          <span class="track-card-title">${escapeHtml(track.title)}</span>
+          <span class="track-card-description">${escapeHtml(track.description)}</span>
+        </button>
+      `).join("")}
+    </div>
+  `;
+  examplesContent.innerHTML = "";
+  quizContent.innerHTML = "";
+  moduleTasksContent.innerHTML = "";
+  codeContent.innerHTML = "";
+
+  conceptContent.querySelectorAll("[data-track]").forEach((button) => {
+    button.addEventListener("click", () => {
+      selectTrack(button.dataset.track);
+    });
+  });
 }
 
 function renderGlossaryPage() {
@@ -1669,6 +2334,7 @@ function renderGlossaryPage() {
   `;
   examplesContent.innerHTML = "";
   quizContent.innerHTML = "";
+  moduleTasksContent.innerHTML = "";
   codeContent.innerHTML = "";
 
   const input = document.querySelector("#glossarySearchInput");
@@ -1695,6 +2361,7 @@ function renderTasksPage() {
   `;
   examplesContent.innerHTML = "";
   quizContent.innerHTML = "";
+  moduleTasksContent.innerHTML = "";
   codeContent.innerHTML = "";
 }
 
@@ -1816,7 +2483,7 @@ function renderCompletion(module, glossary = escapeHtml) {
     <div class="completion">
       <p>${glossary(module.completion.prompt)}</p>
       <div class="completion-code">${codeHtml}</div>
-      <button class="primary-button" id="checkCodeButton" type="button">Code prüfen</button>
+      <button class="primary-button" id="checkCodeButton" type="button">${escapeHtml(module.completionButtonLabel ?? "Code prüfen")}</button>
       <div class="fake-output" id="completionOutput" hidden>
         <div class="fake-output-label">Konsolenausgabe</div>
         <pre>${escapeHtml(module.completion.output ?? "Keine Ausgabe")}</pre>
@@ -1849,7 +2516,7 @@ function checkCompletion(module) {
     feedback.className = "feedback ok";
     document.querySelector("#completionOutput").hidden = false;
   } else {
-    feedback.textContent = "Noch nicht. Prüfe die rot markierten Lücken.";
+    feedback.textContent = "Noch nicht. Prüfe die markierten Lücken mit gestricheltem Rahmen.";
     feedback.className = "feedback error";
     document.querySelector("#completionOutput").hidden = true;
   }
@@ -1951,16 +2618,25 @@ function formatInlineCode(value) {
 function render() {
   renderNav();
   glossaryButton.classList.toggle("active", activeView === "glossary");
-  if (activeView === "glossary") {
+  if (activeView === "home") {
     conceptSection.hidden = false;
     examplesSection.hidden = true;
     quizSection.hidden = true;
+    moduleTasksSection.hidden = true;
+    codeSection.hidden = true;
+    renderHomePage();
+  } else if (activeView === "glossary") {
+    conceptSection.hidden = false;
+    examplesSection.hidden = true;
+    quizSection.hidden = true;
+    moduleTasksSection.hidden = true;
     codeSection.hidden = true;
     renderGlossaryPage();
   } else if (activeView === "tasks") {
     conceptSection.hidden = false;
     examplesSection.hidden = true;
     quizSection.hidden = true;
+    moduleTasksSection.hidden = true;
     codeSection.hidden = true;
     renderTasksPage();
   } else {

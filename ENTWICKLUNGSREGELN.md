@@ -19,7 +19,8 @@ Der fachliche rote Faden ist die Modellierung einer Ausbildungsgruppe von Azubis
 
 ## Layout
 
-- Die Kapitel-/Modulnavigation bleibt erhalten.
+- Die Startseite mit der Auswahl der Lernbereiche bleibt erhalten.
+- Die Kapitel-/Modulnavigation bleibt innerhalb des gewählten Lernbereichs erhalten.
 - Der Inhaltsbereich eines Moduls ist strikt einspaltig.
 - Abschnitte stehen untereinander:
   - Konzept
@@ -40,11 +41,13 @@ Jedes Modul soll enthalten:
 
 Neue Konzepte sollen schrittweise eingeführt werden. Eine Aufgabe soll nicht zu viele neue Begriffe gleichzeitig einführen.
 
+Recap-Module dürfen als reine Wiederholungsseiten angelegt werden. Sie können nur aus Wissensquiz und Code-Vervollständigung bzw. Ausfülllücken bestehen, wenn keine neuen Konzepte eingeführt werden.
+
 Die ersten Module betrachten einzelne Werte eines Azubis. Arrays, Listen und Gruppen mit mehreren Azubis werden erst eingeführt, wenn das jeweilige Modul diese Konzepte erklärt. Frühe Beispiele vermeiden String-Vergleiche mit `.equals(...)`; Entscheidungen sollen zunächst über `boolean`, `int`, `double` und einfache Zahlenvergleiche laufen.
 
 Das Test-Modul bleibt fachlich vorbereitet, ist aber vorerst in der Navigation deaktiviert.
 
-Die Aufgaben-Seite ist ein eigenes hervorgehobenes Kapitel am Ende der Navigation. Jede Implementierungsaufgabe enthält Anforderungen und eine erwartete Konsolenausgabe, damit Lernende ihre Lösung gegen ein konkretes Ergebnis vergleichen können.
+Die Aufgaben-Seite ist ein eigenes hervorgehobenes Kapitel am Ende der Navigation im Bereich Java Grundlagen. Jede Implementierungsaufgabe enthält Anforderungen und eine erwartete Konsolenausgabe, damit Lernende ihre Lösung gegen ein konkretes Ergebnis vergleichen können.
 
 ## Code-Beispiele
 
@@ -53,7 +56,7 @@ Die Aufgaben-Seite ist ein eigenes hervorgehobenes Kapitel am Ende der Navigatio
 - Die Ausgabe wird als simulierte Konsolenausgabe angezeigt.
 - Code-Beispiele dürfen am Anfang kurze Kommentarzeilen enthalten, wenn diese den fachlichen Kontext erklären.
 - Bei normalen Beispielen gibt es eine kleine IDE-artige Gutter links am Codeblock.
-- In dieser Gutter sitzt oben ein kleines grünes Play-Symbol.
+- In dieser Gutter sitzt oben ein kleines Play-Symbol, das nicht nur über Farbe erkennbar sein darf.
 - Es gibt keinen normalen Textbutton `Ausführen` unter dem Codeblock.
 - Der Output erscheint beim Klick auf das Play-Symbol.
 - Das Play-Symbol darf den Codeblock nicht optisch dominieren.

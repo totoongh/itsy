@@ -93,6 +93,15 @@ input:focus-visible {
   gap: 8px;
 }
 
+.track-label {
+  margin: 10px 2px 2px;
+  color: #c7d2df;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .module-button {
   width: 100%;
   min-height: 64px;
@@ -249,6 +258,60 @@ input:focus-visible {
 
 .concept-list li {
   margin: 6px 0;
+}
+
+.home-intro {
+  max-width: 760px;
+  color: #24313d;
+}
+
+.home-intro p {
+  margin: 0 0 16px;
+}
+
+.track-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.track-card {
+  width: 100%;
+  display: grid;
+  gap: 6px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 16px;
+  background: #ffffff;
+  color: var(--text);
+  text-align: left;
+}
+
+.track-card:hover {
+  background: var(--surface-soft);
+  border-color: #9accc3;
+}
+
+.track-card-kicker,
+.track-card-title,
+.track-card-description {
+  display: block;
+}
+
+.track-card-kicker {
+  color: var(--accent-strong);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.track-card-title {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.track-card-description {
+  color: #24313d;
 }
 
 .code-runner {
@@ -684,11 +747,29 @@ input:focus-visible {
 .choice-button.correct {
   border-color: #74c69d;
   background: #e9f8ef;
+  box-shadow: inset 4px 0 0 #16794c;
 }
 
 .choice-button.incorrect {
   border-color: #f1a39d;
-  background: #fff0ee;
+  border-style: dashed;
+  background: repeating-linear-gradient(
+    135deg,
+    #fff0ee,
+    #fff0ee 10px,
+    #ffe3df 10px,
+    #ffe3df 20px
+  );
+}
+
+.choice-button.correct::before {
+  content: "Richtig: ";
+  font-weight: 900;
+}
+
+.choice-button.incorrect::before {
+  content: "Prüfen: ";
+  font-weight: 900;
 }
 
 .feedback {
@@ -704,6 +785,14 @@ input:focus-visible {
 
 .feedback.error {
   color: var(--error);
+}
+
+.feedback.ok::before {
+  content: "OK: ";
+}
+
+.feedback.error::before {
+  content: "! ";
 }
 
 .completion {
@@ -739,12 +828,20 @@ input:focus-visible {
 
 .blank-input.correct {
   border-color: #22c55e;
+  box-shadow: inset 0 -4px 0 #bbf7d0;
   background: #eafaf0;
 }
 
 .blank-input.incorrect {
   border-color: #ef4444;
-  background: #fff1f1;
+  border-style: dashed;
+  background: repeating-linear-gradient(
+    135deg,
+    #fff1f1,
+    #fff1f1 8px,
+    #ffe4e4 8px,
+    #ffe4e4 16px
+  );
 }
 
 .glossary-search {

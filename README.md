@@ -6,7 +6,13 @@ Der Kurs nutzt als roten Faden die Modellierung einer Ausbildungsgruppe: Eine Au
 
 ## Inhalt dieses Prototyps
 
-Der aktuelle Stand deckt elf aktive Themen aus dem Ausbildungsrahmen ab:
+Beim Start erscheint eine Auswahlseite mit drei Lernbereichen:
+
+- Java Grundlagen
+- Exkurs: Enums
+- Java OOP
+
+Der aktuelle Stand deckt vierzehn aktive Themen aus dem Ausbildungsrahmen ab:
 
 1. Variablen
 2. Einfache Datentypen
@@ -19,6 +25,9 @@ Der aktuelle Stand deckt elf aktive Themen aus dem Ausbildungsrahmen ab:
 9. Objekte in Listen
 10. Kapselung
 11. Fehlerbehandlung
+12. Enums
+13. Enums mit Eigenschaften
+14. RECAP: Klassen vs. Objekte
 
 Das vorbereitete Test-Modul ist vorerst deaktiviert.
 
