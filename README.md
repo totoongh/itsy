@@ -12,7 +12,7 @@ Beim Start erscheint eine Auswahlseite mit drei Lernbereichen:
 - Exkurs: Enums
 - Java OOP
 
-Der aktuelle Stand deckt vierzehn aktive Themen aus dem Ausbildungsrahmen ab:
+Der aktuelle Stand deckt fünfzehn aktive Themen aus dem Ausbildungsrahmen ab:
 
 1. Variablen
 2. Einfache Datentypen
@@ -28,6 +28,7 @@ Der aktuelle Stand deckt vierzehn aktive Themen aus dem Ausbildungsrahmen ab:
 12. Enums
 13. Enums mit Eigenschaften
 14. RECAP: Klassen vs. Objekte
+15. RECAP: Kapselung
 
 Das vorbereitete Test-Modul ist vorerst deaktiviert.
 
@@ -40,7 +41,7 @@ Jedes Thema enthält:
 
 Die Code-Vervollständigung führt keinen Java-Code aus. Sie prüft nur die eingegebenen Lücken gegen erwartete Antworten. Das ist bewusst so, damit die Plattform ohne Backend und ohne lokale Java-Ausführung funktioniert.
 
-Zusätzlich gibt es ein eigenes Kapitel mit Implementierungsaufgaben. Diese Aufgaben sind nach Niveau gemischt und enthalten jeweils eine erwartete Konsolenausgabe zum Vergleichen.
+Zusätzlich gibt es eigene Kapitel mit Implementierungsaufgaben. Im Grundlagenbereich sind die Aufgaben nach Niveau gemischt. Im Java-OOP-Bereich gibt es eigene Aufgaben zu Klasse und Objekt, Kapselung, einfachen Vererbungshierarchien und UML-Klassendiagrammen. Jede Aufgabe enthält Anforderungen und eine erwartete Konsolenausgabe zum Vergleichen.
 
 ## Lokal starten
 

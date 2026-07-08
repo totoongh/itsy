@@ -1431,8 +1431,172 @@ const modules = [
     }
   },
   {
-    id: "tests",
+    id: "encapsulation-recap",
     number: "15",
+    title: "RECAP: Kapselung",
+    subtitle: "Sichtbarkeit, Getter, Setter und erwartetes Verhalten",
+    concepts: [],
+    explanation: [],
+    examples: [],
+    quiz: [
+      {
+        question: "Was ist die Grundidee von Kapselung?",
+        options: [
+          "Eine Klasse schützt ihre Daten und bietet passende Methoden für Zugriff und Änderung an",
+          "Eine Klasse speichert ihre Daten nur noch in lokalen Variablen innerhalb von Methoden",
+          "Eine Klasse gibt alle Felder direkt frei, damit Objekte schneller verändert werden können",
+          "Eine Klasse ersetzt ihre Felder durch einzelne Array-Einträge mit festen Indexpositionen"
+        ],
+        correct: 0,
+        explanation: "Kapselung trennt den inneren Zustand einer Klasse vom kontrollierten Zugriff von außen."
+      },
+      {
+        question: "Warum ist Kapselung bei Azubi-Daten sinnvoll?",
+        options: [
+          "Regeln wie gültige Lehrjahre oder plausible Noten können an einer zentralen Stelle geprüft werden",
+          "Regeln wie gültige Lehrjahre werden am besten in jedem Codebereich einzeln wiederholt",
+          "Alle Objekte derselben Klasse müssen dadurch automatisch dieselben Werte haben",
+          "Getter und Setter speichern Werte automatisch in einer separaten Liste"
+        ],
+        correct: 0,
+        explanation: "Die Klasse kann verhindern, dass ungültige Werte still in den Objektzustand gelangen."
+      },
+      {
+        question: "Wann verwendet man private typischerweise für ein Feld (Attribut)?",
+        options: [
+          "Wenn der Wert nur innerhalb der eigenen Klasse direkt gelesen oder geändert werden soll",
+          "Wenn der Wert aus jeder anderen Klasse direkt ohne Getter lesbar sein soll",
+          "Wenn der Wert in Unterklassen direkt sichtbar sein soll",
+          "Wenn der Wert für alle Objekte der Klasse gemeinsam gespeichert werden soll"
+        ],
+        correct: 0,
+        explanation: "`private` beschränkt den direkten Zugriff auf die Klasse, in der das Feld deklariert ist."
+      },
+      {
+        question: "Wann passt public bei einer Methode eher?",
+        options: [
+          "Wenn anderer Code diese Methode bewusst als Teil der nutzbaren Schnittstelle aufrufen soll",
+          "Wenn die Methode ein privates Feld ohne jede Prüfung direkt nach außen kopieren soll",
+          "Wenn die Methode nur im Konstruktor derselben Klasse aufgerufen werden darf",
+          "Wenn die Methode ausschließlich von privaten Feldern aufgerufen werden soll"
+        ],
+        correct: 0,
+        explanation: "`public` macht eine Methode von außen nutzbar. Deshalb sollte man es bewusst für die äußere Schnittstelle verwenden."
+      },
+      {
+        question: "Welche Aussage zur Sichtbarkeit von private ist richtig?",
+        options: [
+          "Direkter Zugriff ist nur innerhalb der eigenen Klasse erlaubt",
+          "Direkter Zugriff ist in allen Klassen desselben Programms erlaubt",
+          "Direkter Zugriff ist nur für Objekte mit demselben Variablennamen erlaubt",
+          "Direkter Zugriff ist erlaubt, sobald ein Getter existiert"
+        ],
+        correct: 0,
+        explanation: "`private` schützt vor direktem Zugriff außerhalb der Klasse. Ein Getter ist ein eigener, kontrollierter Zugang."
+      },
+      {
+        question: "Was passiert bei diesem Code?",
+        code: `class Apprentice {\n    private int trainingYear = 1;\n}\n\nApprentice maya = new Apprentice();\nSystem.out.println(maya.trainingYear);`,
+        options: [
+          "Der Code kompiliert nicht, weil trainingYear private ist",
+          "Der Code gibt 1 aus, weil das Objekt maya zur Klasse Apprentice gehört",
+          "Der Code gibt 1 aus, weil private nur das Ändern, aber nicht das Lesen verhindert",
+          "Der Code erzeugt automatisch einen Getter, weil das Feld schon einen Startwert hat"
+        ],
+        correct: 0,
+        explanation: "Außerhalb der Klasse darf `maya.trainingYear` nicht direkt gelesen werden."
+      },
+      {
+        question: "Welche Zeile liest ein privates Feld kontrolliert?",
+        code: `class Apprentice {\n    private String firstName;\n\n    Apprentice(String firstName) {\n        this.firstName = firstName;\n    }\n\n    String getFirstName() {\n        return firstName;\n    }\n}\n\nApprentice maya = new Apprentice("Maya");`,
+        options: [
+          "System.out.println(maya.getFirstName());",
+          "System.out.println(maya.firstName);",
+          "System.out.println(getFirstName());",
+          "System.out.println(Apprentice.getFirstName());"
+        ],
+        correct: 0,
+        explanation: "Der Getter gehört zur erlaubten Schnittstelle des Objekts und gibt den Wert zurück."
+      },
+      {
+        question: "Welchen Output erzeugt dieser Code?",
+        code: `class Apprentice {\n    private int trainingYear = 1;\n\n    void setTrainingYear(int trainingYear) {\n        if (trainingYear >= 1 && trainingYear <= 3) {\n            this.trainingYear = trainingYear;\n        }\n    }\n\n    int getTrainingYear() {\n        return trainingYear;\n    }\n}\n\nApprentice maya = new Apprentice();\nmaya.setTrainingYear(4);\nSystem.out.println(maya.getTrainingYear());`,
+        options: [
+          "1",
+          "4",
+          "0",
+          "true"
+        ],
+        correct: 0,
+        explanation: "Der Setter übernimmt 4 nicht, weil nur Lehrjahr 1 bis 3 erlaubt ist. Der alte Wert 1 bleibt erhalten."
+      },
+      {
+        question: "Welche Variante schützt das Lehrjahr am besten und erlaubt trotzdem kontrolliertes Lesen?",
+        options: [
+          "private int trainingYear; und int getTrainingYear()",
+          "public int trainingYear; ohne weitere Methode",
+          "int trainingYear; und der Wert wird nur per Kommentar geschützt",
+          "String trainingYear; und die Zahl wird bei der Ausgabe geraten"
+        ],
+        correct: 0,
+        explanation: "Das private Feld schützt den Zustand. Der Getter erlaubt gezieltes Lesen."
+      },
+      {
+        question: "Warum sollte nicht jedes Feld automatisch public sein?",
+        options: [
+          "Weil sonst andere Klassen Regeln umgehen und ungültige Werte direkt setzen können",
+          "Weil public Felder automatisch final sind und nie geändert werden können",
+          "Weil public Felder nur im Konstruktor gesetzt werden dürfen",
+          "Weil public Felder immer für alle Objekte gemeinsam gelten"
+        ],
+        correct: 0,
+        explanation: "Öffentliche Felder geben Kontrolle ab. Bei wichtigen Daten ist ein kontrollierter Zugang meist besser."
+      },
+      {
+        question: "Welchen Output erzeugt dieser Code?",
+        code: `class Apprentice {\n    private boolean presentToday;\n\n    void setPresentToday(boolean presentToday) {\n        this.presentToday = presentToday;\n    }\n\n    boolean isPresentToday() {\n        return presentToday;\n    }\n}\n\nApprentice noah = new Apprentice();\nnoah.setPresentToday(true);\nSystem.out.println(noah.isPresentToday());`,
+        options: [
+          "true",
+          "false",
+          "presentToday",
+          "Noah"
+        ],
+        correct: 0,
+        explanation: "Der Setter setzt den Wert auf true, der Getter für boolean gibt genau diesen Wert zurück."
+      },
+      {
+        question: "Welche Einschätzung passt zu einem public Getter und einem private Feld?",
+        options: [
+          "Andere Klassen dürfen den Wert über die Methode lesen, aber nicht direkt am Feld vorbei greifen",
+          "Der Getter hebt private vollständig auf und erlaubt danach auch direkten Feldzugriff",
+          "Ein Setter ist dadurch automatisch vorhanden, auch wenn er nicht geschrieben wurde",
+          "Das Feld wird dadurch zu einem gemeinsamen Wert für alle Objekte der Klasse"
+        ],
+        correct: 0,
+        explanation: "So entsteht eine klare Schnittstelle: lesen ist erlaubt, direkter Zugriff auf den Zustand nicht."
+      }
+    ],
+    completionTitle: "Ausfülllücken",
+    completionButtonLabel: "Lücken prüfen",
+    completion: {
+      prompt: "Fülle die Theorie-Lücken zu Kapselung und Sichtbarkeit aus.",
+      parts: [
+        { text: "Ein Feld, das nur innerhalb der eigenen Klasse direkt genutzt werden soll, bekommt die Sichtbarkeit " },
+        { blank: "privateKeyword", answers: ["private"] },
+        { text: ".\nEine von außen bewusst nutzbare Methode kann " },
+        { blank: "publicKeyword", answers: ["public"] },
+        { text: " sein.\nEin " },
+        { blank: "getterTerm", answers: ["Getter"] },
+        { text: " liest einen Wert kontrolliert.\nEin " },
+        { blank: "setterTerm", answers: ["Setter"] },
+        { text: " kann einen Wert kontrolliert ändern." }
+      ],
+      output: "Recap abgeschlossen"
+    }
+  },
+  {
+    id: "tests",
+    number: "16",
     title: "Tests",
     disabled: true,
     subtitle: "Regeln der Ausbildungsgruppe absichern",
@@ -1627,6 +1791,16 @@ const glossaryTerms = [
     description: "Sichtbarkeit für Felder (Attribute) oder Methoden, die nur innerhalb der eigenen Klasse direkt genutzt werden dürfen."
   },
   {
+    title: "public",
+    matches: ["public"],
+    description: "Sichtbarkeit für Methoden oder Felder (Attribute), die von außen direkt genutzt werden dürfen."
+  },
+  {
+    title: "Sichtbarkeit",
+    matches: ["Sichtbarkeit"],
+    description: "Legt fest, von wo aus ein Feld (Attribut), eine Methode oder eine Klasse direkt genutzt werden darf."
+  },
+  {
     title: "Konstruktor",
     matches: ["Konstruktor", "Konstruktoren"],
     description: "Eine besondere Methode, die beim Erzeugen eines Objekts Startwerte setzen kann."
@@ -1685,6 +1859,21 @@ const glossaryTerms = [
     title: "Rolle",
     matches: ["Rolle", "Rollen"],
     description: "Beschreibt, welche Aufgabe oder Berechtigung eine Person in einer Anwendung hat."
+  },
+  {
+    title: "Abstraktion",
+    matches: ["Abstraktion"],
+    description: "Hebt die wichtigen Eigenschaften eines Modells hervor und lässt unwichtige Details weg."
+  },
+  {
+    title: "Vererbung",
+    matches: ["Vererbung"],
+    description: "Eine Klasse kann Eigenschaften und Methoden einer allgemeineren Klasse übernehmen und spezialisieren."
+  },
+  {
+    title: "UML-Klassendiagramm",
+    matches: ["UML-Klassendiagramm", "UML-Klassendiagramme", "Klassendiagramm", "Klassendiagramme"],
+    description: "Ein Diagramm, das Klassen mit Namen, Attributen, Methoden und einfachen Beziehungen zeigt."
   },
   {
     title: "Test",
@@ -1922,6 +2111,127 @@ const implementationTasks = [
   }
 ];
 
+const oopImplementationTasks = [
+  {
+    level: "OOP Einstieg",
+    topic: "Klasse - Objekt und Abstraktion",
+    title: "Azubi als Klasse modellieren",
+    description: "Modelliere einen Azubi als Klasse und erzeuge ein konkretes Objekt für Maya.",
+    requirements: [
+      "Erstelle eine Klasse `Apprentice`.",
+      "Speichere `firstName`, `trainingYear` und `presentToday` als Felder (Attribute).",
+      "Erzeuge ein Objekt für Maya und gib Vorname, Lehrjahr und Anwesenheit aus."
+    ],
+    output: "Maya\n1\ntrue"
+  },
+  {
+    level: "OOP Einstieg",
+    topic: "Klasse - Objekt und Abstraktion",
+    title: "Wichtiges von Unwichtigem trennen",
+    description: "Entscheide dich bewusst für die Daten, die eine einfache Ausbildungsgruppen-App wirklich braucht.",
+    requirements: [
+      "Erstelle eine Klasse `Apprentice` mit genau drei fachlich wichtigen Feldern (Attributen).",
+      "Nutze `firstName`, `trainingYear` und `lastGrade`.",
+      "Erzeuge ein Objekt für Noah und gib seine Daten aus."
+    ],
+    output: "Noah\n2\n3.0"
+  },
+  {
+    level: "OOP Einstieg",
+    topic: "Kapselung",
+    title: "Name über Getter lesen",
+    description: "Schütze den Namen eines Azubis und lies ihn nur über eine Methode.",
+    requirements: [
+      "Verwende ein `private String firstName`.",
+      "Setze den Namen über einen Konstruktor.",
+      "Schreibe einen Getter `getFirstName()` und gib den Namen aus."
+    ],
+    output: "Maya"
+  },
+  {
+    level: "OOP Einstieg",
+    topic: "Kapselung",
+    title: "Lehrjahr kontrolliert ändern",
+    description: "Baue eine Klasse, die nur gültige Lehrjahre von 1 bis 3 übernimmt.",
+    requirements: [
+      "Verwende ein `private int trainingYear` mit Startwert 1.",
+      "Schreibe `setTrainingYear(int trainingYear)` mit Prüfung auf 1 bis 3.",
+      "Setze zuerst 2, danach 4, und gib am Ende das gespeicherte Lehrjahr aus."
+    ],
+    output: "2"
+  },
+  {
+    level: "OOP Basis",
+    topic: "Vererbung",
+    title: "Person und Azubi",
+    description: "Erstelle eine kleine Vererbungshierarchie mit einer allgemeinen Person und einem spezialisierten Azubi.",
+    requirements: [
+      "Erstelle eine Klasse `Person` mit dem Feld (Attribut) `firstName`.",
+      "Erstelle eine Klasse `Apprentice`, die von `Person` erbt und zusätzlich `trainingYear` speichert.",
+      "Erzeuge Maya im ersten Lehrjahr und gib beide Werte aus."
+    ],
+    output: "Maya\n1",
+    concept: {
+      title: "Kurzer Hinweis: Vererbung",
+      text: "Mit `extends` kann eine Klasse von einer allgemeineren Klasse erben. `Apprentice extends Person` bedeutet: Ein Azubi ist eine spezielle Person.",
+      example: `class Person {\n    String firstName;\n}\n\nclass Apprentice extends Person {\n    int trainingYear;\n}`
+    }
+  },
+  {
+    level: "OOP Basis",
+    topic: "Vererbung",
+    title: "Gemeinsame Methode erben",
+    description: "Nutze eine Methode aus der allgemeinen Klasse auch in der spezialisierten Klasse.",
+    requirements: [
+      "Erstelle `Person` mit `firstName` und der Methode `getDisplayName()`.",
+      "Erstelle `Apprentice extends Person` mit `trainingYear`.",
+      "Rufe `getDisplayName()` auf einem Apprentice-Objekt auf."
+    ],
+    output: "Maya",
+    concept: {
+      title: "Kurzer Hinweis: geerbte Methode",
+      text: "Eine Unterklasse kann Methoden der Oberklasse nutzen, wenn die Sichtbarkeit das erlaubt. Für diese einfache Aufgabe reicht eine Methode ohne `private`.",
+      example: `class Person {\n    String firstName;\n\n    String getDisplayName() {\n        return firstName;\n    }\n}\n\nclass Apprentice extends Person {\n    int trainingYear;\n}`
+    }
+  },
+  {
+    level: "OOP Basis",
+    topic: "UML-Klassendiagramm",
+    title: "UML in Java-Code übersetzen",
+    description: "Setze ein einzelnes einfaches Klassendiagramm als Java-Klasse um.",
+    diagram: `+-------------------------+\n| Apprentice              |\n+-------------------------+\n| - firstName: String     |\n| - trainingYear: int     |\n+-------------------------+\n| + getFirstName(): String|\n| + getTrainingYear(): int|\n+-------------------------+`,
+    requirements: [
+      "Erstelle die Klasse `Apprentice` passend zum Diagramm.",
+      "Behandle `-` als private und `+` als von außen nutzbar.",
+      "Erzeuge Maya im ersten Lehrjahr und gib beide Getter-Werte aus."
+    ],
+    output: "Maya\n1",
+    concept: {
+      title: "Kurzer Hinweis: UML-Zeichen",
+      text: "In einfachen UML-Klassendiagrammen steht `-` oft für private und `+` für public. Oben steht der Klassenname, darunter Attribute, darunter Methoden.",
+      example: `- firstName: String      bedeutet: private String firstName\n+ getFirstName(): String bedeutet: public String getFirstName()`
+    }
+  },
+  {
+    level: "OOP Basis",
+    topic: "UML-Klassendiagramm",
+    title: "Vererbungshierarchie aus UML bauen",
+    description: "Übersetze eine kleine UML-Vererbungshierarchie in Java-Klassen.",
+    diagram: `+----------------+\n| Person         |\n+----------------+\n| # firstName    |\n+----------------+\n        ^\n        |\n+----------------+\n| Apprentice     |\n+----------------+\n| - trainingYear |\n+----------------+`,
+    requirements: [
+      "Erstelle eine Klasse `Person` mit `firstName`.",
+      "Erstelle `Apprentice extends Person` mit `trainingYear`.",
+      "Erzeuge Noah im zweiten Lehrjahr und gib Name und Lehrjahr aus."
+    ],
+    output: "Noah\n2",
+    concept: {
+      title: "Kurzer Hinweis: UML-Vererbung",
+      text: "Der Pfeil zeigt zur allgemeineren Klasse. In dieser Aufgabe zeigt er von `Apprentice` zu `Person`: Apprentice erbt also von Person.",
+      example: `class Person {\n    String firstName;\n}\n\nclass Apprentice extends Person {\n    int trainingYear;\n}`
+    }
+  }
+];
+
 const learningTracks = [
   {
     id: "fundamentals",
@@ -1954,10 +2264,16 @@ const learningTracks = [
   {
     id: "oop",
     title: "Java OOP",
-    subtitle: "Objektorientierung wiederholen",
-    description: "Wiederhole den Unterschied zwischen Klassen, Objekten, Instanzen, Feldern bzw. Attributen und Konstruktoren.",
-    moduleIds: ["classes-objects-recap"],
-    showTasks: false
+    subtitle: "Objektorientierung wiederholen und üben",
+    description: "Wiederhole Klassen, Objekte, Kapselung und übe einfache OOP-Aufgaben zu Abstraktion, Vererbung und UML.",
+    moduleIds: ["classes-objects-recap", "encapsulation-recap"],
+    showTasks: true,
+    tasks: oopImplementationTasks,
+    taskPageTitle: "Java OOP: Aufgaben",
+    taskIntro: [
+      "Diese Aufgaben sind zum selbstständigen Implementieren gedacht. Sie üben einfache OOP-Modellierung rund um Azubis, ohne schon die späteren Kapitel zu Vererbung und UML vorauszusetzen.",
+      "Bei UML-Aufgaben übersetzt du das gezeigte Klassendiagramm in Java-Code und vergleichst anschließend die erwartete Konsolenausgabe."
+    ]
   }
 ];
 
@@ -2348,15 +2664,21 @@ function renderGlossaryPage() {
 }
 
 function renderTasksPage() {
-  moduleTitle.textContent = "Implementierungsaufgaben";
+  const activeTrack = getActiveTrack();
+  const tasks = activeTrack?.tasks ?? implementationTasks;
+  const intro = activeTrack?.taskIntro ?? [
+    "Diese Sammlung ist zum selbstständigen Implementieren gedacht. Schreibe jeweils ein kleines Java-Programm und vergleiche deine Konsolenausgabe mit der erwarteten Ausgabe.",
+    "Die Aufgaben sind bewusst gemischt: einige passen direkt zu den frühen Grundlagen, andere verlangen Methoden, Klassen, Kapselung oder Fehlerbehandlung."
+  ];
+
+  moduleTitle.textContent = activeTrack?.taskPageTitle ?? "Implementierungsaufgaben";
   conceptHeading.textContent = "Aufgaben";
   conceptContent.innerHTML = `
     <div class="task-page-intro">
-      <p>Diese Sammlung ist zum selbstständigen Implementieren gedacht. Schreibe jeweils ein kleines Java-Programm und vergleiche deine Konsolenausgabe mit der erwarteten Ausgabe.</p>
-      <p>Die Aufgaben sind bewusst gemischt: einige passen direkt zu den frühen Grundlagen, andere verlangen Methoden, Klassen, Kapselung oder Fehlerbehandlung.</p>
+      ${intro.map((paragraph) => `<p>${formatInlineCode(paragraph)}</p>`).join("")}
     </div>
     <div class="task-list">
-      ${implementationTasks.map((task, index) => renderImplementationTask(task, index)).join("")}
+      ${tasks.map((task, index) => renderImplementationTask(task, index)).join("")}
     </div>
   `;
   examplesContent.innerHTML = "";
@@ -2379,6 +2701,12 @@ function renderImplementationTask(task, index) {
         </div>
       </header>
       <p>${formatInlineCode(task.description)}</p>
+      ${task.diagram ? `
+        <div class="task-section">
+          <h5>Diagramm</h5>
+          <pre class="code-block"><code>${escapeHtml(task.diagram)}</code></pre>
+        </div>
+      ` : ""}
       <div class="task-section">
         <h5>Anforderungen</h5>
         <ul>
