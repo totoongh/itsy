@@ -1,0 +1,29 @@
+https://chatgpt.com/share/6a4e2d9e-3190-83eb-96e4-5a66d10ea8a4
+
+### 1. Geräte- und Materialverleih — **Komplexität: 3/5 (mittel)**
+
+Entwickelt eine Anwendung zur Verwaltung von ausleihbaren Gegenständen im Ausbildungszentrum. Dazu gehören beispielsweise Laptops, Beamer, Adapter, Lernkarten, Bücher oder Moderationsmaterial. Verschiedene Personengruppen (z. B. Azubis und Ausbilder) sollen Gegenstände ausleihen und zurückgeben können. Die Anwendung verwaltet den aktuellen Status eines Gegenstands (z. B. verfügbar, ausgeliehen oder defekt) sowie die zugehörigen Ausleihvorgänge.
+
+---
+
+### 2. Personen- und Gruppensystem — **Komplexität: 1/5 (leicht)**
+
+Entwickelt eine Anwendung zur Verwaltung der Personen im Ausbildungszentrum. Es sollen verschiedene Personengruppen (z. B. Azubis, Ausbilder und Mitarbeitende) sowie unterschiedliche Gruppen (z. B. Azubigruppen oder Projektgruppen) modelliert werden. Gruppen können Personen enthalten und Verantwortliche besitzen. Ziel ist es, die Beziehungen zwischen Personen und Gruppen übersichtlich abzubilden.
+
+---
+
+### 3. Seminar- und Workshopplanung — **Komplexität: 4/5 (mittel bis anspruchsvoll)**
+
+Entwickelt eine Anwendung zur Planung und Verwaltung von Schulungen. Es gibt verschiedene Arten von Lerneinheiten, beispielsweise Seminare und Workshops, die sich in ihren Eigenschaften unterscheiden. Jede Lerneinheit besitzt einen Ausbilder, einen Raum, Teilnehmende sowie Informationen wie Thema, Kalenderwoche, Dauer und Status. Die Anwendung soll den Ablauf einer Schulung von der Planung bis zum Abschluss unterstützen.
+
+---
+
+### 4. Praktikums- und Praxisplatzverteilung — **Komplexität: 5/5 (anspruchsvoll)**
+
+Entwickelt eine Anwendung zur Verwaltung von Praxiseinsätzen der Azubis. Azubis werden für bestimmte Kalenderwochen einem Praxisplatz zugeordnet, der von einem Praxisbetreuer betreut wird. Es gibt unterschiedliche Arten von Praxisplätzen, beispielsweise interne oder externe Einsatzorte. Die Anwendung soll Praxisplätze, Zeiträume und Einsätze verwalten sowie einfache fachliche Regeln, wie gültige Zeiträume oder Statuswechsel, berücksichtigen.
+
+---
+
+### 5. Berichtsheftverwaltung — **Komplexität: 2/5 (leicht bis mittel)**
+
+Entwickelt eine Anwendung zur digitalen Verwaltung von Berichtsheften bzw. Ausbildungsnachweisen. Azubis können Berichte erstellen und einreichen. Diese werden anschließend von Ausbildern oder BPUs geprüft und entweder freigegeben oder zur Nacharbeit zurückgegeben. Zusätzlich sollen Kommentare und Dateianhänge verwaltet werden. Die Anwendung bildet damit einen einfachen Freigabe- und Prüfprozess für Ausbildungsnachweise ab.
