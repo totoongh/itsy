@@ -12,7 +12,7 @@ Beim Start erscheint eine Auswahlseite mit drei Lernbereichen:
 - Exkurs: Enums
 - Java OOP
 
-Der aktuelle Stand deckt fünfzehn aktive Themen aus dem Ausbildungsrahmen ab:
+Der aktuelle Stand deckt sechzehn aktive Themen aus dem Ausbildungsrahmen ab:
 
 1. Variablen
 2. Einfache Datentypen
@@ -29,6 +29,7 @@ Der aktuelle Stand deckt fünfzehn aktive Themen aus dem Ausbildungsrahmen ab:
 13. Enums mit Eigenschaften
 14. RECAP: Klassen vs. Objekte
 15. RECAP: Kapselung
+16. RECAP: OOP-Prinzipien
 
 Das vorbereitete Test-Modul ist vorerst deaktiviert.
 

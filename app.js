@@ -1595,8 +1595,399 @@ const modules = [
     }
   },
   {
-    id: "tests",
+    id: "oop-principles-recap",
     number: "16",
+    title: "RECAP: OOP-Prinzipien",
+    subtitle: "Vererbung, Polymorphie und Abstraktion sicher unterscheiden",
+    concepts: [],
+    explanation: [],
+    examples: [],
+    quiz: [
+      {
+        question: "Welchen Output erzeugt dieser Code?",
+        code: `class Person {
+    String role() {
+        return "Person";
+    }
+}
+
+class Apprentice extends Person {
+    @Override
+    String role() {
+        return "Azubi";
+    }
+}
+
+Person person = new Apprentice();
+System.out.println(person.role());`,
+        options: [
+          "Azubi",
+          "Person",
+          "PersonAzubi",
+          "Der Code kompiliert nicht, weil die Variable den Typ Person hat"
+        ],
+        correct: 0,
+        explanation: "Bei überschriebenen Instanzmethoden entscheidet das tatsächliche Objekt. Das Objekt ist ein Apprentice, deshalb läuft dessen role()-Methode."
+      },
+      {
+        question: "Welchen Output erzeugt dieser Code?",
+        code: `class Trainer {
+    String describe(Person person) {
+        return "Person";
+    }
+
+    String describe(Apprentice apprentice) {
+        return "Azubi";
+    }
+}
+
+Person maya = new Apprentice();
+System.out.println(new Trainer().describe(maya));`,
+        options: [
+          "Person",
+          "Azubi",
+          "PersonAzubi",
+          "Der Code kompiliert wegen der zwei describe-Methoden nicht"
+        ],
+        correct: 0,
+        explanation: "Überladung wird anhand der deklarierten Typen beim Kompilieren ausgewählt. maya ist als Person deklariert, auch wenn das Objekt ein Apprentice ist."
+      },
+      {
+        question: "Welche Änderung ist eine gültige Überladung von `recordGrade(double grade)`?",
+        options: [
+          "`recordGrade(double grade, String subject)` ergänzen",
+          "Nur den Rückgabetyp in `boolean recordGrade(double grade)` ändern",
+          "Nur den Parameternamen in `recordGrade(double value)` ändern",
+          "Dieselbe Signatur nochmals mit `@Override` deklarieren"
+        ],
+        correct: 0,
+        explanation: "Eine Überladung braucht eine andere Parameterliste. Rückgabetyp oder Parametername allein ändern die Methodensignatur nicht ausreichend."
+      },
+      {
+        question: "Welche Methode überschreibt die geerbte Methode tatsächlich?",
+        code: `class Person {
+    protected String label() {
+        return "Person";
+    }
+}`,
+        options: [
+          "`@Override public String label() { return \"Azubi\"; }`",
+          "`@Override private String label() { return \"Azubi\"; }`",
+          "`@Override public String label(String prefix) { return prefix; }`",
+          "`@Override public int label() { return 1; }`"
+        ],
+        correct: 0,
+        explanation: "Name und Parameterliste stimmen überein, der Rückgabetyp bleibt kompatibel und die Sichtbarkeit wird nicht eingeschränkt."
+      },
+      {
+        question: "Welchen Output erzeugt die Methodenerweiterung mit `super`?",
+        code: `class Person {
+    String info() {
+        return "Maya";
+    }
+}
+
+class Apprentice extends Person {
+    @Override
+    String info() {
+        return super.info() + ", Lehrjahr 2";
+    }
+}
+
+System.out.println(new Apprentice().info());`,
+        options: [
+          "Maya, Lehrjahr 2",
+          "Lehrjahr 2",
+          "Maya",
+          "Die Aufrufe wechseln endlos zwischen beiden Methoden"
+        ],
+        correct: 0,
+        explanation: "super.info() ruft gezielt die Implementierung der Oberklasse auf. Die Unterklasse ergänzt deren Ergebnis."
+      },
+      {
+        question: "Welche Aussage zu einer abstrakten Klasse ist vollständig richtig?",
+        options: [
+          "Sie kann Zustand, Konstruktoren und konkrete Methoden besitzen, aber nicht direkt mit new instanziiert werden",
+          "Sie darf ausschließlich abstrakte Methoden enthalten und keine Felder besitzen",
+          "Sie kann direkt instanziiert werden, solange keine abstrakte Methode aufgerufen wird",
+          "Jede Unterklasse muss abstrakt bleiben, auch wenn sie alle abstrakten Methoden implementiert"
+        ],
+        correct: 0,
+        explanation: "Abstrakte Klassen können gemeinsamen Zustand und fertiges Verhalten bündeln. Ein konkretes Objekt entsteht erst aus einer nicht abstrakten Unterklasse."
+      },
+      {
+        question: "Was passiert bei diesem Code?",
+        code: `abstract class Person {
+    abstract String role();
+}
+
+class Apprentice extends Person {
+}
+
+Apprentice maya = new Apprentice();`,
+        options: [
+          "Der Code kompiliert nicht, weil Apprentice role() weder implementiert noch selbst abstract ist",
+          "Der Code kompiliert und role() liefert automatisch null",
+          "Der Code kompiliert, weil nur Person abstrakt ist",
+          "Der Code scheitert erst beim Aufruf von role() zur Laufzeit"
+        ],
+        correct: 0,
+        explanation: "Eine konkrete Unterklasse muss alle geerbten abstrakten Methoden implementieren. Andernfalls muss auch sie abstract sein."
+      },
+      {
+        question: "Welche Modellierung nutzt `extends` und `implements` korrekt?",
+        options: [
+          "`class Apprentice extends Person implements Gradable`",
+          "`class Apprentice implements Person extends Gradable`",
+          "`class Apprentice extends Person, Gradable`",
+          "`interface Gradable implements Person`"
+        ],
+        correct: 0,
+        explanation: "Eine Klasse erweitert höchstens eine Klasse mit extends und kann danach ein oder mehrere Interfaces mit implements angeben."
+      },
+      {
+        question: "Welche Aussage über Interfaces trifft zu?",
+        options: [
+          "Eine Klasse kann mehrere Interfaces implementieren und damit mehrere Verträge erfüllen",
+          "Eine Klasse darf nur dann ein Interface implementieren, wenn sie keine Oberklasse hat",
+          "Ein Interface wird mit new instanziiert, sobald alle Methoden deklariert sind",
+          "implements übernimmt automatisch privaten Objektzustand aus dem Interface"
+        ],
+        correct: 0,
+        explanation: "Interfaces beschreiben nutzbare Verträge. Eine Klasse kann mehrere davon erfüllen, auch wenn sie bereits eine Oberklasse erweitert."
+      },
+      {
+        question: "Welchen Output erzeugt dieser polymorphe Interface-Code?",
+        code: `interface Describable {
+    String describe();
+}
+
+class Apprentice implements Describable {
+    public String describe() {
+        return "Azubi";
+    }
+}
+
+Describable item = new Apprentice();
+System.out.println(item.describe());`,
+        options: [
+          "Azubi",
+          "Describable",
+          "null",
+          "Der Code kompiliert nicht, weil item kein Apprentice-Typ ist"
+        ],
+        correct: 0,
+        explanation: "Die Interface-Variable kann auf ein implementierendes Objekt zeigen. Der Methodenaufruf wird vom tatsächlichen Apprentice-Objekt ausgeführt."
+      },
+      {
+        question: "Was ist in Java mit Mehrfachvererbung möglich?",
+        options: [
+          "Eine Klasse kann genau eine Klasse erweitern und gleichzeitig mehrere Interfaces implementieren",
+          "Eine Klasse kann mehrere Klassen hinter extends durch Kommas trennen",
+          "Eine Klasse kann mehrere abstrakte Klassen implementieren, wenn diese keine Felder besitzen",
+          "Mehrfachvererbung ist vollständig ausgeschlossen, auch über Interfaces"
+        ],
+        correct: 0,
+        explanation: "Java vermeidet mehrere direkte Oberklassen, erlaubt aber mehrere Interface-Verträge."
+      },
+      {
+        question: "Warum kompiliert dieser Code nicht ohne eine weitere Entscheidung in Apprentice?",
+        code: `interface Trackable {
+    default String status() {
+        return "erfasst";
+    }
+}
+
+interface Reportable {
+    default String status() {
+        return "gemeldet";
+    }
+}
+
+class Apprentice implements Trackable, Reportable {
+}`,
+        options: [
+          "Beide Interfaces liefern dieselbe Default-Methodensignatur; Apprentice muss den Konflikt durch Überschreiben auflösen",
+          "Java erlaubt grundsätzlich nie zwei Interfaces hinter implements",
+          "Default-Methoden dürfen nur private sein",
+          "Die Rückgabewerte beider Methoden müssten identisch sein"
+        ],
+        correct: 0,
+        explanation: "Java kann zwischen zwei gleich spezifischen Default-Implementierungen nicht wählen. Die Klasse muss status() selbst überschreiben."
+      },
+      {
+        question: "Welche Implementierung löst den Default-Methoden-Konflikt gezielt und kombiniert beide Ergebnisse?",
+        code: `class Apprentice implements Trackable, Reportable {
+    // Welche Methode gehört hierhin?
+}`,
+        options: [
+          "`public String status() { return Trackable.super.status() + \" & \" + Reportable.super.status(); }`",
+          "`public String status() { return super.status(); }`",
+          "`public String status() { return Trackable.status() + Reportable.status(); }`",
+          "`public String status(String value) { return value; }`"
+        ],
+        correct: 0,
+        explanation: "Mit InterfaceName.super.methode() kann die Klasse eine bestimmte Default-Implementierung aufrufen. Die eigene Methode löst zugleich den Konflikt auf."
+      },
+      {
+        question: "Was beschreibt das Deadly Diamond of Death im Kern?",
+        options: [
+          "Eine Unterklasse erreicht dieselbe geerbte Methode über mehrere Vererbungswege und die passende Implementierung kann mehrdeutig sein",
+          "Ein Objekt wird gelöscht, sobald zwei Variablen darauf zeigen",
+          "Vier Klassen dürfen in Java niemals Methoden mit demselben Namen besitzen",
+          "Eine abstrakte Klasse darf nicht zwischen einem Interface und einer Unterklasse stehen"
+        ],
+        correct: 0,
+        explanation: "Die Diamantform entsteht durch zwei Vererbungswege zu einer gemeinsamen Basis. Problematisch wird eine nicht eindeutig bestimmbare Implementierung."
+      },
+      {
+        question: "Welche Änderung ist eine Generalisierung?",
+        options: [
+          "Gemeinsame Merkmale von Apprentice und Trainer werden in die allgemeinere Klasse Person verschoben",
+          "Apprentice erhält zusätzlich das spezielle Feld trainingYear",
+          "Eine lokale Variable wird von Person in maya umbenannt",
+          "Eine Methode wird private, ohne dass sich die Klassenhierarchie ändert"
+        ],
+        correct: 0,
+        explanation: "Generalisierung zieht Gemeinsamkeiten in einen allgemeineren Typ, den mehrere speziellere Typen nutzen können."
+      },
+      {
+        question: "Welche Änderung ist eine Spezialisierung?",
+        options: [
+          "Aus Person wird Apprentice abgeleitet und um trainingYear sowie recordGrade() ergänzt",
+          "Gemeinsame Namensfelder mehrerer Klassen werden nach Person verschoben",
+          "Apprentice und Trainer werden durch eine einzige Person-Klasse ohne Unterschiede ersetzt",
+          "Ein Getter wird in allen Klassen exakt kopiert"
+        ],
+        correct: 0,
+        explanation: "Spezialisierung bildet einen konkreteren Typ, der allgemeine Merkmale übernimmt und eigene Merkmale ergänzt."
+      },
+      {
+        question: "Welche Aussage beschreibt gute Kapselung in einer Vererbungshierarchie am besten?",
+        options: [
+          "Ein privates Feld bleibt geschützt; die Oberklasse stellt bei Bedarf eine kontrollierte protected- oder public-Methode bereit",
+          "Alle Felder sollten protected sein, damit jede Unterklasse Regeln jederzeit umgehen kann",
+          "private bedeutet, dass auch Methoden der deklarierenden Klasse das Feld nicht verwenden dürfen",
+          "Eine Unterklasse erhält durch extends automatisch direkten Zugriff auf alle privaten Felder"
+        ],
+        correct: 0,
+        explanation: "Vererbung hebt Kapselung nicht auf. Kontrollierte Methoden bewahren Regeln besser als frei zugängliche Felder."
+      },
+      {
+        question: "Welchen Output erzeugt dieser Code?",
+        code: `class Person {
+    String name = "Person";
+
+    String getName() {
+        return name;
+    }
+}
+
+class Apprentice extends Person {
+    String name = "Maya";
+
+    @Override
+    String getName() {
+        return name;
+    }
+}
+
+Person person = new Apprentice();
+System.out.println(person.name + " / " + person.getName());`,
+        options: [
+          "Person / Maya",
+          "Maya / Maya",
+          "Person / Person",
+          "Maya / Person"
+        ],
+        correct: 0,
+        explanation: "Feldzugriff richtet sich nach dem deklarierten Variablentyp Person. Überschriebene Instanzmethoden richten sich dagegen nach dem tatsächlichen Apprentice-Objekt."
+      },
+      {
+        question: "Was passiert bei diesem Aufruf?",
+        code: `class Person {
+    void introduce() {
+        System.out.println("Person");
+    }
+}
+
+class Apprentice extends Person {
+    void introduce(String course) {
+        System.out.println(course);
+    }
+}
+
+new Apprentice().introduce();`,
+        options: [
+          "Es wird Person ausgegeben",
+          "Der Code kompiliert nicht, weil Apprentice introduce() überschreiben muss",
+          "Es wird eine leere Zeile ausgegeben",
+          "Der Aufruf ist mehrdeutig"
+        ],
+        correct: 0,
+        explanation: "introduce(String) ist eine Überladung, keine Überschreibung. Die parameterlose Methode wird unverändert von Person geerbt."
+      },
+      {
+        question: "Welchen Output erzeugt dieser Code zu Objektreferenzen und Kapselung?",
+        code: `class Apprentice {
+    private int trainingYear = 1;
+
+    void advance() {
+        trainingYear++;
+    }
+
+    int getTrainingYear() {
+        return trainingYear;
+    }
+}
+
+Apprentice maya = new Apprentice();
+Apprentice groupMember = maya;
+groupMember.advance();
+System.out.println(maya.getTrainingYear());`,
+        options: [
+          "2",
+          "1",
+          "0",
+          "Der Code kompiliert nicht, weil groupMember und maya verschieden heißen"
+        ],
+        correct: 0,
+        explanation: "Beide Variablen verweisen auf dasselbe Objekt. Die Änderung über groupMember ist deshalb beim Zugriff über maya sichtbar."
+      },
+      {
+        question: "Welche Apprentice-Klasse kompiliert mit dieser Oberklasse?",
+        code: `class Person {
+    private final String name;
+
+    Person(String name) {
+        this.name = name;
+    }
+}`,
+        options: [
+          "`class Apprentice extends Person { Apprentice() { super(\"Maya\"); } }`",
+          "`class Apprentice extends Person { Apprentice() { super(); } }`",
+          "`class Apprentice extends Person { Apprentice() { this.name = \"Maya\"; } }`",
+          "`class Apprentice extends Person { Apprentice() { } }`"
+        ],
+        correct: 0,
+        explanation: "Person besitzt nur den Konstruktor mit String-Parameter. Die Unterklasse muss ihn aufrufen; auf das private finale Feld darf sie nicht direkt zugreifen."
+      },
+      {
+        question: "Welche Entwurfsentscheidung nutzt Abstraktion und Polymorphie am sinnvollsten?",
+        options: [
+          "Eine Liste vom Typ List<Person> enthält Apprentice- und Trainer-Objekte; gemeinsame abstrakte Methoden werden polymorph aufgerufen",
+          "Für jeden Objekttyp wird dieselbe Auswertungslogik kopiert und über Klassennamen als String ausgewählt",
+          "Alle speziellen Felder werden public in Person gesammelt, auch wenn sie für die meisten Unterklassen bedeutungslos sind",
+          "Jede Unterklasse wird ohne gemeinsame Oberklasse angelegt, damit keine Methode überschrieben werden kann"
+        ],
+        correct: 0,
+        explanation: "Ein gemeinsamer abstrakter Typ beschreibt das Wesentliche. Polymorphie erlaubt, unterschiedliche konkrete Objekte über diese gemeinsame Sicht zu verwenden."
+      }
+    ]
+  },
+  {
+    id: "tests",
+    number: "17",
     title: "Tests",
     disabled: true,
     subtitle: "Regeln der Ausbildungsgruppe absichern",
@@ -2265,8 +2656,8 @@ const learningTracks = [
     id: "oop",
     title: "Java OOP",
     subtitle: "Objektorientierung wiederholen und üben",
-    description: "Wiederhole Klassen, Objekte, Kapselung und übe einfache OOP-Aufgaben zu Abstraktion, Vererbung und UML.",
-    moduleIds: ["classes-objects-recap", "encapsulation-recap"],
+    description: "Wiederhole Klassen, Objekte, Kapselung, Abstraktion, Vererbung, Interfaces und Polymorphie.",
+    moduleIds: ["classes-objects-recap", "encapsulation-recap", "oop-principles-recap"],
     showTasks: true,
     tasks: oopImplementationTasks,
     taskPageTitle: "Java OOP: Aufgaben",
@@ -2413,6 +2804,7 @@ function renderModule() {
 
   conceptSection.hidden = !hasConceptContent;
   examplesSection.hidden = !hasExamples;
+  codeSection.hidden = !module.completion;
 
   conceptContent.innerHTML = `
     <ul class="concept-list">
@@ -2799,6 +3191,11 @@ function highlightSearch(value, normalizedQuery) {
 }
 
 function renderCompletion(module, glossary = escapeHtml) {
+  if (!module.completion) {
+    codeContent.innerHTML = "";
+    return;
+  }
+
   const codeHtml = module.completion.parts.map((part) => {
     if (part.text !== undefined) {
       return escapeHtml(part.text);
