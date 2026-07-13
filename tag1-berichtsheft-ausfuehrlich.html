@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Tag 1 · Team Berichtsheft (ausführliche Version)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --accent:#2D5BE3; --accent-soft:#EEF2FF; --ink:#1B2430; --muted:#526070;
+    --bg:#F3F5FA; --card:#FFFFFF; --line:#E1E7F2;
+    --easy:#1a8754; --easy-bg:#e8f6ee;
+    --mid:#b6790a; --mid-bg:#fdf1de;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;}
+  .page{max-width:980px;margin:0 auto;padding:40px 24px 90px}
+  code, .mono{font-family:Menlo,Consolas,monospace;font-size:0.92em}
+  header{margin-bottom:36px}
+  .badge{display:inline-block;background:var(--accent);color:#fff;font-weight:600;
+    font-size:13px;letter-spacing:.02em;padding:5px 14px;border-radius:999px;margin-bottom:14px}
+  .badge.note{background:#8A94A6}
+  h1{font-size:32px;margin:0 0 12px;letter-spacing:-0.01em}
+  .lead{font-size:17px;color:var(--muted);max-width:760px}
+  h2{font-size:22px;margin:0 0 14px;padding-top:6px}
+  h3{font-size:17px;margin:0}
+  section{margin-bottom:52px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:24px 26px;box-shadow:0 1px 3px rgba(20,30,60,.04)}
+  .diagram{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:18px;margin:18px 0 26px;overflow-x:auto}
+  .diagram svg{display:block;min-width:640px}
+
+  .legend{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+  .legend-row{display:flex;align-items:center;gap:14px;font-size:14.5px;color:var(--ink)}
+  .legend-line{position:relative;width:64px;height:0;border-top:2px solid var(--muted);flex:none}
+  .legend-line.dashed{border-top-style:dashed}
+  .legend-line::after{content:'▷';position:absolute;right:-11px;top:-9px;color:var(--muted);font-size:15px;background:var(--card)}
+  .legend-line.arrow::after{content:'›';font-weight:700;top:-11px}
+
+  .stepcard{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:22px 26px;margin-bottom:18px;box-shadow:0 1px 3px rgba(20,30,60,.04)}
+  .stepcard-head{display:flex;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+  .stepnum{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;
+    border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:13px;flex:none}
+  .kind{font-size:12px;font-weight:600;padding:3px 9px;border-radius:6px;background:var(--accent-soft);color:var(--accent)}
+  .diff{margin-left:auto;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px}
+  .diff.easy{background:var(--easy-bg);color:var(--easy)}
+  .diff.mid{background:var(--mid-bg);color:var(--mid)}
+  .stepcard p{margin:8px 0}
+  .members{background:#F8FAFF;border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:12px 0 6px}
+  .members .row{font-family:Menlo,Consolas,monospace;font-size:13px;color:var(--ink);padding:2px 0}
+  .members .sep{border:none;border-top:1px solid var(--line);margin:8px 0}
+  .members .abstract{font-style:italic}
+  .note{background:var(--accent-soft);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+    padding:10px 14px;margin-top:12px;font-size:14px;color:#1c2b52}
+  .note b{color:var(--accent)}
+
+  .checklist{list-style:none;padding:0;margin:0}
+  .checklist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:15px}
+  .checklist li:last-child{border-bottom:none}
+  .checklist li::before{content:'☐';color:var(--accent);font-size:17px;line-height:1.3}
+
+  footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:20px;margin-top:40px}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <span class="badge note">Archiv – ausführliche Fassung vor der Kürzung, nur zum Vergleich</span>
+
+  <header>
+    <span class="badge">Tag 1 · Team Berichtsheft</span>
+    <h1>Euer Auftrag: das Berichtsheft-Modell</h1>
+    <p class="lead">AzubiHub ist das Ausbildungsportal, an dem ihr mitbaut. Euer Team ist heute für alles zuständig,
+      was mit dem digitalen Berichtsheft zu tun hat: Berufsschulwochen, Praxiseinsatz-Wochen und Seminar-/Workshop-Wochen.
+      Ihr bekommt kein fertiges Gerüst. Ihr lest ein Klassendiagramm und baut daraus selbst Klassen, eine abstrakte
+      Klasse und ein Interface – Schritt für Schritt, in der Reihenfolge dieses Dokuments.</p>
+  </header>
+
+  <section>
+    <h2>Bevor ihr anfangt: zwei Pfeile, die ihr auseinanderhalten müsst</h2>
+    <div class="card">
+      <p>Im Diagramm unten kommen zwei Pfeilarten mit einem hohlen Dreieck vor. Sie sehen ähnlich aus, bedeuten aber
+        etwas komplett anderes:</p>
+      <div class="legend">
+        <div class="legend-row"><span class="legend-line"></span>
+          <span><b>Vererbung</b> (<code>extends</code>) – die Unterklasse erbt alle Attribute und Methoden der Oberklasse
+          und kann sie ergänzen oder überschreiben.</span></div>
+        <div class="legend-row"><span class="legend-line dashed"></span>
+          <span><b>Interface-Umsetzung</b> (<code>implements</code>) – die Klasse verspricht, alle Methoden des
+          Interfaces bereitzustellen. Sie erbt dabei nichts.</span></div>
+        <div class="legend-row"><span class="legend-line arrow"></span>
+          <span><b>Assoziation</b> – die Klasse hält eine Referenz auf eine andere Klasse als Attribut.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Teil 1 – Die Basis: Person, Azubi, Ausbilder, Bpu</h2>
+    <p>Diesen Teil baut ihr gemeinsam mit Team Praxiseinsatz nach demselben Diagramm. Beide Teams brauchen dieselbe
+      Grundlage, deshalb bauen beide sie einmal selbst durch.</p>
+    <div class="diagram">
+<svg viewBox='0 0 1366.8 419' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;background:#F7F9FC;border-radius:12px'>
+<defs>
+  <marker id='tri' markerWidth='16' markerHeight='14' refX='15' refY='7' orient='auto'>
+    <path d='M1,1 L15,7 L1,13 Z' fill='white' stroke='#526070' stroke-width='1.2'/>
+  </marker>
+  <marker id='arrow' markerWidth='10' markerHeight='10' refX='8' refY='5' orient='auto'>
+    <path d='M1,1 L8,5 L1,9' fill='none' stroke='#526070' stroke-width='1.3'/>
+  </marker>
+</defs>
+<polyline points='209.6,248 683.4,178' fill='none' stroke='#526070' stroke-width='1.3'  marker-end='url(#tri)'/>
+<polyline points='566.0,248 683.4,178' fill='none' stroke='#526070' stroke-width='1.3'  marker-end='url(#tri)'/>
+<polyline points='914.8,248 683.4,178' fill='none' stroke='#526070' stroke-width='1.3'  marker-end='url(#tri)'/>
+<polyline points='379.2,318.5 748.0,318.5 1116.8,298.5' fill='none' stroke='#526070' stroke-width='1.3'  marker-end='url(#arrow)'/>
+<rect x='510.0' y='20' width='346.8' height='158' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='683.4' y='37' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700' font-style='italic' fill='#1B2430'>Person</text>
+<line x1='510.0' y1='50' x2='856.8' y2='50' stroke='#2D5BE3' stroke-width='1'/>
+<text x='520.0' y='60' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- personalnummer: int</text>
+<text x='520.0' y='77' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- vorname: String</text>
+<text x='520.0' y='94' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- nachname: String</text>
+<line x1='510.0' y1='107' x2='856.8' y2='107' stroke='#2D5BE3' stroke-width='1'/>
+<text x='520.0' y='117' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ Person(personalnummer, vorname, nachname)</text>
+<text x='520.0' y='134' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ getVollstaendigerName(): String</text>
+<text x='520.0' y='151' font-family='Menlo, Consolas, monospace' font-size='12.5' font-style='italic' fill='#1B2430'>+ getRollenbezeichnung(): String</text>
+<rect x='40' y='248' width='339.2' height='141' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='209.6' y='265' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700'  fill='#1B2430'>Azubi</text>
+<line x1='40' y1='278' x2='379.2' y2='278' stroke='#2D5BE3' stroke-width='1'/>
+<text x='50' y='288' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- ausbildungsjahr: int</text>
+<text x='50' y='305' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- fachrichtung: Fachrichtung</text>
+<line x1='40' y1='318' x2='379.2' y2='318' stroke='#2D5BE3' stroke-width='1'/>
+<text x='50' y='328' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ Azubi(personalnummer, vorname, nachname,</text>
+<text x='50' y='345' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>     ausbildungsjahr, fachrichtung)</text>
+<text x='50' y='362' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ getRollenbezeichnung(): String</text>
+<rect x='419.2' y='248' width='293.59999999999997' height='101' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='566.0' y='265' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700'  fill='#1B2430'>Ausbilder</text>
+<line x1='419.2' y1='278' x2='712.8' y2='278' stroke='#2D5BE3' stroke-width='1'/>
+<text x='429.2' y='288' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ Ausbilder(personalnummer, vorname,</text>
+<text x='429.2' y='305' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>     nachname)</text>
+<text x='429.2' y='322' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ getRollenbezeichnung(): String</text>
+<rect x='752.8' y='248' width='324.0' height='84' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='914.8' y='265' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700'  fill='#1B2430'>Bpu</text>
+<line x1='752.8' y1='278' x2='1076.8' y2='278' stroke='#2D5BE3' stroke-width='1'/>
+<text x='762.8' y='288' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ Bpu(personalnummer, vorname, nachname)</text>
+<text x='762.8' y='305' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ getRollenbezeichnung(): String</text>
+<rect x='1116.8' y='248' width='210' height='101' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='1221.8' y='250' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#526070'>&#171;enum&#187;</text>
+<text x='1221.8' y='265' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700'  fill='#1B2430'>Fachrichtung</text>
+<line x1='1116.8' y1='278' x2='1326.8' y2='278' stroke='#2D5BE3' stroke-width='1'/>
+<text x='1221.8' y='288' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>ANWENDUNGSENTWICKLUNG</text>
+<text x='1221.8' y='305' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>SYSTEMINTEGRATION</text>
+<text x='1221.8' y='322' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>DATEN_UND_PROZESSANALYSE</text>
+</svg>
+    </div>
+
+    <div class="stepcard">
+      <div class="stepcard-head"><span class="stepnum">1</span><h3>Person</h3><span class="kind">Abstrakte Klasse</span><span class="diff easy">Leicht</span></div>
+      <p>Legt die Klasse <code>Person</code> an und markiert sie als <code>abstract</code>. Es gibt in AzubiHub keine
+        „Person ohne genauere Rolle" – jede echte Person ist Azubi, Ausbilder oder BPU. Der Konstruktor setzt alle
+        drei Attribute direkt, ohne Prüfung. <code>getRollenbezeichnung()</code> bekommt keinen Rumpf, nur ein
+        Semikolon nach der Signatur – sie ist <code>abstract</code>.</p>
+      <div class="members">
+        <div class="row">- personalnummer: int</div>
+        <div class="row">- vorname: String</div>
+        <div class="row">- nachname: String</div>
+        <hr class="sep">
+        <div class="row">+ Person(personalnummer, vorname, nachname)</div>
+        <div class="row">+ getVollstaendigerName(): String</div>
+        <div class="row abstract">{abstract} + getRollenbezeichnung(): String</div>
+      </div>
+      <div class="note">Eine abstrakte Methode hat keinen Rumpf. Genau das zwingt jede Unterklasse, eine eigene
+        Antwort zu liefern – der Compiler lässt euch sonst nicht kompilieren.</div>
+    </div>
+
+    <div class="stepcard">
+      <div class="stepcard-head"><span class="stepnum">2</span><h3>Azubi</h3><span class="kind">Klasse extends Person</span><span class="diff easy">Leicht</span></div>
+      <p><code>Azubi</code> erbt von <code>Person</code>. Der Konstruktor nimmt zusätzlich <code>ausbildungsjahr</code>
+        und <code>fachrichtung</code> entgegen und ruft als <b>erste Anweisung</b> <code>super(personalnummer, vorname,
+        nachname)</code> auf. Überschreibt <code>getRollenbezeichnung()</code> so, dass sie <code>"Azubi"</code>
+        zurückgibt. Das Enum <code>Fachrichtung</code> ist bereits vorgegeben, ihr müsst es nicht selbst bauen.</p>
+      <div class="members">
+        <div class="row">- ausbildungsjahr: int</div>
+        <div class="row">- fachrichtung: Fachrichtung</div>
+        <hr class="sep">
+        <div class="row">+ Azubi(personalnummer, vorname, nachname, ausbildungsjahr, fachrichtung)</div>
+        <div class="row">+ getRollenbezeichnung(): String</div>
+      </div>
+    </div>
+
+    <div class="stepcard">
+      <div class="stepcard-head"><span class="stepnum">3</span><h3>Ausbilder</h3><span class="kind">Klasse extends Person</span><span class="diff easy">Sehr leicht</span></div>
+      <p><code>Ausbilder</code> erbt von <code>Person</code> und hat keine eigenen zusätzlichen Attribute. Der
+        Konstruktor reicht alle drei Parameter einfach an <code>super(...)</code> weiter. Überschreibt
+        <code>getRollenbezeichnung()</code> mit <code>"Ausbilder"</code>.</p>
+      <div class="members">
+        <div class="row">+ Ausbilder(personalnummer, vorname, nachname)</div>
+        <div class="row">+ getRollenbezeichnung(): String</div>
+      </div>
+      <div class="note">Nicht jede Unterklasse braucht neue Attribute. Manchmal ist der einzige Unterschied, was
+        <code>getRollenbezeichnung()</code> zurückgibt.</div>
+    </div>
+
+    <div class="stepcard">
+      <div class="stepcard-head"><span class="stepnum">4</span><h3>Bpu</h3><span class="kind">Klasse extends Person</span><span class="diff easy">Sehr leicht</span></div>
+      <p>Genau wie <code>Ausbilder</code>, nur dass <code>getRollenbezeichnung()</code> <code>"BPU"</code>
+        zurückgibt.</p>
+      <div class="members">
+        <div class="row">+ Bpu(personalnummer, vorname, nachname)</div>
+        <div class="row">+ getRollenbezeichnung(): String</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Teil 2 – Euer Modell: Berichtshefte</h2>
+    <p>Ab hier baut ihr allein weiter, in eurem eigenen Package. Achtet auf die Reihenfolge: Enums und Interface
+      zuerst, dann die abstrakte Klasse, dann die drei konkreten Unterklassen.</p>
+    <div class="diagram">
+<svg viewBox='0 0 1147.2 635' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;background:#F7F9FC;border-radius:12px'>
+<defs>
+  <marker id='tri2' markerWidth='16' markerHeight='14' refX='15' refY='7' orient='auto'>
+    <path d='M1,1 L15,7 L1,13 Z' fill='white' stroke='#526070' stroke-width='1.2'/>
+  </marker>
+  <marker id='arrow2' markerWidth='10' markerHeight='10' refX='8' refY='5' orient='auto'>
+    <path d='M1,1 L8,5 L1,9' fill='none' stroke='#526070' stroke-width='1.3'/>
+  </marker>
+</defs>
+<polyline points='573.6,191 283.6,166 283.6,87' fill='none' stroke='#526070' stroke-width='1.3' stroke-dasharray='6,4' marker-end='url(#tri2)'/>
+<polyline points='573.6,191 578.6,166 578.6,121' fill='none' stroke='#526070' stroke-width='1.3'  marker-end='url(#arrow2)'/>
+<polyline points='573.6,191 868.6,166 868.6,121' fill='none' stroke='#526070' stroke-width='1.3'  marker-end='url(#arrow2)'/>
+<polyline points='202.0,487 573.6,417' fill='none' stroke='#526070' stroke-width='1.3'  marker-end='url(#tri2)'/>
+<polyline points='573.6,487 573.6,417' fill='none' stroke='#526070' stroke-width='1.3'  marker-end='url(#tri2)'/>
+<polyline points='945.2,487 573.6,417' fill='none' stroke='#526070' stroke-width='1.3'  marker-end='url(#tri2)'/>
+<rect x='153.60000000000002' y='20' width='260' height='67' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='283.6' y='22' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#526070'>&#171;interface&#187;</text>
+<text x='283.6' y='37' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700'  fill='#1B2430'>Protokollierbar</text>
+<line x1='153.60000000000002' y1='50' x2='413.6' y2='50' stroke='#2D5BE3' stroke-width='1'/>
+<text x='163.60000000000002' y='60' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ verlauf(): List&lt;String&gt;</text>
+<rect x='453.6' y='20' width='250' height='101' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='578.6' y='22' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#526070'>&#171;enum&#187;</text>
+<text x='578.6' y='37' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700'  fill='#1B2430'>Berichtsart</text>
+<line x1='453.6' y1='50' x2='703.6' y2='50' stroke='#2D5BE3' stroke-width='1'/>
+<text x='578.6' y='60' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>BERUFSSCHULE</text>
+<text x='578.6' y='77' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>PRAXISEINSATZ</text>
+<text x='578.6' y='94' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>SEMINAR_WORKSHOP</text>
+<rect x='743.6' y='20' width='250' height='101' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='868.6' y='22' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#526070'>&#171;enum&#187;</text>
+<text x='868.6' y='37' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700'  fill='#1B2430'>Berichtsstatus</text>
+<line x1='743.6' y1='50' x2='993.6' y2='50' stroke='#2D5BE3' stroke-width='1'/>
+<text x='868.6' y='60' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>ENTWURF</text>
+<text x='868.6' y='77' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>EINGEREICHT</text>
+<text x='868.6' y='94' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>FREIGEGEBEN</text>
+<rect x='343.6' y='191' width='460' height='226' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='573.6' y='208' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700' font-style='italic' fill='#1B2430'>Berichtsheft</text>
+<line x1='343.6' y1='221' x2='803.6' y2='221' stroke='#2D5BE3' stroke-width='1'/>
+<text x='353.6' y='231' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- nummer: int</text>
+<text x='353.6' y='248' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- azubi: Azubi</text>
+<text x='353.6' y='265' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- kalenderjahr: int</text>
+<text x='353.6' y='282' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- kalenderwoche: int</text>
+<text x='353.6' y='299' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- status: Berichtsstatus</text>
+<line x1='343.6' y1='312' x2='803.6' y2='312' stroke='#2D5BE3' stroke-width='1'/>
+<text x='353.6' y='322' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ Berichtsheft(nummer, azubi, kalenderjahr,</text>
+<text x='353.6' y='339' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>     kalenderwoche)</text>
+<text x='353.6' y='356' font-family='Menlo, Consolas, monospace' font-size='12.5' font-style='italic' fill='#1B2430'>+ getArt(): Berichtsart</text>
+<text x='353.6' y='373' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ brauchtBpuFreigabe(): boolean</text>
+<text x='353.6' y='390' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ verlauf(): List&lt;String&gt;</text>
+<rect x='40.0' y='487' width='324.0' height='101' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='202.0' y='504' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700'  fill='#1B2430'>BerufsschulBerichtsheft</text>
+<line x1='40.0' y1='517' x2='364.0' y2='517' stroke='#2D5BE3' stroke-width='1'/>
+<text x='50.0' y='527' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ BerufsschulBerichtsheft(nummer, azubi,</text>
+<text x='50.0' y='544' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>     kalenderjahr, kalenderwoche)</text>
+<text x='50.0' y='561' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ getArt(): Berichtsart</text>
+<rect x='404.0' y='487' width='339.2' height='118' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='573.6' y='504' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700'  fill='#1B2430'>PraxiseinsatzBerichtsheft</text>
+<line x1='404.0' y1='517' x2='743.2' y2='517' stroke='#2D5BE3' stroke-width='1'/>
+<text x='414.0' y='527' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ PraxiseinsatzBerichtsheft(nummer, azubi,</text>
+<text x='414.0' y='544' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>     kalenderjahr, kalenderwoche)</text>
+<text x='414.0' y='561' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ getArt(): Berichtsart</text>
+<text x='414.0' y='578' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ brauchtBpuFreigabe(): boolean</text>
+<rect x='783.2' y='487' width='324.0' height='101' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='945.2' y='504' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700'  fill='#1B2430'>SeminarWorkshopBerichtsheft</text>
+<line x1='783.2' y1='517' x2='1107.2' y2='517' stroke='#2D5BE3' stroke-width='1'/>
+<text x='793.2' y='527' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ SeminarWorkshopBerichtsheft(nummer,</text>
+<text x='793.2' y='544' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>     azubi, kalenderjahr, kalenderwoche)</text>
+<text x='793.2' y='561' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ getArt(): Berichtsart</text>
+</svg>
+    </div>
+
+    <div class="stepcard">
+      <div class="stepcard-head"><span class="stepnum">5</span><h3>Berichtsart</h3><span class="kind">Enum</span><span class="diff easy">Leicht</span></div>
+      <p>Legt das Enum <code>Berichtsart</code> mit genau drei Konstanten an.</p>
+      <div class="members">
+        <div class="row">BERUFSSCHULE</div>
+        <div class="row">PRAXISEINSATZ</div>
+        <div class="row">SEMINAR_WORKSHOP</div>
+      </div>
+    </div>
+
+    <div class="stepcard">
+      <div class="stepcard-head"><span class="stepnum">6</span><h3>Berichtsstatus</h3><span class="kind">Enum</span><span class="diff easy">Leicht</span></div>
+      <p>Legt das Enum <code>Berichtsstatus</code> mit genau drei Konstanten an. Das ist bewusst eine vereinfachte
+        Fassung – der echte Ablauf mit BPU-Zwischenschritt kommt erst an Tag 2 dazu.</p>
+      <div class="members">
+        <div class="row">ENTWURF</div>
+        <div class="row">EINGEREICHT</div>
+        <div class="row">FREIGEGEBEN</div>
+      </div>
+    </div>
+
+    <div class="stepcard">
+      <div class="stepcard-head"><span class="stepnum">7</span><h3>Protokollierbar</h3><span class="kind">Interface</span><span class="diff easy">Leicht</span></div>
+      <p>Legt das Interface <code>Protokollierbar</code> mit genau einer Methode an. Jede Klasse, die dieses Interface
+        implementiert, verspricht eine Methode <code>verlauf()</code>, die eine Liste mit lesbaren Text-Zeilen liefert.
+        Team Praxiseinsatz baut in seinem Bereich dasselbe Interface. Später soll die Oberfläche darüber für zwei
+        Klassen, die sonst nichts miteinander zu tun haben, eine einheitliche „Verlauf"-Ansicht zeigen können.</p>
+      <div class="members">
+        <div class="row">+ verlauf(): List&lt;String&gt;</div>
+      </div>
+    </div>
+
+    <div class="stepcard">
+      <div class="stepcard-head"><span class="stepnum">8</span><h3>Berichtsheft</h3><span class="kind">Abstrakte Klasse, implements Protokollierbar</span><span class="diff mid">Mittel</span></div>
+      <p>Legt <code>Berichtsheft</code> als <code>abstract</code> an und lasst sie <code>Protokollierbar</code>
+        implementieren. Der Konstruktor setzt alle vier Parameter direkt und zusätzlich
+        <code>status = Berichtsstatus.ENTWURF</code>, obwohl <code>status</code> gar kein Parameter ist – jedes neue
+        Berichtsheft startet als Entwurf. <code>getArt()</code> ist <code>abstract</code>, jede Unterklasse muss sie
+        ausfüllen. <code>brauchtBpuFreigabe()</code> bekommt dagegen schon einen Rumpf: <code>return false;</code> –
+        das ist der Normalfall. Für <code>verlauf()</code> reicht an Tag 1 eine Liste mit einem einzigen Eintrag,
+        zum Beispiel <code>List.of(getArt() + " – KW" + kalenderwoche + " – " + status)</code>. Eine echte Historie
+        kommt an Tag 2.</p>
+      <div class="members">
+        <div class="row">- nummer: int</div>
+        <div class="row">- azubi: Azubi</div>
+        <div class="row">- kalenderjahr: int</div>
+        <div class="row">- kalenderwoche: int</div>
+        <div class="row">- status: Berichtsstatus</div>
+        <hr class="sep">
+        <div class="row">+ Berichtsheft(nummer, azubi, kalenderjahr, kalenderwoche)</div>
+        <div class="row abstract">{abstract} + getArt(): Berichtsart</div>
+        <div class="row">+ brauchtBpuFreigabe(): boolean</div>
+        <div class="row">+ verlauf(): List&lt;String&gt;</div>
+      </div>
+      <div class="note"><b>Wichtig:</b> <code>brauchtBpuFreigabe()</code> ist <u>nicht</u> abstract – sie hat schon
+        einen Rumpf. Trotzdem darf eine Unterklasse sie überschreiben, wenn sie ein anderes Verhalten braucht. Das ist
+        der Unterschied zu <code>getArt()</code>: dort <b>muss</b> überschrieben werden, hier <b>kann</b>.</div>
+    </div>
+
+    <div class="stepcard">
+      <div class="stepcard-head"><span class="stepnum">9</span><h3>BerufsschulBerichtsheft</h3><span class="kind">Klasse extends Berichtsheft</span><span class="diff easy">Leicht</span></div>
+      <p>Ruft im Konstruktor <code>super(nummer, azubi, kalenderjahr, kalenderwoche)</code> auf und überschreibt
+        <code>getArt()</code> so, dass sie <code>Berichtsart.BERUFSSCHULE</code> zurückgibt.</p>
+      <div class="members">
+        <div class="row">+ BerufsschulBerichtsheft(nummer, azubi, kalenderjahr, kalenderwoche)</div>
+        <div class="row">+ getArt(): Berichtsart</div>
+      </div>
+    </div>
+
+    <div class="stepcard">
+      <div class="stepcard-head"><span class="stepnum">10</span><h3>PraxiseinsatzBerichtsheft</h3><span class="kind">Klasse extends Berichtsheft</span><span class="diff mid">Leicht–Mittel</span></div>
+      <p>Wie <code>BerufsschulBerichtsheft</code>, aber <code>getArt()</code> gibt <code>Berichtsart.PRAXISEINSATZ</code>
+        zurück. Zusätzlich überschreibt diese Klasse als einzige auch <code>brauchtBpuFreigabe()</code> und gibt
+        <code>true</code> zurück – nur Praxiseinsatz-Berichte brauchen die BPU-Station im Ablauf.</p>
+      <div class="members">
+        <div class="row">+ PraxiseinsatzBerichtsheft(nummer, azubi, kalenderjahr, kalenderwoche)</div>
+        <div class="row">+ getArt(): Berichtsart</div>
+        <div class="row">+ brauchtBpuFreigabe(): boolean</div>
+      </div>
+      <div class="note">Das ist die einzige Stelle in eurem Modell, an der eine <b>konkrete</b> (nicht-abstrakte)
+        geerbte Methode überschrieben wird, nicht nur eine abstrakte.</div>
+    </div>
+
+    <div class="stepcard">
+      <div class="stepcard-head"><span class="stepnum">11</span><h3>SeminarWorkshopBerichtsheft</h3><span class="kind">Klasse extends Berichtsheft</span><span class="diff easy">Leicht</span></div>
+      <p>Wie <code>BerufsschulBerichtsheft</code>, aber <code>getArt()</code> gibt
+        <code>Berichtsart.SEMINAR_WORKSHOP</code> zurück.</p>
+      <div class="members">
+        <div class="row">+ SeminarWorkshopBerichtsheft(nummer, azubi, kalenderjahr, kalenderwoche)</div>
+        <div class="row">+ getArt(): Berichtsart</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Wann seid ihr fertig?</h2>
+    <div class="card">
+      <ul class="checklist">
+        <li>Alle elf Typen aus diesem Dokument existieren mit exakt diesen Namen.</li>
+        <li>Das Projekt kompiliert ohne Fehler.</li>
+        <li><code>getArt()</code> ist in allen drei Unterklassen überschrieben, <code>@Override</code> steht dabei.</li>
+        <li><code>PraxiseinsatzBerichtsheft</code> überschreibt zusätzlich <code>brauchtBpuFreigabe()</code>.</li>
+        <li>Ihr könnt an eurem eigenen Diagramm zeigen, welcher Pfeil Vererbung und welcher Interface-Umsetzung ist.</li>
+        <li>Mindestens eine Person im Team kann erklären, warum <code>Berichtsheft</code> abstrakt ist, aber
+          <code>BerufsschulBerichtsheft</code> nicht.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>Tag 2: Ihr bekommt eine geprüfte, ergänzte Fassung dieses Modells zurück – mit echter Statushistorie und
+    dem vollen fünfstufigen Freigabeablauf. Darauf arbeitet ihr weiter, unabhängig davon, wie weit ihr heute
+    gekommen seid.</footer>
+
+</div>
+</body>
+</html>
