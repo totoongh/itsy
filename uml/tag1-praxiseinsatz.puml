@@ -1,0 +1,59 @@
+@startuml
+!pragma layout smetana
+skinparam backgroundColor #F7F9FC
+skinparam classBackgroundColor white
+skinparam classBorderColor #2D5BE3
+skinparam ArrowColor #526070
+
+interface Protokollierbar {
+  + verlauf(): List<String>
+}
+
+enum Praxiseinsatzstatus {
+  GEPLANT
+  LAUFEND
+  ABGESCHLOSSEN
+  ABGESAGT
+}
+
+class Abteilung {
+  - id: int
+  - kuerzel: String
+  - beschreibung: String
+  - bpu: Bpu
+  + Abteilung(id, kuerzel, beschreibung, bpu)
+}
+
+class Praxisangebot {
+  - id: int
+  - abteilung: Abteilung
+  - beschreibung: String
+  - vorausgesetztesAusbildungsjahr: int
+  + Praxisangebot(id, abteilung, beschreibung, vorausgesetztesAusbildungsjahr)
+}
+
+class Praxisplatz {
+  - id: int
+  - angebot: Praxisangebot
+  - kapazitaet: int
+  - schwerpunkt: String
+  + Praxisplatz(id, angebot, kapazitaet, schwerpunkt)
+}
+
+class Praxiseinsatz {
+  - nummer: int
+  - azubi: Azubi
+  - angebot: Praxisangebot
+  - zugewiesenDurch: Ausbilder
+  - status: Praxiseinsatzstatus
+  + Praxiseinsatz(nummer, azubi, angebot, zugewiesenDurch)
+  + verlauf(): List<String>
+}
+
+Praxiseinsatz ..|> Protokollierbar
+Praxisangebot --> Abteilung
+Praxisplatz --> Praxisangebot
+Praxiseinsatz --> Praxisangebot
+Praxiseinsatz --> Azubi
+Praxiseinsatz --> Ausbilder
+@enduml

@@ -1,0 +1,43 @@
+@startuml
+!pragma layout smetana
+skinparam backgroundColor #F7F9FC
+skinparam classBackgroundColor white
+skinparam classBorderColor #2D5BE3
+skinparam ArrowColor #526070
+
+abstract class Person {
+  - personalnummer: int
+  - vorname: String
+  - nachname: String
+  + Person(personalnummer, vorname, nachname)
+  + getVollstaendigerName(): String
+  + {abstract} getRollenbezeichnung(): String
+}
+
+class Azubi {
+  - ausbildungsjahr: int
+  - fachrichtung: Fachrichtung
+  + Azubi(personalnummer, vorname, nachname, ausbildungsjahr, fachrichtung)
+  + getRollenbezeichnung(): String
+}
+
+class Ausbilder {
+  + Ausbilder(personalnummer, vorname, nachname)
+  + getRollenbezeichnung(): String
+}
+
+class Bpu {
+  + Bpu(personalnummer, vorname, nachname)
+  + getRollenbezeichnung(): String
+}
+
+enum Fachrichtung {
+  ANWENDUNGSENTWICKLUNG
+  SYSTEMINTEGRATION
+}
+
+Person <|-- Azubi
+Person <|-- Ausbilder
+Person <|-- Bpu
+Azubi --> Fachrichtung
+@enduml

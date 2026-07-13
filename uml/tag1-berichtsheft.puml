@@ -1,0 +1,59 @@
+@startuml
+!pragma layout smetana
+skinparam backgroundColor #F7F9FC
+skinparam classBackgroundColor white
+skinparam classBorderColor #2D5BE3
+skinparam ArrowColor #526070
+
+interface Protokollierbar {
+  + verlauf(): List<String>
+}
+
+enum Berichtsart {
+  BERUFSSCHULE
+  PRAXISEINSATZ
+  SEMINAR_WORKSHOP
+}
+
+enum Berichtsstatus {
+  ENTWURF
+  EINGEREICHT
+  FREIGEGEBEN
+}
+
+abstract class Berichtsheft {
+  - nummer: int
+  - azubi: Azubi
+  - kalenderjahr: int
+  - kalenderwoche: int
+  - status: Berichtsstatus
+  + Berichtsheft(nummer, azubi, kalenderjahr, kalenderwoche)
+  + {abstract} getArt(): Berichtsart
+  + brauchtBpuFreigabe(): boolean
+  + verlauf(): List<String>
+}
+
+class BerufsschulBerichtsheft {
+  + BerufsschulBerichtsheft(nummer, azubi, kalenderjahr, kalenderwoche)
+  + getArt(): Berichtsart
+}
+
+class PraxiseinsatzBerichtsheft {
+  + PraxiseinsatzBerichtsheft(nummer, azubi, kalenderjahr, kalenderwoche)
+  + getArt(): Berichtsart
+  + brauchtBpuFreigabe(): boolean
+}
+
+class SeminarWorkshopBerichtsheft {
+  + SeminarWorkshopBerichtsheft(nummer, azubi, kalenderjahr, kalenderwoche)
+  + getArt(): Berichtsart
+}
+
+Berichtsheft ..|> Protokollierbar
+Berichtsheft <|-- BerufsschulBerichtsheft
+Berichtsheft <|-- PraxiseinsatzBerichtsheft
+Berichtsheft <|-- SeminarWorkshopBerichtsheft
+Berichtsheft --> Berichtsart
+Berichtsheft --> Berichtsstatus
+Berichtsheft --> Azubi
+@enduml
