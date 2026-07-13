@@ -1,0 +1,182 @@
+<svg viewBox='0 0 2241.6 1474' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;background:#F7F9FC;border-radius:12px'>
+<text x='1120' y='30' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='19' font-weight='700' fill='#1B2430'>AzubiHub &#8211; Gesamtmodell</text>
+<defs>
+  <marker id='tri' markerWidth='16' markerHeight='14' refX='15' refY='7' orient='auto'>
+    <path d='M1,1 L15,7 L1,13 Z' fill='white' stroke='#526070' stroke-width='1.2'/>
+  </marker>
+  <marker id='arrow' markerWidth='10' markerHeight='10' refX='8' refY='5' orient='auto'>
+    <path d='M1,1 L8,5 L1,9' fill='none' stroke='#526070' stroke-width='1.3'/>
+  </marker>
+</defs>
+<polyline points='209.6,293 698.4,218' fill='none' stroke='#526070' stroke-width='1.3'  marker-end='url(#tri)'/>
+<polyline points='576.0,293 698.4,218' fill='none' stroke='#526070' stroke-width='1.3'  marker-end='url(#tri)'/>
+<polyline points='934.8,293 698.4,218' fill='none' stroke='#526070' stroke-width='1.3'  marker-end='url(#tri)'/>
+<polyline points='209.6,434 209.6,471.5 1251.8,471.5 1251.8,394' fill='none' stroke='#526070' stroke-width='1.3'  marker-end='url(#arrow)'/>
+<polyline points='583.6,827 583.6,588 698.4,588 698.4,576' fill='none' stroke='#526070' stroke-width='1.3' stroke-dasharray='6,4' marker-end='url(#tri)'/>
+<polyline points='1627.2,923.0 1657.2,923.0 1657.2,588 718.4,588 698.4,576' fill='none' stroke='#526070' stroke-width='1.3' stroke-dasharray='6,4' marker-end='url(#tri)'/>
+<polyline points='583.6,827 433.6,802 433.6,752' fill='none' stroke='#526070' stroke-width='1.3'  marker-end='url(#arrow)'/>
+<polyline points='583.6,827 733.6,802 733.6,752' fill='none' stroke='#526070' stroke-width='1.3'  marker-end='url(#arrow)'/>
+<polyline points='202.0,1128 583.6,1053' fill='none' stroke='#526070' stroke-width='1.3'  marker-end='url(#tri)'/>
+<polyline points='583.6,1128 583.6,1053' fill='none' stroke='#526070' stroke-width='1.3'  marker-end='url(#tri)'/>
+<polyline points='965.2,1128 583.6,1053' fill='none' stroke='#526070' stroke-width='1.3'  marker-end='url(#tri)'/>
+<polyline points='1462.2,827 1427.2,802 1427.2,769' fill='none' stroke='#526070' stroke-width='1.3'  marker-end='url(#arrow)'/>
+<polyline points='1627.2,923.0 1682.2,923.0 1737.2,1122.0' fill='none' stroke='#526070' stroke-width='1.3'  marker-end='url(#arrow)'/>
+<rect x='1624.2' y='920.0' width='38.0' height='16' fill='#F7F9FC'/><text x='1643.2' y='932.0' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>0..*</text>
+<rect x='1731.6124631012406' y='1092.1806237656817' width='20' height='16' fill='#F7F9FC'/><text x='1741.6124631012406' y='1104.1806237656817' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>1</text>
+<polyline points='1914.4,1043 1910.6000000000001,968' fill='none' stroke='#526070' stroke-width='1.3'  marker-end='url(#arrow)'/>
+<rect x='1903.5788420639121' y='1014.5650816097682' width='38.0' height='16' fill='#F7F9FC'/><text x='1922.5788420639121' y='1026.5650816097682' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>0..*</text>
+<rect x='1892.421157936088' y='972.4349183902318' width='20' height='16' fill='#F7F9FC'/><text x='1902.421157936088' y='984.4349183902318' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>1</text>
+<polyline points='1891.6000000000001,1276 1914.4,1201' fill='none' stroke='#526070' stroke-width='1.3'  marker-end='url(#arrow)'/>
+<rect x='1885.8646111587225' y='1251.3094487587064' width='38.0' height='16' fill='#F7F9FC'/><text x='1904.8646111587225' y='1263.3094487587064' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>0..*</text>
+<rect x='1891.1353888412777' y='1201.6905512412936' width='20' height='16' fill='#F7F9FC'/><text x='1901.1353888412777' y='1213.6905512412936' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>1</text>
+<polyline points='353.6,940.0 15,940.0 15,255.5 40,363.5' fill='none' stroke='#526070' stroke-width='1.3'  marker-end='url(#arrow)'/>
+<rect x='318.6' y='919.0' width='38.0' height='16' fill='#F7F9FC'/><text x='337.6' y='931.0' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>0..*</text>
+<rect x='35.15985807999089' y='333.8825125345765' width='20' height='16' fill='#F7F9FC'/><text x='45.15985807999089' y='345.8825125345765' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>1</text>
+<polyline points='1297.2,923.0 1131.8,923.0 1131.8,235.5 399.2,235.5 379.2,363.5' fill='none' stroke='#526070' stroke-width='1.3'  marker-end='url(#arrow)'/>
+<rect x='1262.2' y='902.0' width='38.0' height='16' fill='#F7F9FC'/><text x='1281.2' y='914.0' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>0..*</text>
+<rect x='380.56213838813767' y='337.0811993824449' width='20' height='16' fill='#F7F9FC'/><text x='390.56213838813767' y='349.0811993824449' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>1</text>
+<polyline points='1297.2,923.0 1111.8,943.0 1111.8,255.5 742.8,255.5 722.8,343.5' fill='none' stroke='#526070' stroke-width='1.3'  marker-end='url(#arrow)'/>
+<rect x='1261.3270175817797' y='903.767955730609' width='38.0' height='16' fill='#F7F9FC'/><text x='1280.3270175817797' y='915.767955730609' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>0..*</text>
+<rect x='725.1221333595465' y='317.8924642396373' width='20' height='16' fill='#F7F9FC'/><text x='735.1221333595465' y='329.8924642396373' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>1</text>
+<polyline points='1910.6000000000001,827 1910.6000000000001,215.5 1116.8,215.5 1096.8,335.0' fill='none' stroke='#526070' stroke-width='1.3'  marker-end='url(#arrow)'/>
+<rect x='1900.6000000000001' y='799.0' width='38.0' height='16' fill='#F7F9FC'/><text x='1919.6000000000001' y='811.0' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>0..*</text>
+<rect x='1098.3176297931702' y='308.70509867304145' width='20' height='16' fill='#F7F9FC'/><text x='1108.3176297931702' y='320.70509867304145' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>1</text>
+<rect x='525.0' y='60' width='346.8' height='158' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='698.4' y='77' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700' font-style='italic' fill='#1B2430'>Person</text>
+<line x1='525.0' y1='90' x2='871.8' y2='90' stroke='#2D5BE3' stroke-width='1'/>
+<text x='535.0' y='100' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- personalnummer: int</text>
+<text x='535.0' y='117' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- vorname: String</text>
+<text x='535.0' y='134' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- nachname: String</text>
+<line x1='525.0' y1='147' x2='871.8' y2='147' stroke='#2D5BE3' stroke-width='1'/>
+<text x='535.0' y='157' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ Person(personalnummer, vorname, nachname)</text>
+<text x='535.0' y='174' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ getVollstaendigerName(): String</text>
+<text x='535.0' y='191' font-family='Menlo, Consolas, monospace' font-size='12.5' font-style='italic' fill='#1B2430'>+ getRollenbezeichnung(): String</text>
+<rect x='40' y='293' width='339.2' height='141' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='209.6' y='310' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700'  fill='#1B2430'>Azubi</text>
+<line x1='40' y1='323' x2='379.2' y2='323' stroke='#2D5BE3' stroke-width='1'/>
+<text x='50' y='333' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- ausbildungsjahr: int</text>
+<text x='50' y='350' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- fachrichtung: Fachrichtung</text>
+<line x1='40' y1='363' x2='379.2' y2='363' stroke='#2D5BE3' stroke-width='1'/>
+<text x='50' y='373' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ Azubi(personalnummer, vorname, nachname,</text>
+<text x='50' y='390' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>     ausbildungsjahr, fachrichtung)</text>
+<text x='50' y='407' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ getRollenbezeichnung(): String</text>
+<rect x='429.2' y='293' width='293.59999999999997' height='101' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='576.0' y='310' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700'  fill='#1B2430'>Ausbilder</text>
+<line x1='429.2' y1='323' x2='722.8' y2='323' stroke='#2D5BE3' stroke-width='1'/>
+<text x='439.2' y='333' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ Ausbilder(personalnummer, vorname,</text>
+<text x='439.2' y='350' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>     nachname)</text>
+<text x='439.2' y='367' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ getRollenbezeichnung(): String</text>
+<rect x='772.8' y='293' width='324.0' height='84' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='934.8' y='310' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700'  fill='#1B2430'>Bpu</text>
+<line x1='772.8' y1='323' x2='1096.8' y2='323' stroke='#2D5BE3' stroke-width='1'/>
+<text x='782.8' y='333' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ Bpu(personalnummer, vorname, nachname)</text>
+<text x='782.8' y='350' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ getRollenbezeichnung(): String</text>
+<rect x='1146.8' y='293' width='210' height='101' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='1251.8' y='295' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#526070'>&#171;enum&#187;</text>
+<text x='1251.8' y='310' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700'  fill='#1B2430'>Fachrichtung</text>
+<line x1='1146.8' y1='323' x2='1356.8' y2='323' stroke='#2D5BE3' stroke-width='1'/>
+<text x='1251.8' y='333' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>ANWENDUNGSENTWICKLUNG</text>
+<text x='1251.8' y='350' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>SYSTEMINTEGRATION</text>
+<text x='1251.8' y='367' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>DATEN_UND_PROZESSANALYSE</text>
+<rect x='568.4' y='509' width='260' height='67' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='698.4' y='511' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#526070'>&#171;interface&#187;</text>
+<text x='698.4' y='526' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700'  fill='#1B2430'>Protokollierbar</text>
+<line x1='568.4' y1='539' x2='828.4' y2='539' stroke='#2D5BE3' stroke-width='1'/>
+<text x='578.4' y='549' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ verlauf(): List&lt;String&gt;</text>
+<rect x='308.6' y='651' width='250' height='101' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='433.6' y='653' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#526070'>&#171;enum&#187;</text>
+<text x='433.6' y='668' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700'  fill='#1B2430'>Berichtsart</text>
+<line x1='308.6' y1='681' x2='558.6' y2='681' stroke='#2D5BE3' stroke-width='1'/>
+<text x='433.6' y='691' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>BERUFSSCHULE</text>
+<text x='433.6' y='708' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>PRAXISEINSATZ</text>
+<text x='433.6' y='725' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>SEMINAR_WORKSHOP</text>
+<rect x='608.6' y='651' width='250' height='101' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='733.6' y='653' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#526070'>&#171;enum&#187;</text>
+<text x='733.6' y='668' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700'  fill='#1B2430'>Berichtsstatus</text>
+<line x1='608.6' y1='681' x2='858.6' y2='681' stroke='#2D5BE3' stroke-width='1'/>
+<text x='733.6' y='691' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>ENTWURF</text>
+<text x='733.6' y='708' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>EINGEREICHT</text>
+<text x='733.6' y='725' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>FREIGEGEBEN</text>
+<rect x='353.6' y='827' width='460' height='226' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='583.6' y='844' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700' font-style='italic' fill='#1B2430'>Berichtsheft</text>
+<line x1='353.6' y1='857' x2='813.6' y2='857' stroke='#2D5BE3' stroke-width='1'/>
+<text x='363.6' y='867' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- nummer: int</text>
+<text x='363.6' y='884' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- azubi: Azubi</text>
+<text x='363.6' y='901' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- kalenderjahr: int</text>
+<text x='363.6' y='918' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- kalenderwoche: int</text>
+<text x='363.6' y='935' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- status: Berichtsstatus</text>
+<line x1='353.6' y1='948' x2='813.6' y2='948' stroke='#2D5BE3' stroke-width='1'/>
+<text x='363.6' y='958' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ Berichtsheft(nummer, azubi, kalenderjahr,</text>
+<text x='363.6' y='975' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>     kalenderwoche)</text>
+<text x='363.6' y='992' font-family='Menlo, Consolas, monospace' font-size='12.5' font-style='italic' fill='#1B2430'>+ getArt(): Berichtsart</text>
+<text x='363.6' y='1009' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ brauchtBpuFreigabe(): boolean</text>
+<text x='363.6' y='1026' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ verlauf(): List&lt;String&gt;</text>
+<rect x='40' y='1128' width='324.0' height='101' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='202.0' y='1145' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700'  fill='#1B2430'>BerufsschulBerichtsheft</text>
+<line x1='40' y1='1158' x2='364.0' y2='1158' stroke='#2D5BE3' stroke-width='1'/>
+<text x='50' y='1168' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ BerufsschulBerichtsheft(nummer, azubi,</text>
+<text x='50' y='1185' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>     kalenderjahr, kalenderwoche)</text>
+<text x='50' y='1202' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ getArt(): Berichtsart</text>
+<rect x='414.0' y='1128' width='339.2' height='118' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='583.6' y='1145' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700'  fill='#1B2430'>PraxiseinsatzBerichtsheft</text>
+<line x1='414.0' y1='1158' x2='753.2' y2='1158' stroke='#2D5BE3' stroke-width='1'/>
+<text x='424.0' y='1168' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ PraxiseinsatzBerichtsheft(nummer, azubi,</text>
+<text x='424.0' y='1185' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>     kalenderjahr, kalenderwoche)</text>
+<text x='424.0' y='1202' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ getArt(): Berichtsart</text>
+<text x='424.0' y='1219' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ brauchtBpuFreigabe(): boolean</text>
+<rect x='803.2' y='1128' width='324.0' height='101' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='965.2' y='1145' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700'  fill='#1B2430'>SeminarWorkshopBerichtsheft</text>
+<line x1='803.2' y1='1158' x2='1127.2' y2='1158' stroke='#2D5BE3' stroke-width='1'/>
+<text x='813.2' y='1168' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ SeminarWorkshopBerichtsheft(nummer,</text>
+<text x='813.2' y='1185' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>     azubi, kalenderjahr, kalenderwoche)</text>
+<text x='813.2' y='1202' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ getArt(): Berichtsart</text>
+<rect x='1297.2' y='651' width='260' height='118' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='1427.2' y='653' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#526070'>&#171;enum&#187;</text>
+<text x='1427.2' y='668' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700'  fill='#1B2430'>Praxiseinsatzstatus</text>
+<line x1='1297.2' y1='681' x2='1557.2' y2='681' stroke='#2D5BE3' stroke-width='1'/>
+<text x='1427.2' y='691' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>GEPLANT</text>
+<text x='1427.2' y='708' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>LAUFEND</text>
+<text x='1427.2' y='725' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>ABGESCHLOSSEN</text>
+<text x='1427.2' y='742' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>ABGESAGT</text>
+<rect x='1297.2' y='827' width='330' height='192' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='1462.2' y='844' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700'  fill='#1B2430'>Praxiseinsatz</text>
+<line x1='1297.2' y1='857' x2='1627.2' y2='857' stroke='#2D5BE3' stroke-width='1'/>
+<text x='1307.2' y='867' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- nummer: int</text>
+<text x='1307.2' y='884' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- azubi: Azubi</text>
+<text x='1307.2' y='901' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- angebot: Praxisangebot</text>
+<text x='1307.2' y='918' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- zugewiesenDurch: Ausbilder</text>
+<text x='1307.2' y='935' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- status: Praxiseinsatzstatus</text>
+<line x1='1297.2' y1='948' x2='1627.2' y2='948' stroke='#2D5BE3' stroke-width='1'/>
+<text x='1307.2' y='958' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ Praxiseinsatz(nummer, azubi, angebot,</text>
+<text x='1307.2' y='975' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>     zugewiesenDurch)</text>
+<text x='1307.2' y='992' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ verlauf(): List&lt;String&gt;</text>
+<rect x='1737.2' y='827' width='346.8' height='141' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='1910.6000000000001' y='844' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700'  fill='#1B2430'>Abteilung</text>
+<line x1='1737.2' y1='857' x2='2084.0' y2='857' stroke='#2D5BE3' stroke-width='1'/>
+<text x='1747.2' y='867' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- id: int</text>
+<text x='1747.2' y='884' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- kuerzel: String</text>
+<text x='1747.2' y='901' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- beschreibung: String</text>
+<text x='1747.2' y='918' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- bpu: Bpu</text>
+<line x1='1737.2' y1='931' x2='2084.0' y2='931' stroke='#2D5BE3' stroke-width='1'/>
+<text x='1747.2' y='941' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ Abteilung(id, kuerzel, beschreibung, bpu)</text>
+<rect x='1737.2' y='1043' width='354.4' height='158' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='1914.4' y='1060' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700'  fill='#1B2430'>Praxisangebot</text>
+<line x1='1737.2' y1='1073' x2='2091.6' y2='1073' stroke='#2D5BE3' stroke-width='1'/>
+<text x='1747.2' y='1083' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- id: int</text>
+<text x='1747.2' y='1100' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- abteilung: Abteilung</text>
+<text x='1747.2' y='1117' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- beschreibung: String</text>
+<text x='1747.2' y='1134' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- vorausgesetztesAusbildungsjahr: int</text>
+<line x1='1737.2' y1='1147' x2='2091.6' y2='1147' stroke='#2D5BE3' stroke-width='1'/>
+<text x='1747.2' y='1157' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ Praxisangebot(id, abteilung, beschreibung,</text>
+<text x='1747.2' y='1174' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>     vorausgesetztesAusbildungsjahr)</text>
+<rect x='1737.2' y='1276' width='308.8' height='158' fill='#FFFFFF' stroke='#2D5BE3' stroke-width='1.4' rx='3'/>
+<text x='1891.6000000000001' y='1293' text-anchor='middle' font-family='Menlo, Consolas, monospace' font-size='13.5' font-weight='700'  fill='#1B2430'>Praxisplatz</text>
+<line x1='1737.2' y1='1306' x2='2046.0' y2='1306' stroke='#2D5BE3' stroke-width='1'/>
+<text x='1747.2' y='1316' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- id: int</text>
+<text x='1747.2' y='1333' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- angebot: Praxisangebot</text>
+<text x='1747.2' y='1350' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- kapazitaet: int</text>
+<text x='1747.2' y='1367' font-family='Menlo, Consolas, monospace' font-size='12.5' fill='#1B2430'>- schwerpunkt: String</text>
+<line x1='1737.2' y1='1380' x2='2046.0' y2='1380' stroke='#2D5BE3' stroke-width='1'/>
+<text x='1747.2' y='1390' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>+ Praxisplatz(id, angebot, kapazitaet,</text>
+<text x='1747.2' y='1407' font-family='Menlo, Consolas, monospace' font-size='12.5'  fill='#1B2430'>     schwerpunkt)</text>
+</svg>
