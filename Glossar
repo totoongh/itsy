@@ -1,0 +1,245 @@
+# Klausur-Glossar: Java und Objektorientierung
+
+Dieses Glossar basiert auf dem festgehaltenen Scope des Java-OOP-Workshops. Jede Definition ist so formuliert, dass sie als kurze Antwort auf die Klausurfrage „Was bedeutet der Begriff …?“ verwendet werden kann.
+
+## Verbindlich behandelter Scope
+
+### Abstrakte Klasse
+
+Eine abstrakte Klasse ist eine Klasse, von der keine direkten Objekte erzeugt werden können. Sie dient als gemeinsame Grundlage für Unterklassen und kann sowohl bereits implementierte als auch abstrakte Methoden enthalten. In Java wird sie mit `abstract` gekennzeichnet.
+
+### Abstrakte Methode
+
+Eine abstrakte Methode legt nur die Methodensignatur fest und besitzt in der abstrakten Oberklasse keinen Methodenrumpf. Eine konkrete Unterklasse muss diese Methode implementieren, sofern sie nicht selbst abstrakt ist. Dadurch wird ein gemeinsames Verhalten vorgeschrieben, dessen konkrete Umsetzung den Unterklassen überlassen bleibt.
+
+### Abstrakte Klasse im Vergleich zum Interface
+
+Eine abstrakte Klasse ist eine teilweise ausgearbeitete gemeinsame Basisklasse und kann Attribute, Konstruktoren sowie bereits implementierte Methoden enthalten. Ein Interface beschreibt vor allem einen Vertrag, den auch fachlich unterschiedliche Klassen erfüllen können. Eine Klasse kann nur eine direkte Oberklasse erweitern, aber mehrere Interfaces implementieren.
+
+### Abstraktion
+
+Abstraktion bedeutet, sich auf die für eine Aufgabe wichtigen Eigenschaften und Verhaltensweisen eines Objekts zu konzentrieren. Unwichtige technische oder fachliche Einzelheiten werden ausgeblendet. In Java unterstützen beispielsweise abstrakte Klassen und Interfaces diese Form der Modellierung.
+
+### Aggregation
+
+Eine Aggregation ist eine besondere „has-a“-Beziehung zwischen einem Ganzen und seinen Teilen. Der Teil kann jedoch unabhängig vom Ganzen existieren, beispielsweise ein Mitarbeiter unabhängig von einer Abteilung. Im UML-Klassendiagramm wird die Aggregation durch eine leere Raute auf der Seite des Ganzen dargestellt.
+
+### Argument
+
+Ein Argument ist ein konkreter Wert, der bei einem Methoden- oder Konstruktoraufruf übergeben wird. Bei `setName("Mia")` ist `"Mia"` das Argument. Der zugehörige Platzhalter in der Methodendefinition heißt Parameter.
+
+### Assoziation
+
+Eine Assoziation beschreibt eine allgemeine Beziehung zwischen Objekten oder Klassen. Sie sagt aus, dass Objekte miteinander verbunden sind oder ein Objekt ein anderes kennt und verwendet. In einem UML-Klassendiagramm wird sie üblicherweise als Linie dargestellt.
+
+### Attribut
+
+Ein Attribut ist eine in einer Klasse definierte Variable, die eine Eigenschaft beziehungsweise einen Teil des Zustands eines Objekts speichert. Verschiedene Objekte derselben Klasse können unterschiedliche Attributwerte besitzen. Beispiele sind `name`, `personalnummer` oder `verfuegbar`.
+
+### Austauschbarkeit über einen gemeinsamen Typ
+
+Unterschiedliche Objekte sind über einen gemeinsamen Oberklassen- oder Interfacetyp austauschbar, wenn sie diesen Typ erfüllen. Eine Variable des gemeinsamen Typs kann dann nacheinander verschiedene konkrete Implementierungen referenzieren. Auf diese Weise kann derselbe Programmcode mit unterschiedlichen Unterklassen oder Implementierungen arbeiten.
+
+### `@Override`
+
+`@Override` ist eine Annotation, mit der gekennzeichnet wird, dass eine Methode eine geerbte Methode überschreibt. Der Compiler prüft dadurch, ob tatsächlich eine passende Methode in einer Oberklasse oder einem Interface vorhanden ist. Schreibfehler oder eine falsche Methodensignatur können so früh erkannt werden.
+
+### `abstract`
+
+`abstract` ist ein Java-Schlüsselwort zur Kennzeichnung abstrakter Klassen und abstrakter Methoden. Eine abstrakte Klasse kann nicht direkt instanziiert werden. Eine abstrakte Methode gibt eine Signatur vor, enthält aber noch keine konkrete Implementierung.
+
+### Dynamischer Polymorphismus
+
+Dynamischer Polymorphismus bedeutet, dass erst zur Laufzeit entschieden wird, welche überschriebene Methode ausgeführt wird. Entscheidend ist der tatsächliche Objekttyp und nicht nur der Typ der Variablen. So kann derselbe Methodenaufruf bei unterschiedlichen Unterklassen unterschiedliches Verhalten auslösen.
+
+### Dynamischer Typ
+
+Der dynamische Typ ist die Klasse des Objekts, das zur Laufzeit tatsächlich hinter einer Variablen steht. Bei `Person person = new Azubi();` ist `Azubi` der dynamische Typ. Er bestimmt bei überschriebenen Instanzmethoden, welche Implementierung ausgeführt wird.
+
+### Enum
+
+Ein Enum ist ein Java-Typ für eine feste, begrenzte Menge benannter Werte. Beispielsweise kann ein `Wochentag` nur Werte wie `MONTAG`, `DIENSTAG` oder `MITTWOCH` annehmen. Enums verhindern ungültige freie Werte und machen den Code verständlicher.
+
+### Exception
+
+Eine Exception ist ein Objekt, das einen Fehler oder eine außergewöhnliche Situation während der Programmausführung beschreibt. Sie kann mit `throw` ausgelöst und mit `try` und `catch` behandelt werden. Eigene Exception-Klassen können fachliche Fehler besonders verständlich ausdrücken.
+
+### Exception-Hierarchie
+
+Eine Exception-Hierarchie ordnet verschiedene Exception-Klassen durch Vererbung. Eine gemeinsame Oberklasse beschreibt die allgemeine Fehlergruppe, während Unterklassen konkrete Fehlerarten darstellen. Dadurch können Fehler entweder allgemein über die Oberklasse oder gezielt über eine bestimmte Unterklasse behandelt werden.
+
+### `extends`
+
+`extends` ist das Java-Schlüsselwort, mit dem eine Klasse von einer anderen Klasse erbt. Die Unterklasse übernimmt dadurch zugängliche Attribute und Methoden der Oberklasse und kann deren Verhalten erweitern oder überschreiben. Eine Java-Klasse kann nur genau eine direkte Oberklasse besitzen.
+
+### Generalisierung
+
+Generalisierung bedeutet, gemeinsame Eigenschaften und Verhaltensweisen mehrerer Klassen in einer allgemeineren Oberklasse zusammenzufassen. Beispielsweise können `Azubi` und `Ausbilder` zu `Person` generalisiert werden. Dadurch werden Gemeinsamkeiten zentral modelliert und Wiederholungen reduziert.
+
+### Getter
+
+Ein Getter ist eine Methode, die den Wert eines meist privaten Attributs zurückgibt. Er ermöglicht einen kontrollierten Lesezugriff von außen, ohne das Attribut selbst öffentlich zu machen. Typische Namen sind `getName()` oder bei boolean-Werten `isVerfuegbar()`.
+
+### „has-a“-Beziehung
+
+Eine „has-a“-Beziehung beschreibt, dass ein Objekt ein anderes Objekt als Bestandteil oder zugeordnetes Objekt besitzt. Beispielsweise hat eine Bestellung einen Besteller oder eine Ausbildungsmaßnahme einen Raum. In Java wird dies häufig durch ein Attribut dargestellt, dessen Typ eine andere Klasse ist.
+
+### `implements`
+
+`implements` ist das Java-Schlüsselwort, mit dem eine Klasse angibt, dass sie ein oder mehrere Interfaces erfüllt. Die Klasse muss die darin vorgeschriebenen abstrakten Methoden implementieren, sofern sie nicht selbst abstrakt ist. Eine Klasse kann mehrere Interfaces gleichzeitig implementieren.
+
+### Instanz
+
+Eine Instanz ist ein konkretes, zur Laufzeit erzeugtes Objekt einer Klasse. Die Klasse ist der Bauplan, während die Instanz konkrete Werte für ihre Attribute besitzt. Die Begriffe Instanz und Objekt werden in diesem Zusammenhang meist gleichbedeutend verwendet.
+
+### Instanzmethode
+
+Eine Instanzmethode gehört zu einem konkreten Objekt und wird über dieses Objekt aufgerufen. Sie kann auf dessen Attribute und weitere Instanzmethoden zugreifen. Welche überschriebene Instanzmethode ausgeführt wird, kann vom dynamischen Typ des Objekts abhängen.
+
+### Interface
+
+Ein Interface beschreibt einen Vertrag, den implementierende Klassen erfüllen müssen. Es legt fest, welche Methoden von außen verfügbar sein sollen, ohne die konkrete Umsetzung an eine bestimmte Klasse zu binden. Objekte verschiedener Klassen können dadurch über denselben Interfacetyp verwendet werden.
+
+### Interface als Vertrag
+
+Ein Interface ist ein Vertrag, weil es verbindlich festlegt, welche Methoden eine implementierende Klasse anbieten muss. Andere Programmteile dürfen sich auf diese Methodensignaturen verlassen, ohne die konkrete Klasse oder Implementierung zu kennen. Der Vertrag beschreibt somit das erwartete Verhalten nach außen.
+
+### „is-a“-Beziehung
+
+Eine „is-a“-Beziehung beschreibt eine Vererbungs- oder Subtypbeziehung. Wenn `Azubi` von `Person` erbt, gilt: Ein Azubi ist eine Person und kann deshalb grundsätzlich als `Person` verwendet werden. Eine sinnvolle „is-a“-Beziehung ist eine wichtige Voraussetzung für geeignete Vererbung.
+
+### Klasse
+
+Eine Klasse ist ein Bauplan für Objekte. Sie beschreibt, welche Attribute die Objekte besitzen und welche Methoden sie ausführen können. Aus derselben Klasse können mehrere Instanzen mit unterschiedlichen Zuständen erzeugt werden.
+
+### Kapselung
+
+Kapselung bedeutet, den inneren Zustand eines Objekts vor unkontrolliertem Zugriff zu schützen und den Zugriff über klar definierte Methoden zu ermöglichen. Attribute werden dafür häufig `private` deklariert und über Getter, Setter oder fachliche Methoden verwendet. Das Objekt behält dadurch die Kontrolle über seinen eigenen Zustand.
+
+### Komposition
+
+Eine Komposition ist eine starke „has-a“-Beziehung zwischen einem Ganzen und seinen Teilen. Der Teil gehört fest zum Ganzen und besitzt im Modell keine unabhängige Lebensdauer, beispielsweise ein Zimmer innerhalb eines bestimmten Hauses. Im UML-Klassendiagramm wird die Komposition durch eine ausgefüllte Raute auf der Seite des Ganzen dargestellt.
+
+### Konstruktor
+
+Ein Konstruktor ist ein besonderer Bestandteil einer Klasse, der beim Erzeugen eines neuen Objekts aufgerufen wird. Er trägt denselben Namen wie die Klasse, besitzt keinen Rückgabetyp und setzt typischerweise den Anfangszustand des Objekts. Eine Klasse kann mehrere überladene Konstruktoren besitzen.
+
+### Konstruktoraufruf
+
+Ein Konstruktoraufruf erzeugt und initialisiert ein neues Objekt, beispielsweise mit `new Azubi(...)`. Dabei werden die angegebenen Argumente an einen passenden Konstruktor übergeben. Innerhalb eines Konstruktors kann mit `super(...)` ein Konstruktor der Oberklasse aufgerufen werden.
+
+### Mehrfachvererbungsproblem bei Klassen
+
+Bei der Mehrfachvererbung würde eine Klasse gleichzeitig von mehreren Klassen erben. Dabei können Mehrdeutigkeiten entstehen, wenn mehrere Oberklassen gleichnamige Methoden oder widersprüchliches Verhalten bereitstellen. Java vermeidet dieses Problem, indem eine Klasse nur eine direkte Oberklasse haben, aber mehrere Interfaces implementieren darf.
+
+### Methode
+
+Eine Methode beschreibt eine benannte Operation beziehungsweise ein Verhalten einer Klasse oder eines Objekts. Sie kann Parameter entgegennehmen, Anweisungen ausführen, den Objektzustand verändern und einen Wert zurückgeben. Beispiele sind `ausleihen()`, `suchen()` oder `getName()`.
+
+### Methodenaufruf
+
+Bei einem Methodenaufruf wird eine definierte Methode ausgeführt. Dazu werden gegebenenfalls Argumente übergeben, beispielsweise `verwaltung.suchen(42)`. Besitzt die Methode einen Rückgabewert, kann das Ergebnis gespeichert oder direkt weiterverwendet werden.
+
+### Methodenüberladung – Overloading
+
+Methodenüberladung bedeutet, dass mehrere Methoden in derselben Klasse denselben Namen, aber unterschiedliche Parameterlisten besitzen. Der Compiler entscheidet anhand der übergebenen Argumente, welche Variante aufgerufen wird. Nur ein anderer Rückgabewert reicht für eine Überladung nicht aus.
+
+### Methodenüberschreibung – Overriding
+
+Methodenüberschreibung bedeutet, dass eine Unterklasse eine geerbte Methode mit passender Signatur neu implementiert. Bei einem Aufruf wird zur Laufzeit die Implementierung des tatsächlichen Objekttyps ausgeführt. Überschriebene Methoden sollten mit `@Override` gekennzeichnet werden.
+
+### Methodensignatur
+
+Die Methodensignatur kennzeichnet eine Methode durch ihren Namen und ihre Parameterliste, also insbesondere Anzahl, Reihenfolge und Typen der Parameter. Anhand der Signatur unterscheidet Java überladene Methoden voneinander. Der Rückgabetyp allein gehört nicht zu den Merkmalen, mit denen eine Überladung gebildet werden kann.
+
+### `null`
+
+`null` bedeutet, dass eine Variable, die ein Objekt aufnehmen kann, aktuell auf kein Objekt verweist. Wird über `null` auf ein Attribut oder eine Methode zugegriffen, entsteht eine `NullPointerException`. `null` ist kein normales erzeugtes Objekt und besitzt keine eigenen Methoden.
+
+### Objekt
+
+Ein Objekt ist eine konkrete Ausprägung einer Klasse zur Laufzeit. Es besitzt einen eigenen Zustand durch seine Attributwerte und zeigt Verhalten durch seine Methoden. Mehrere Objekte derselben Klasse können unabhängig voneinander existieren.
+
+### Objektverhalten
+
+Das Objektverhalten beschreibt, was ein Objekt tun kann und wie es auf Methodenaufrufe reagiert. Es wird durch die Methoden der Klasse festgelegt. Das Verhalten kann den eigenen Objektzustand oder den Zustand anderer beteiligter Objekte verändern.
+
+### Objektzustand
+
+Der Objektzustand ist die Gesamtheit der aktuellen Attributwerte eines Objekts. Er kann sich während der Laufzeit durch Konstruktoren, Setter oder andere Methoden verändern. Zwei Objekte derselben Klasse können deshalb unterschiedliche Zustände besitzen.
+
+### `Object`
+
+`Object` ist die gemeinsame oberste Basisklasse aller Java-Klassen. Jede Klasse erbt direkt oder indirekt von `Object` und erhält dadurch grundlegende Methoden wie `toString()`. Wird keine andere Oberklasse angegeben, erfolgt diese Vererbung automatisch.
+
+### Oberklasse
+
+Eine Oberklasse ist die allgemeinere Klasse in einer Vererbungsbeziehung. Sie stellt gemeinsame Attribute und Methoden bereit, die von Unterklassen übernommen werden können. Sie wird auch Basisklasse oder Superklasse genannt.
+
+### Parameter
+
+Ein Parameter ist eine Variable in der Definition einer Methode oder eines Konstruktors. Er dient als Platzhalter für einen Wert, der beim Aufruf als Argument übergeben wird. Bei `void setName(String name)` ist `name` ein Parameter.
+
+### Polymorphismus
+
+Polymorphismus bedeutet Vielgestaltigkeit: Derselbe gemeinsame Typ oder Methodenaufruf kann mit Objekten verschiedener konkreter Klassen arbeiten. Die Objekte können dabei aufgrund überschriebener Methoden unterschiedlich reagieren. Polymorphismus ermöglicht austauschbare Implementierungen und allgemeineren Programmcode.
+
+### `private`
+
+`private` ist eine Sichtbarkeit, bei der ein Attribut, Konstruktor oder eine Methode nur innerhalb derselben Klasse zugänglich ist. Private Attribute sind ein typisches Mittel zur Kapselung. Der Zugriff von außen erfolgt dann beispielsweise über öffentliche Methoden.
+
+### `protected`
+
+`protected` ist eine Sichtbarkeit, die den Zugriff insbesondere in derselben Klasse, im selben Package und in Unterklassen ermöglicht. Sie wird häufig verwendet, wenn Unterklassen bestimmte Bestandteile einer Oberklasse direkt verwenden dürfen. Der Zugriff ist weiter gefasst als bei `private`, aber eingeschränkter als bei `public`.
+
+### `public`
+
+`public` ist die weiteste Sichtbarkeit in Java. Ein öffentliches Element kann grundsätzlich auch von Klassen außerhalb des eigenen Packages verwendet werden, sofern die enthaltende Klasse erreichbar ist. Öffentliche Methoden bilden häufig die von außen nutzbare Schnittstelle einer Klasse.
+
+### Rückgabewert
+
+Ein Rückgabewert ist das Ergebnis, das eine Methode mit `return` an den aufrufenden Programmteil zurückgibt. Der Typ des Ergebnisses wird vor dem Methodennamen angegeben. Eine mit `void` deklarierte Methode gibt keinen Wert zurück.
+
+### Setter
+
+Ein Setter ist eine Methode, mit der der Wert eines meist privaten Attributs verändert wird. Er ermöglicht einen kontrollierten Schreibzugriff und kann bei Bedarf zusätzliche Regeln ausführen. Ein typischer Name ist `setName(String name)`.
+
+### Sichtbarkeit
+
+Die Sichtbarkeit legt fest, von welchen Stellen im Programm auf eine Klasse, ein Attribut, einen Konstruktor oder eine Methode zugegriffen werden darf. Wichtige Java-Sichtbarkeiten sind `public`, `private` und `protected`. Sichtbarkeiten unterstützen die Kapselung und eine klar definierte Schnittstelle nach außen.
+
+### Spezialisierung
+
+Spezialisierung bedeutet, aus einer allgemeinen Oberklasse eine konkretere Unterklasse abzuleiten. Die Unterklasse übernimmt gemeinsame Merkmale und ergänzt oder verändert spezielle Eigenschaften und Verhaltensweisen. Beispielsweise ist `Azubi` eine Spezialisierung von `Person`.
+
+### Statischer Typ
+
+Der statische Typ ist der bei der Deklaration einer Variablen angegebene Typ und steht bereits zur Compile-Zeit fest. Bei `Person person = new Azubi();` ist `Person` der statische Typ. Er bestimmt, welche Methoden über die Variable grundsätzlich aufgerufen werden dürfen.
+
+### Subtyp-Polymorphismus
+
+Subtyp-Polymorphismus bedeutet, dass ein Objekt einer Unterklasse überall dort verwendet werden kann, wo sein Oberklassen- oder Interfacetyp erwartet wird. Verschiedene Subtypen können dadurch einheitlich behandelt werden. Überschriebene Methoden sorgen trotzdem für das jeweils passende konkrete Verhalten.
+
+### `super`
+
+`super` verweist innerhalb einer Unterklasse auf den Teil des Objekts, der von der direkten Oberklasse stammt. Mit `super(...)` wird ein Konstruktor der Oberklasse aufgerufen, mit `super.methode()` eine Implementierung der Oberklasse. So können geerbte Initialisierung und geerbtes Verhalten gezielt verwendet werden.
+
+### `this`
+
+`this` verweist innerhalb einer Instanzmethode oder eines Konstruktors auf das aktuelle Objekt. Es wird häufig verwendet, um Attribute von gleichnamigen Parametern zu unterscheiden, beispielsweise `this.name = name`. Außerdem kann mit `this(...)` ein anderer Konstruktor derselben Klasse aufgerufen werden.
+
+### Unterklasse
+
+Eine Unterklasse ist die speziellere Klasse in einer Vererbungsbeziehung. Sie erbt zugängliche Attribute und Methoden ihrer Oberklasse und kann zusätzliche Merkmale ergänzen oder Methoden überschreiben. Sie wird auch abgeleitete Klasse oder Subklasse genannt.
+
+### UML-Klassendiagramm
+
+Ein UML-Klassendiagramm stellt die statische Struktur eines objektorientierten Systems grafisch dar. Es zeigt Klassen mit Attributen und Methoden sowie Beziehungen wie Vererbung, Assoziation, Aggregation und Komposition. Es dient der Planung, Dokumentation und gemeinsamen Besprechung eines Domänenmodells.
+
+### Vererbung
+
+Vererbung ermöglicht es einer Unterklasse, zugängliche Attribute und Methoden einer Oberklasse zu übernehmen. Die Unterklasse kann die geerbten Bestandteile erweitern und Methoden überschreiben. In Java wird die Klassenvererbung mit `extends` ausgedrückt.
+
+### `void`
+
+`void` steht bei einer Methodendeklaration an der Stelle des Rückgabetyps und bedeutet, dass die Methode keinen Wert zurückgibt. Die Methode kann dennoch Anweisungen ausführen oder den Zustand von Objekten verändern. Ein leeres `return;` kann sie vorzeitig beenden.
