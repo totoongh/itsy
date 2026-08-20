@@ -81,3 +81,52 @@ $_SESSION['github_token'] = $data['access_token'];
 
 header('Location: repos.php');
 exit;
+
+
+
+----
+
+<?php
+
+$githubBaseUrl = 'https://DEIN-GITHUB-HOST';
+
+echo '<h2>PHP</h2>';
+echo 'Version: ' . PHP_VERSION . '<br>';
+
+echo '<h2>allow_url_fopen</h2>';
+var_dump(ini_get('allow_url_fopen'));
+
+echo '<h2>Stream Wrapper</h2>';
+echo 'HTTPS vorhanden: ';
+var_dump(in_array('https', stream_get_wrappers()));
+
+echo '<h2>DNS</h2>';
+
+$host = parse_url($githubBaseUrl, PHP_URL_HOST);
+
+echo 'Hostname: ' . htmlspecialchars($host) . '<br>';
+echo 'Aufgelöste IP: ';
+var_dump(gethostbyname($host));
+
+echo '<h2>GitHub Startseite abrufen</h2>';
+
+$url = $githubBaseUrl . '/';
+
+echo 'URL: ' . htmlspecialchars($url) . '<br><br>';
+
+$response = @file_get_contents($url);
+
+if ($response === false) {
+    echo '<strong>FEHLER</strong><br><pre>';
+    print_r(error_get_last());
+    echo '</pre>';
+} else {
+    echo '<strong>ERFOLG</strong><br>';
+    echo 'Bytes empfangen: ' . strlen($response);
+}
+
+echo '<h2>OAuth Token Endpoint</h2>';
+
+$tokenUrl = $githubBaseUrl . '/login/oauth/access_token';
+
+echo htmlspecialchars($tokenUrl);
