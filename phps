@@ -1,74 +1,13 @@
 <?php
 
-$clientId = 'DEINE_CLIENT_ID';
-
-$loginUrl =
-    'https://github.com/login/oauth/authorize'
-    . '?client_id=' . urlencode($clientId)
-    . '&redirect_uri=' . urlencode('http://SERVER/github_con/callback.php');
-
-?>
-
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <title>GitHub Connector</title>
-</head>
-<body>
-
-<h1>GitHub Connector</h1>
-
-<a href="<?= htmlspecialchars($loginUrl) ?>">
-    Mit GitHub anmelden
-</a>
-
-</body>
-</html>
-
-
-<?php
-
-$code = $_GET['code'] ?? null;
-
-if (!$code) {
-    die('Kein GitHub-Code erhalten.');
-}
-
-echo 'GitHub Code erhalten: ';
-echo htmlspecialchars($code);
-
-
-
----
-  <?php
 session_start();
 
-$clientId = 'DEINE_CLIENT_ID';
-$redirectUri = 'http://SERVER/github_con/callback.php';
-
-$state = bin2hex(random_bytes(16));
-$_SESSION['github_oauth_state'] = $state;
-
-$params = [
-    'client_id' => $clientId,
-    'redirect_uri' => $redirectUri,
-    'state' => $state
-];
-
-header(
-    'Location: https://github.com/login/oauth/authorize?' .
-    http_build_query($params)
-);
-exit;
-
-
-<?php
-session_start();
+$githubBaseUrl = 'https://github.firma.de';
 
 $clientId = 'DEINE_CLIENT_ID';
 $clientSecret = 'DEIN_CLIENT_SECRET';
-$redirectUri = 'http://SERVER/github_con/callback.php';
+
+$redirectUri = 'http://DEIN-SERVER/github_con/callback.php';
 
 $code = $_GET['code'] ?? null;
 $state = $_GET['state'] ?? null;
@@ -77,42 +16,68 @@ if (!$code) {
     die('Kein GitHub-Code erhalten.');
 }
 
-if (!$state || $state !== ($_SESSION['github_oauth_state'] ?? null)) {
+if (
+    !$state ||
+    !isset($_SESSION['github_oauth_state']) ||
+    $state !== $_SESSION['github_oauth_state']
+) {
     die('Ungültiger OAuth-State.');
 }
 
-$postData = [
+unset($_SESSION['github_oauth_state']);
+
+$postData = http_build_query([
     'client_id' => $clientId,
     'client_secret' => $clientSecret,
     'code' => $code,
     'redirect_uri' => $redirectUri
-];
-
-$ch = curl_init('https://github.com/login/oauth/access_token');
-
-curl_setopt_array($ch, [
-    CURLOPT_POST => true,
-    CURLOPT_POSTFIELDS => http_build_query($postData),
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_HTTPHEADER => [
-        'Accept: application/json'
-    ]
 ]);
 
-$response = curl_exec($ch);
+$options = [
+    'http' => [
+        'method' => 'POST',
+        'header' =>
+            "Accept: application/json\r\n" .
+            "Content-Type: application/x-www-form-urlencoded\r\n" .
+            "User-Agent: github-con\r\n",
+        'content' => $postData,
+        'ignore_errors' => true,
+        'timeout' => 15
+    ]
+];
+
+$context = stream_context_create($options);
+
+$tokenUrl = $githubBaseUrl . '/login/oauth/access_token';
+
+$response = file_get_contents(
+    $tokenUrl,
+    false,
+    $context
+);
 
 if ($response === false) {
-    die('Fehler beim Token-Abruf: ' . curl_error($ch));
+    die('Fehler beim Abruf des GitHub Access Tokens.');
 }
-
-curl_close($ch);
 
 $data = json_decode($response, true);
 
+if (!is_array($data)) {
+    die('Ungültige Antwort von GitHub: ' . htmlspecialchars($response));
+}
+
 if (!isset($data['access_token'])) {
-    die('Kein Access Token erhalten: ' . htmlspecialchars($response));
+    $error = $data['error'] ?? 'Unbekannter Fehler';
+    $description = $data['error_description'] ?? '';
+
+    die(
+        'Kein Access Token erhalten.<br>' .
+        'Fehler: ' . htmlspecialchars($error) . '<br>' .
+        htmlspecialchars($description)
+    );
 }
 
 $_SESSION['github_token'] = $data['access_token'];
 
-echo 'GitHub Login erfolgreich.';
+header('Location: repos.php');
+exit;
