@@ -1,0 +1,176 @@
+;;;;Einstellungsjahr 26;;;Einstellungsjahr 25;;;;;;Einstellungsjahr 24;;;;;;;;;
+Jahr;KW;Datum  von;Datum bis;26AE I;26SI I;26DP I;25AE I;25AE II;25AE III;25SI I;25SI II;Berufsschule;E24;F24;G24;BS Fürth;H24;I24;Studis;Kommentare;;
+;;;;IF10A;IF10B;IF10D;IF11C;IF11C;IF11D;IF11B;IF11B;zur;AE I;AE II;SI I;IFS12E;SI II;DP I;Gutin;;;
+;;;;Scholz;Bittermann;Neher;Schumacher;Schumacher;Golf;Gall;Ciupka;sonderpädagogischen;IFA12A;IFA12A;IFS12B;;IFS12B;IFD12A;;;;
+;;;;;;;;;;;;Förderung;Rösch;Rösch;Scholz;;Ciupka;Golf;;;;
+2026;36;31.08.2026;06.09.2026;Auftaktwoche;Auftaktwoche;Auftaktwoche;P3;P3;P3;P3;P3;P3;P5;P5;P5;P5;P5;P5;Praktikum;Sommerferien bis 14.09;;BS
+2026;37;07.09.2026;13.09.2026;Ausbildungsst.;Ausbildungsst.;Ausbildungsst.;P3;P3;P3;P3;P3;P3;P5;P5;P5;P5;P5;P5;Praktikum;Sommerferien bis 14.09;;P1
+2026;38;14.09.2026;20.09.2026;Homepage;Homepage;Homepage;P3;P3;P3;P3;P3;P3;P5;P5;BS;P5;BS;P5;Praktikum;Sommerferien bis 14.09;;P2
+2026;39;21.09.2026;27.09.2026;Programmierung;Programmierung;Programmierung;P3;P3;P3;P3;P3;P3;P5;P5;BS;P5;BS;P5;Praktikum;;;P3
+2026;40;28.09.2026;04.10.2026;BS;Programmierung;Programmierung;P3;P3;SCRUM;P3;SCRUM;BS;BS;BS;P5;BS;P5;BS;Praktikum;;;P4
+2026;41;05.10.2026;11.10.2026;BS;Programmierung;Programmierung;Fachspezifische Informatik;P3;SCRUM;P3;SCRUM;BS;BS;BS;P5;BS;P5;BS;;;;P5
+2026;42;12.10.2026;18.10.2026;Programmierung;BS;BS;BS;BS;BS;BS;BS;BS;P5;P5;P5;P5;P5;P5;;;;
+2026;43;19.10.2026;25.10.2026;Programmierung;Unix/Linux;Datenbanken;P3;P3;Fachspezifische Informatik;P3;P3;P3;P5;P5;BS;P5;BS;P5;;"22.10. Abschlussfeier NWK; 23.10 Parentum Nbg-Fü-Erl";;
+2026;44;26.10.2026;01.11.2026;Kommunikation;Unix/Linux;Datenbanken;P3;P3;Fachspezifische Informatik;P3;P3;P3;P5;P5;BS;P5;BS;P5;;Klimapuzzle 26AE-I;;
+2026;45;02.11.2026;08.11.2026;Kommunikation;P1;P1;P3;P3;P3;Fachspezifische Informatik;P3;P3;Vorb. APT2 V.;Vorb. APT2 V.;Vorb. APT2 V.;Vorb. APT2 V.;Vorb. APT2 V.;Vorb. APT2 V.;;Herbstferien;;
+2026;46;09.11.2026;15.11.2026;BS;P1;P1;P3;Fachspezifische Informatik;P3;Grundlagen Testing;Grundlagen Testing;Grundlagen Testing;BS;BS;P5;P5;P5;BS;;;;
+2026;47;16.11.2026;22.11.2026;BS;P1;P1;KI;KI;P3;IT-Sicherheit;P3;P3;BS;BS;P5;P5;P5;BS;;18.11. Beteiligung Eltern-Kind-Tag im VZ;;
+2026;48;23.11.2026;29.11.2026;P1;P1;P1;Grundlagen Testing;Cloud;P3;DevOps;P3;BS;P5;P5;BS;BS;BS;P5;;APT2 Verk. 24/25.11;;
+2026;49;30.11.2026;06.12.2026;P1;P1;P1;P3;IT-Sicherheit;P3;DevOps;P3;BS;P5;P5;BS;BS;BS;P5;;;;
+2026;50;07.12.2026;13.12.2026;BS;P1;P1;P3;P3;P3;P3;P3;P3;BS;BS;P5;BS;P5;BS;;07. + 08. 12 Workshop Suchtprävention 2. Ausbildungsjahr;;
+2026;51;14.12.2026;20.12.2026;BS;P1;P1;P3;P3;P3;P3;P3;P3;BS;BS;P5;P5;P5;BS;;Abgabe Doku 15.12;;
+2026;52;21.12.2026;27.12.2026;BS;P1;P1;P3;P3;P3;P3;P4;P3;BS;BS;P5;P5;P5;BS;;Weihnachtsferien 24.12-08.01;;
+2026;53;28.12.2026;03.01.2027;P1;P1;P1;P4;P3;P3;P3;P4;P3;P5;P5;P5;P5;P5;P5;;Weihnachtsferien 24.12-08.01;;
+2027;1;04.01.2027;10.01.2027;P1;P1;P1;P4;P3;P3;P3;P4;P3;P5;P5;P5;P5;P5;P5;;Weihnachtsferien 24.12-08.01;;
+;;;;;;;;;;;;;;;;;;;;Ab Januar Präsentation & Fachgespräch Verkürzer;;
+2027;2;11.01.2027;17.01.2027;P1;BS;BS;BS;BS;BS;BS;BS;P3;PräsTrVerk;PräsTrVerk;PräsTrVerk;PräsTrVerk;PräsTrVerk;PräsTrVerk;;;;
+2027;3;18.01.2027;24.01.2027;P1;BS;BS;BS;BS;BS;BS;BS;P3;PräsTrVerk;PräsTrVerk;PräsTrVerk;PräsTrVerk;PräsTrVerk;PräsTrVerk;;;;
+2027;4;25.01.2027;31.01.2027;P1;P2;Unix/Linux;Vorb. APT1;Vorb. APT1;Vorb. APT1;Vorb. APT1;Vorb. APT1;BS;P5;P5;BS;BS;BS;P5;;30.01 parentum Nürnberg;;
+2027;5;01.02.2027;07.02.2027;P1;P2;Unix/Linux;Cloud;P4;P4;SCRUM;P4;BS;P5;P5;BS;BS;BS;P5;;;;
+2027;6;08.02.2027;14.02.2027;Unix/Linux;P2;P2;Fachspezifische Informatik;P4;P4;SCRUM;P4;P4;P5;P5;P5;P5;P5;P5;;Winterferien;;
+2027;7;15.02.2027;21.02.2027;Unix/Linux;P2;P2;IT-Sicherheit;P4;P4;P4;P4;P4;P5;P5;BS;P5;BS;P5;;;;
+2027;8;22.02.2027;28.02.2027;BS;Programmieren;Programmieren;P4 / Hospitation AA;P4 / Hospitation AA;DevOps;P4 / Hospitation AA;DevOps;DevOps;BS;BS;P5;P5;P5;BS;;APT1 24.02;;
+2027;9;01.03.2027;07.03.2027;BS;Programmieren;Programmieren;P4 / Hospitation AA;P4 / Hospitation AA;DevOps;P4 / Hospitation AA;DevOps;DevOps;BS;BS;P5;P5;P5;BS;;;;
+2027;10;08.03.2027;14.03.2027;Programmieren;BS;BS;BS;BS;BS;BS;BS;P4;P5;P5;P5;P5;P5;P5;;;;
+2027;11;15.03.2027;21.03.2027;Programmieren;BS;BS;BS;BS;BS;BS;BS;P4;P5;P5;P5;BS;P5;P5;;;;
+2027;12;22.03.2027;28.03.2027;Datenbanken;Datenbanken;P2;P4;P4;P4;KI;KI;KI;P5;P5;P5;P5;P5;P5;;Osterferien;;
+2027;13;29.03.2027;04.04.2027;Datenbanken;Datenbanken;P2;P4;P4;P4;Cloud;Cloud;Cloud;Vorb. APT2;Vorb. APT2;Vorb. APT2;Vorb. APT2;Vorb. APT2;Vorb. APT2;;Osterferien;;
+2027;14;05.04.2027;11.04.2027;BS;P2;P2;P4 / Hospitation AA;P4 / Hospitation AA;P4 / Hospitation AA;Fachspezifische Informatik;Fachspezifische Informatik;Fachspezifische Informatik;BS;BS;P5;BS;P5;BS;;;;
+2027;15;12.04.2027;18.04.2027;BS;P2;P2;P4 / Hospitation AA;P4 / Hospitation AA;P4 / Hospitation AA;P4 / Hospitation AA;P4 / Hospitation AA;P4 / Hospitation AA;BS;BS;P5;BS;P5;BS;;;;
+2027;16;19.04.2027;25.04.2027;P1;Management;Management;DevOps;DevOps;P4 / Hospitation AA;P4 / Hospitation AA;P4 / Hospitation AA;P4 / Hospitation AA;P5;P5;BS;P5;BS;P5;;22.04 Girls Day;;
+2027;17;26.04.2027;02.05.2027;P1;Server/Inf;Server/Inf;DevOps;DevOps;P4 / Hospitation AA;P4 / Hospitation AA;P4 / Hospitation AA;P4 / Hospitation AA;P5;P5;BS;P5;BS;P5;;APT2 27/28.04 27.04/28.04 vocatium Erlangen;;
+2027;18;03.05.2027;09.05.2027;P1;BS;BS;BS;BS;BS;BS;BS;P4;P5;P5;P5;P5;P5;P5;;05.05 vocatium Fürth;;
+2027;19;10.05.2027;16.05.2027;P2;BS;BS;BS;BS;BS;BS;BS;P4;P5;P5;P5;BS;P5;P5;;Abgabe Doku 15.05;;
+2027;20;17.05.2027;23.05.2027;P2;Server/Inf;Server/Inf;P4;P4;P4;P4;P4;P4;P5;P5;P5;P5;P5;P5;;Pfingstferien;;
+2027;21;24.05.2027;30.05.2027;P2;Server/Inf;Server/Inf;P4;P4;P4;P4;P4;P4;PrasTr;PräsTr;PräsTr;PräsTr;PräsTr;PräsTr;;Pfingstferien;;
+2027;22;31.05.2027;06.06.2027;P2;BS;BS;P4;P4;P4;BS;BS;BS;PrasTr;PräsTr;PräsTr;PräsTr;PräsTr;PräsTr;;Ab Juni Präsentation & Fachgespräch;;
+2027;23;07.06.2027;13.06.2027;P2;Kommunikation;Kommunikation;P4;Fachspezifische Informatik;Cloud;P4;P4;BS;P5;P5;P5;P5;P5;P5;;Klimapuzzle 26SI-I, 26DP-I;;
+2027;24;14.06.2027;20.06.2027;Server/Inf;Kommunikation;Kommunikation;P4;Grundlagen Testing;Grundlagen Testing;P4;P4;P4;P5;P5;P5;P5;P5;P5;;;;
+2027;25;21.06.2027;27.06.2027;Server/Inf;BS;BS;BS;BS;BS;BS;BS;P4;P5;P5;P5;P5;P5;P5;;;;
+2027;26;28.06.2027;04.07.2027;Server/Inf;BS;BS;BS;BS;BS;BS;BS;BS;P5;P5;P5;P5;P5;P5;;;;
+2027;27;05.07.2027;11.07.2027;BS;P2;P2;SCRUM;SCRUM;KI;P4;IT-Sicherheit;BS;P5;P5;P5;P5;P5;P5;;06.07/07.07 vocatium Nürnberg;;
+2027;28;12.07.2027;18.07.2027;BS;P2;P2;SCRUM;SCRUM;IT-Sicherheit;P4;Fachspezifische Informatik;BS;P5;P5;P5;P5;P5;P5;;;;
+2027;29;19.07.2027;25.07.2027;Management;BS;BS;BS;BS;BS;BS;BS;P4;P5;P5;P5;P5;P5;P5;;Teamworkshop2?;;
+2027;30;26.07.2027;01.08.2027;P2;BS;BS;BS;BS;BS;BS;BS;P4;P5;P5;P5;P5;P5;P5;;Teamworkshop2?;;
+2027;31;02.08.2027;08.08.2027;P2;P2;P2;Dokutraining;Dokutraining;Dokutraining;Dokutraining;Dokutraining;Dokutraining;P5;P5;P5;P5;P5;P5;;Sommerferien -13.09;;
+2027;32;09.08.2027;15.08.2027;P2;P2;P2;P5;P5;P5;P5;P5;P5;P5;P5;P5;P5;P5;P5;;Sommerferien -13.09;;
+2027;33;16.08.2027;22.08.2027;P2;P2;P2;P5;P5;P5;P5;P5;P5;P5;P5;P5;P5;P5;P5;;Sommerferien -13.09;;
+2027;34;23.08.2027;29.08.2027;P2;P2;P2;P5;P5;P5;P5;P5;P5;P5;P5;P5;P5;P5;P5;;Sommerferien -13.09;;
+;;;;21;22;22;22;22;22;20;22;27;;;;;;;;;;
+;;;;11;11;11;11;11;11;10;11;14;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+;;;P1/P3;11;10;10;13;14;14;13;12;15;;;;;;;;;;
+;;;P2/P4;10;12;12;9;8;8;7;10;12;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;Einstellungsjahr 26;;;Einstellungsjahr 25;;;;;;Einstellungsjahr 24;;;;;;;;;;;;;;;;;;;;;
+Jahr;KW;Datum  von;Datum bis;26AE I;26SI I;26DP I;25AE I;25AE II;25AE III;25SI I;25SI II;Berufsschule;E24;F24;G24;BS Fürth;H24;I24;Studis;Kommentare;BWT;Messe;Springer;Sonstiges;Flo;Julian;Hubertus;Daniil;Agnes;Tim;Dominik;Alex;Thomas;
+;;;;IF10A;IF10B;IF10D;IF11C;IF11C;IF11D;IF11B;IF11B;zur;AE I;AE II;SI I;;SI II;DP I;Gutin;;;;;;;;;;;;;;;
+;;;;Scholz;Bittermann;Neher;Schumacher;Schumacher;Golf;Gall;Ciupka;sonderpädagogischen;IFA12A;IFA12A;IFS12B;;IFS12B;IFD12A;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;Förderung;Rösch;Rösch;Ciupka;;Scholz;Golf;;;;;;;;;;;;;;;;
+2026;36;31.08.2026;06.09.2026;Auftaktwoche;Auftaktwoche;Auftaktwoche;P3;P3;P3;P3;P3;P3;P5;P5;P5;P5;P5;P5;Praktikum;Sommerferien bis 14.09;---;;;;0;0;0;0;0;0;0;0;0;0
+2026;37;07.09.2026;13.09.2026;Ausbildungsst.;Ausbildungsst.;Ausbildungsst.;P3;P3;P3;P3;P3;P3;P5;P5;P5;P5;P5;P5;Praktikum;Sommerferien bis 14.09;---;;;;0;0;0;0;0;0;0;0;0;0
+2026;38;14.09.2026;20.09.2026;Tim;Alex;Thomas;P3;P3;P3;P3;P3;P3;P5;P5;BS;P5;BS;P5;Praktikum;Sommerferien bis 14.09, Arbeitsschutzunterweisung.;;;;;0;0;0;0;0;1;0;1;1;3
+2026;39;21.09.2026;27.09.2026;Dominik;Florian+Julian;Thomas;P3;P3;P3;P3;P3;P3;P5;P5;BS;P5;BS;P5;Praktikum;;;;;;1;1;0;0;0;0;1;0;1;4
+2026;40;28.09.2026;04.10.2026;BS;Florian+Julian;Thomas;P3;P3;Agnes;P3;Tim;Tim;BS;BS;P5;BS;P5;BS;Praktikum;;;;;;1;1;0;0;1;2;0;0;1;6
+2026;41;05.10.2026;11.10.2026;BS;Florian+Julian;Thomas;Dominik;P3;Agnes;P3;Tim;Tim;BS;BS;P5;BS;P5;BS;;;;;;;1;1;0;0;1;2;1;0;1;7
+2026;42;12.10.2026;18.10.2026;Dominik;BS;BS;BS;BS;BS;BS;BS;P3;P5;P5;P5;P5;P5;P5;;;;;;;0;0;0;0;0;0;1;0;0;1
+2026;43;19.10.2026;25.10.2026;Dominik;Alex;Julian;P3;P3;Hubertus;P3;P3;P3;P5;P5;BS;P5;BS;P5;;"22.10. Abschlussfeier NWK; 23.10 Parentum Nbg-Fü-Erl";;Tim;;;0;1;1;0;0;1;1;1;0;5
+2026;44;26.10.2026;01.11.2026;Tim;Alex;Julian;P3;P3;Hubertus;P3;P3;P3;P5;P5;BS;P5;BS;P5;;;;;;;0;1;1;0;0;1;0;1;0;4
+2026;45;02.11.2026;08.11.2026;Tim;P1;P1;P3;P3;P3;Florian;P3;P3;Vorb. APT2 V.;Vorb. APT2 V.;Vorb. APT2 V.;Vorb. APT2 V.;Vorb. APT2 V.;Vorb. APT2 V.;;Herbstferien;;;;;1;0;0;0;0;1;0;0;0;2
+2026;46;09.11.2026;15.11.2026;BS;P1;P1;P3;Dominik;P3;Thomas;Julian;Julian;BS;BS;P5;P5;P5;BS;;;;;;;0;2;0;0;0;0;1;0;1;4
+2026;47;16.11.2026;22.11.2026;BS;P1;P1;Hubertus;Alex;P3;Extern;P3;P3;BS;BS;P5;P5;P5;BS;;;;;;;0;0;1;0;0;0;0;1;0;2
+2026;48;23.11.2026;29.11.2026;P1;P1;P1;Julian;Hubertus;P3;Dominik;P3;P3;P5;P5;BS;BS;BS;P5;;APT2 Verk. 24/25.11;;;;;0;1;1;0;0;0;1;0;0;3
+2026;49;30.11.2026;06.12.2026;P1;P1;P1;P3;Extern;P3;Dominik;P3;P3;P5;P5;BS;BS;BS;P5;;;;;;;0;0;0;0;0;0;1;0;0;1
+2026;50;07.12.2026;13.12.2026;BS;P1;P1;P3;P3;P3;P3;P3;P3;BS;BS;P5;BS;P5;BS;;;;;;;0;0;0;0;0;0;0;0;0;0
+2026;51;14.12.2026;20.12.2026;BS;P1;P1;P3;P3;P3;P3;P3;P3;BS;BS;P5;P5;P5;BS;;Abgabe Doku 15.12;;;;;0;0;0;0;0;0;0;0;0;0
+2026;52;21.12.2026;27.12.2026;BS;P1;P1;P3;P3;P3;P3;P4;P3;BS;BS;P5;P5;P5;BS;;Weihnachtsferien 24.12-08.01;;;;;0;0;0;0;0;0;0;0;0;0
+2026;53;28.12.2026;03.01.2027;P1;P1;P1;P4;P3;P3;P4;P4;P3;P5;P5;P5;P5;P5;P5;;Weihnachtsferien 24.12-08.01;;;;;0;0;0;0;0;0;0;0;0;0
+2027;1;04.01.2027;10.01.2027;P1;P1;P1;P4;P3;P3;P4;P4;P3;P5;P5;P5;P5;P5;P5;;Weihnachtsferien 24.12-08.01;;;;;0;0;0;0;0;0;0;0;0;0
+;;;;;;;;;;;;;;;;;;;;Ab Januar Präsentation & Fachgespräch Verkürzer;;;;;;;;;;;;;;
+2027;2;11.01.2027;17.01.2027;P1;BS;BS;BS;BS;BS;BS;BS;P3;PräsTrVerk;PräsTrVerk;PräsTrVerk;PräsTrVerk;PräsTrVerk;PräsTrVerk;;;;;;;0;0;0;0;0;0;0;0;0;0
+2027;3;18.01.2027;24.01.2027;P1;BS;BS;BS;BS;BS;BS;BS;P3;PräsTrVerk;PräsTrVerk;PräsTrVerk;PräsTrVerk;PräsTrVerk;PräsTrVerk;;Teamworkshop1?;;;;;0;0;0;0;0;0;0;0;0;0
+2027;4;25.01.2027;31.01.2027;P1;P2;Alex;Vorb. APT1;Vorb. APT1;Vorb. APT1;Vorb. APT1;Vorb. APT1;Vorb. APT1;P5;P5;BS;BS;BS;P5;;30.01 parentum Nürnberg;;Julian;;;0;1;0;0;0;0;0;1;0;2
+2027;5;01.02.2027;07.02.2027;P1;P2;Alex;Hubertus;P4;P4;Agnes;P4;P4;P5;P5;BS;BS;BS;P5;;;;;;;0;0;1;0;1;0;0;1;0;3
+2027;6;08.02.2027;14.02.2027;Alex;P2;P2;Dominik;P4;P4;Agnes;P4;P4;P5;P5;P5;P5;P5;P5;;Winterferien;;;;;0;0;0;0;1;0;1;1;0;3
+2027;7;15.02.2027;21.02.2027;Alex;P2;P2;Extern;P4;P4;P4;P4;P4;P5;P5;BS;P5;BS;P5;;;;;;;0;0;0;0;0;0;0;1;0;1
+2027;8;22.02.2027;28.02.2027;BS;Florian;Thomas;P4;P4;DevOps;P4;DevOps;DevOps;BS;BS;P5;P5;P5;BS;;APT1 24.02;;;;;1;0;0;0;0;0;0;0;1;2
+2027;9;01.03.2027;07.03.2027;BS;Florian;Thomas;P4;P4;DevOps;P4;DevOps;DevOps;BS;BS;P5;P5;P5;BS;;;;;;;1;0;0;0;0;0;0;0;1;2
+2027;10;08.03.2027;14.03.2027;Dominik;BS;BS;BS;BS;BS;BS;BS;P4;P5;P5;P5;P5;P5;P5;;;;;;;0;0;0;0;0;0;1;0;0;1
+2027;11;15.03.2027;21.03.2027;Dominik;BS;BS;BS;BS;BS;BS;BS;P4;P5;P5;P5;BS;P5;P5;;;;;;;0;0;0;0;0;0;1;0;0;1
+2027;12;22.03.2027;28.03.2027;Julian;Thomas;P2;P4;P4;P4;Hubertus;Alex;Alex;P5;P5;P5;P5;P5;P5;;Osterferien;;;;;0;1;1;0;0;0;0;2;1;5
+2027;13;29.03.2027;04.04.2027;Julian;Thomas;P2;P4;P4;P4;Hubertus;Florian;Florian;Vorb. APT2;Vorb. APT2;Vorb. APT2;Vorb. APT2;Vorb. APT2;Vorb. APT2;;Osterferien;;;;;2;1;1;0;0;0;0;0;1;5
+2027;14;05.04.2027;11.04.2027;BS;P2;P2;P4;P4;P4;Julian;Florian;Florian;BS;BS;P5;BS;P5;BS;;;;;;;2;1;0;0;0;0;0;0;0;3
+2027;15;12.04.2027;18.04.2027;BS;P2;P2;P4;P4;P4;P4;P4;P4;BS;BS;P5;BS;P5;BS;;;;;;;0;0;0;0;0;0;0;0;0;0
+2027;16;19.04.2027;25.04.2027;P1;Tim;Agnes;DevOps;DevOps;P4;P4;P4;P4;P5;P5;BS;P5;BS;P5;;22.04 Girls Day;;;;Daniil;0;0;0;1;1;1;0;0;0;3
+2027;17;26.04.2027;02.05.2027;P1;Florian;Tim;DevOps;DevOps;P4;P4;P4;P4;P5;P5;BS;P5;BS;P5;;APT2 27/28.04 27.04/28.04 vocatium Erlangen;;Julian;;;1;1;0;0;0;1;0;0;0;3
+2027;18;03.05.2027;09.05.2027;P1;BS;BS;BS;BS;BS;BS;BS;P4;P5;P5;P5;P5;P5;P5;;05.05 vocatium Fürth;;Tim;;;0;0;0;0;0;1;0;0;0;1
+2027;19;10.05.2027;16.05.2027;P2;BS;BS;BS;BS;BS;BS;BS;P4;P5;P5;P5;BS;P5;P5;;Abgabe Doku 15.05;;;;;0;0;0;0;0;0;0;0;0;0
+2027;20;17.05.2027;23.05.2027;P2;Florian;Tim;P4;P4;P4;P4;P4;P4;P5;P5;P5;P5;P5;P5;;Pfingstferien;;;;;1;0;0;0;0;1;0;0;0;2
+2027;21;24.05.2027;30.05.2027;P2;Florian;Tim;P4;P4;P4;P4;P4;P4;PrasTr;PräsTr;PräsTr;PräsTr;PräsTr;PräsTr;;Pfingstferien;;;;;1;0;0;0;0;1;0;0;0;2
+2027;22;31.05.2027;06.06.2027;P2;BS;BS;P4;P4;P4;BS;BS;P4;PrasTr;PräsTr;PräsTr;PräsTr;PräsTr;PräsTr;;Ab Juni Präsentation & Fachgespräch;;;;;0;0;0;0;0;0;0;0;0;0
+2027;23;07.06.2027;13.06.2027;P2;Tim;Agnes;P4;Dominik;Florian;P4;P4;P4;P5;P5;P5;P5;P5;P5;;;;;;;1;0;0;0;1;1;1;0;0;4
+2027;24;14.06.2027;20.06.2027;Florian;Tim;Agnes;P4;Julian;Thomas;P4;P4;P4;P5;P5;P5;P5;P5;P5;;;;;;;1;1;0;0;1;1;0;0;1;5
+2027;25;21.06.2027;27.06.2027;Florian;BS;BS;BS;BS;BS;BS;BS;P4;P5;P5;P5;P5;P5;P5;;;;;;;1;0;0;0;0;0;0;0;0;1
+2027;26;28.06.2027;04.07.2027;Florian;BS;BS;BS;BS;BS;BS;BS;P4;P5;P5;P5;P5;P5;P5;;;;;;;1;0;0;0;0;0;0;0;0;1
+2027;27;05.07.2027;11.07.2027;BS;P2;P2;Tim;Agnes;Hubertus;P4;Extern;Extern;P5;P5;P5;P5;P5;P5;;06.07/07.07 vocatium Nürnberg;;Julian;;;0;1;1;0;1;1;0;0;0;4
+2027;28;12.07.2027;18.07.2027;BS;P2;P2;Tim;Agnes;Extern;P4;Florian;Florian;P5;P5;P5;P5;P5;P5;;;;;;;2;0;0;0;1;1;0;0;0;4
+2027;29;19.07.2027;25.07.2027;Agnes;BS;BS;BS;BS;BS;BS;BS;P4;P5;P5;P5;P5;P5;P5;;Teamworkshop2?;;;;;0;0;0;0;1;0;0;0;0;1
+2027;30;26.07.2027;01.08.2027;P2;BS;BS;BS;BS;BS;BS;BS;P4;P5;P5;P5;P5;P5;P5;;Teamworkshop2?;;;;;0;0;0;0;0;0;0;0;0;0
+2027;31;02.08.2027;08.08.2027;P2;P2;P2;Tim;Tim;Tim;Agnes;Agnes;Agnes;P5;P5;P5;P5;P5;P5;;Sommerferien -13.09;;;;;0;0;0;0;3;3;0;0;0;6
+2027;32;09.08.2027;15.08.2027;P2;P2;P2;P5;P5;P5;P5;P5;P5;P5;P5;P5;P5;P5;P5;;Sommerferien -13.09;;;;;0;0;0;0;0;0;0;0;0;0
+2027;33;16.08.2027;22.08.2027;P2;P2;P2;P5;P5;P5;P5;P5;P5;P5;P5;P5;P5;P5;P5;;Sommerferien -13.09;;;;;0;0;0;0;0;0;0;0;0;0
+2027;34;23.08.2027;29.08.2027;P2;P2;P2;P5;P5;P5;P5;P5;P5;P5;P5;P5;P5;P5;P5;;Sommerferien -13.09;;;;;0;0;0;0;0;0;0;0;0;0
+;;;;;;;;;;;;;;;;;;;;;;;;;19;15;8;1;13;20;11;10;10;36
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+BS;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+P1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+P2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+P3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+P4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+P5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
